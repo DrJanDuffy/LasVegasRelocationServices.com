@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "@/components/motion";
 import { ChevronDown, Mail, MapPin, Menu, Phone, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -10,15 +10,21 @@ const navigationItems = [
     name: "Services",
     href: "#services",
     submenu: [
-      { name: "Residential Relocation", href: "#residential" },
-      { name: "Corporate Relocation", href: "#corporate" },
-      { name: "International Relocation", href: "#international" },
-      { name: "Moving & Transportation", href: "#moving" },
-      { name: "Settling-In Services", href: "#settling" },
-      { name: "Relocation Planning", href: "#planning" },
+      { name: "Residential Relocation", href: "/services/residential-moving" },
+      { name: "Corporate Relocation", href: "/services/corporate-relocation" },
+      { name: "International Relocation", href: "/services/international-relocation" },
+      { name: "Settling-In Services", href: "/services/settling-in" },
     ],
   },
-  { name: "About", href: "#about" },
+  { name: "About", href: "/about" },
+  {
+    name: "Relocating From",
+    href: "#relocating",
+    submenu: [
+      { name: "Los Angeles", href: "/relocating-from/los-angeles" },
+      { name: "San Diego", href: "/relocating-from/san-diego" },
+    ],
+  },
   { name: "Team", href: "#team" },
   { name: "Testimonials", href: "#testimonials" },
   { name: "Contact", href: "#contact" },
@@ -42,10 +48,16 @@ export default function Navigation() {
     setActiveSubmenu(activeSubmenu === itemName ? null : itemName);
   };
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+  const handleNavigation = (href: string) => {
+    if (href.startsWith('/')) {
+      // External page navigation
+      window.location.href = href;
+    } else {
+      // Scroll to section
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
     setIsOpen(false);
     setActiveSubmenu(null);
@@ -92,7 +104,7 @@ export default function Navigation() {
                   </button>
                 ) : (
                   <button
-                    onClick={() => scrollToSection(item.href)}
+                    onClick={() => handleNavigation(item.href)}
                     className="text-gray-800 hover:text-blue-700 px-3 py-2 text-sm font-semibold transition-colors duration-200"
                   >
                     {item.name}
@@ -106,7 +118,7 @@ export default function Navigation() {
                       {item.submenu.map((subItem) => (
                         <button
                           key={subItem.name}
-                          onClick={() => scrollToSection(subItem.href)}
+                          onClick={() => handleNavigation(subItem.href)}
                           className="w-full text-left px-4 py-3 text-sm text-gray-700 hover:text-blue-700 hover:bg-blue-50 transition-colors duration-200 font-medium"
                         >
                           {subItem.name}
@@ -126,7 +138,7 @@ export default function Navigation() {
               <span>(702) 707-7273</span>
             </div>
             <button
-              onClick={() => scrollToSection("#contact")}
+              onClick={() => handleNavigation("#contact")}
               className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg"
             >
               Get Started
@@ -181,7 +193,7 @@ export default function Navigation() {
                             {item.submenu.map((subItem) => (
                               <button
                                 key={subItem.name}
-                                onClick={() => scrollToSection(subItem.href)}
+                                onClick={() => handleNavigation(subItem.href)}
                                 className="block w-full text-left text-gray-700 hover:text-blue-700 py-2 font-medium text-sm"
                               >
                                 {subItem.name}
@@ -193,7 +205,7 @@ export default function Navigation() {
                     </div>
                   ) : (
                     <button
-                      onClick={() => scrollToSection(item.href)}
+                      onClick={() => handleNavigation(item.href)}
                       className="block w-full text-left text-gray-800 hover:text-blue-700 py-3 font-semibold text-base"
                     >
                       {item.name}
@@ -217,7 +229,7 @@ export default function Navigation() {
                   <span>Las Vegas, NV</span>
                 </div>
                 <button
-                  onClick={() => scrollToSection("#contact")}
+                  onClick={() => handleNavigation("#contact")}
                   className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg"
                 >
                   Get Started

@@ -11,10 +11,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 1,
   };
 
+  // About page
+  const aboutPage = {
+    url: `${baseUrl}/about`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  };
+
   // Service-specific pages
   const servicePages = [
     {
+      url: `${baseUrl}/services/residential-moving`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/services/corporate-relocation`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/services/international-relocation`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/services/settling-in`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.9,
@@ -37,5 +63,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  return [mainPage, ...servicePages, ...cityPages];
+  return [mainPage, aboutPage, ...servicePages, ...cityPages];
 }
