@@ -8,7 +8,9 @@ import {
   CheckCircle, 
   Phone, 
   Calendar,
-  Truck
+  Truck,
+  MapPin,
+  Shield
 } from 'lucide-react'
 
 export const metadata: Metadata = {
