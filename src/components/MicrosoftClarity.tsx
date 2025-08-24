@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-import { clarity } from '@microsoft/clarity'
+import clarity from '@microsoft/clarity'
 
 interface MicrosoftClarityProps {
   projectId: string
@@ -15,77 +15,8 @@ export default function MicrosoftClarity({ projectId, enabled = true }: Microsof
     }
 
     try {
-      // Initialize Clarity
-      clarity.init(projectId, {
-        // Basic configuration
-        cookies: true,
-        cache: true,
-        app: 'las-vegas-relocation-services',
-        
-        // Privacy settings
-        privacy: {
-          // Don't record sensitive form inputs
-          forms: {
-            password: false,
-            email: false,
-            phone: false,
-            creditCard: false,
-            ssn: false
-          },
-          // Don't record URL parameters
-          url: {
-            query: false,
-            hash: false
-          }
-        },
-        
-        // Performance settings
-        performance: {
-          // Record Core Web Vitals
-          metrics: true,
-          // Record resource timing
-          resources: true
-        },
-        
-        // Session recording settings
-        session: {
-          // Record mouse movements
-          mouse: true,
-          // Record scroll events
-          scroll: true,
-          // Record clicks
-          clicks: true,
-          // Record form interactions
-          forms: true,
-          // Record page navigation
-          navigation: true
-        },
-        
-        // Heatmap settings
-        heatmap: {
-          // Enable click heatmaps
-          clicks: true,
-          // Enable scroll heatmaps
-          scroll: true,
-          // Enable mouse movement heatmaps
-          mouse: true
-        },
-        
-        // Custom events for real estate specific tracking
-        events: {
-          // Track relocation inquiries
-          'relocation-inquiry': true,
-          // Track service page views
-          'service-page-view': true,
-          // Track contact form submissions
-          'contact-form-submit': true,
-          // Track phone number clicks
-          'phone-click': true,
-          // Track map interactions
-          'map-interaction': true
-        }
-      })
-
+      // Initialize Clarity with basic configuration
+      clarity.init(projectId)
       console.log('Microsoft Clarity initialized successfully')
     } catch (error) {
       console.error('Failed to initialize Microsoft Clarity:', error)
