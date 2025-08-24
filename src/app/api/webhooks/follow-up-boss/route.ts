@@ -67,11 +67,17 @@ async function handleContactCreated(contact: { id: string; tags?: string[] }) {
   try {
     console.log("New contact created:", contact);
 
+    const api = getFollowUpBossAPI();
+    if (!api) {
+      console.warn("Follow Up Boss API not available");
+      return;
+    }
+
     // Add welcome tag
-    await followUpBossAPI.addTagsToContact(contact.id, ["welcome", "new-contact"]);
+    await api.addTagsToContact(contact.id, ["welcome", "new-contact"]);
 
     // Create welcome task
-    await followUpBossAPI.createTask({
+    await api.createTask({
       contactId: contact.id,
       title: "Welcome new contact",
       description: "Send welcome email and introduction materials",

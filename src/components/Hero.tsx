@@ -1,206 +1,140 @@
-"use client";
+'use client'
 
-import { motion } from "framer-motion";
-import { ArrowRight, Award, Clock, Mail, MapPin, Phone, Star, Users } from "lucide-react";
+import { motion } from 'framer-motion'
+import { Phone, Calendar, ArrowRight, Star, Shield, Award } from 'lucide-react'
 
 export default function Hero() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const stats = [
-    { icon: Star, value: "4.9", label: "Client Rating", color: "text-yellow-500" },
-    { icon: Award, value: "500+", label: "Successful Relocations", color: "text-blue-500" },
-    { icon: Users, value: "15+", label: "Years Experience", color: "text-green-500" },
-    { icon: Clock, value: "24/7", label: "Support Available", color: "text-purple-500" },
-  ];
-
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-yellow-50 pt-20 lg:pt-24">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}
-        />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900">
+        {/* Abstract background pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-20 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-72 h-72 bg-indigo-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000"></div>
+          <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-4000"></div>
+        </div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+        {/* Trust Badge */}
         <motion.div
-          className="max-w-4xl mx-auto"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          {/* Trust Badge */}
-          <motion.div
-            className="inline-flex items-center gap-2 bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6 hover:bg-blue-200 transition-colors cursor-pointer"
-            variants={itemVariants}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <MapPin className="w-4 h-4" />
-            <span>Serving Las Vegas & Surrounding Areas</span>
-          </motion.div>
-
-          {/* Main Headline */}
-          <motion.h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
-            variants={itemVariants}
-          >
-            Your Trusted Partner for{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-yellow-500 bg-clip-text text-transparent">
-              Las Vegas Relocation
-            </span>
-          </motion.h1>
-
-          {/* Subheadline */}
-          <motion.p
-            className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed"
-            variants={itemVariants}
-          >
-            Expert relocation services with Dr. Jan Duffy and the Berkshire Hathaway Services
-            Relocation Services Team. Making your move to Las Vegas seamless and stress-free.
-          </motion.p>
-
-          {/* CTA Buttons */}
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
-            variants={itemVariants}
-          >
-            <motion.button
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 group shadow-lg hover:shadow-xl"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              aria-label="Get free consultation for Las Vegas relocation"
-            >
-              Get Free Consultation
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform inline" />
-            </motion.button>
-
-            <motion.button
-              className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 shadow-lg hover:shadow-xl"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              aria-label="Learn more about our relocation services"
-            >
-              Learn More About Our Services
-            </motion.button>
-          </motion.div>
-
-          {/* Trust Indicators */}
-          <motion.div
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center text-gray-600 mb-8"
-            variants={itemVariants}
-          >
-            <motion.div
-              className="flex items-center gap-2 hover:text-blue-600 transition-colors cursor-pointer group"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Phone className="w-5 h-5 text-blue-600 group-hover:scale-110 transition-transform" />
-              <span className="font-medium">(702) 707-7273</span>
-            </motion.div>
-
-            <motion.div
-              className="flex items-center gap-2 hover:text-blue-600 transition-colors cursor-pointer group"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Mail className="w-5 h-5 text-blue-600 group-hover:scale-110 transition-transform" />
-              <span className="font-medium">DrJan@LasVegasRelocationServices.com</span>
-            </motion.div>
-          </motion.div>
-
-          {/* Stats Grid */}
-          <motion.div
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto"
-            variants={itemVariants}
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                className="text-center p-3 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer"
-                whileHover={{ scale: 1.05, y: -5 }}
-                whileTap={{ scale: 0.95 }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 + index * 0.1 }}
-              >
-                <stat.icon className={`w-6 h-6 mx-auto mb-2 ${stat.color}`} />
-                <div className="text-lg font-bold text-gray-900">{stat.value}</div>
-                <div className="text-xs text-gray-600">{stat.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.8 }}
+          transition={{ duration: 0.8 }}
+          className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-8"
         >
-          <motion.div
-            className="w-6 h-10 border-2 border-gray-300 rounded-full flex justify-center cursor-pointer"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+          <Award className="w-5 h-5 text-yellow-400" />
+          <span className="text-sm font-medium">Trusted by 500+ Families</span>
+          <div className="flex items-center gap-1">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Main Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+        >
+          Your Dream Move to
+          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-indigo-200">
+            Las Vegas Starts Here
+          </span>
+        </motion.h1>
+
+        {/* Value Proposition */}
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-xl md:text-2xl text-blue-100 mb-8 max-w-4xl mx-auto leading-relaxed"
+        >
+          Professional relocation services that transform stressful moves into exciting new beginnings. 
+          From home finding to settling in, we handle every detail with precision and care.
+        </motion.p>
+
+        {/* Trust Indicators */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="flex flex-wrap justify-center items-center gap-6 mb-12 text-blue-100"
+        >
+          <div className="flex items-center gap-2">
+            <Shield className="w-5 h-5 text-green-400" />
+            <span className="text-sm">Licensed & Insured</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Award className="w-5 h-5 text-yellow-400" />
+            <span className="text-sm">Berkshire Hathaway Services</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Star className="w-5 h-5 text-blue-400" />
+            <span className="text-sm">15+ Years Experience</span>
+          </div>
+        </motion.div>
+
+        {/* CTA Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
+        >
+          <button
+            type="button"
+            className="group bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-10 py-5 rounded-xl font-semibold text-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center gap-3"
           >
-            <div className="w-1 h-3 bg-gray-400 rounded-full mt-2" />
-          </motion.div>
+            Get Free Consultation
+            <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+          </button>
+          
+          <button
+            type="button"
+            className="group border-2 border-white text-white hover:bg-white hover:text-blue-900 px-10 py-5 rounded-xl font-semibold text-xl transition-all duration-300 transform hover:scale-105 flex items-center gap-3"
+          >
+            <Phone className="w-6 h-6" />
+            Call Now: (702) 707-7273
+          </button>
+        </motion.div>
+
+        {/* Quick Contact */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.0 }}
+          className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 max-w-md mx-auto"
+        >
+          <div className="flex items-center justify-center gap-3 mb-3">
+            <Calendar className="w-5 h-5 text-blue-300" />
+            <span className="text-sm font-medium text-blue-200">Available 7 Days a Week</span>
+          </div>
+          <p className="text-sm text-blue-100">
+            Schedule your consultation today and start your stress-free relocation journey
+          </p>
         </motion.div>
       </div>
 
-      {/* Floating Elements for Visual Interest */}
+      {/* Scroll Indicator */}
       <motion.div
-        className="absolute top-20 right-20 w-20 h-20 bg-blue-200 rounded-full opacity-20"
-        animate={{
-          y: [0, -20, 0],
-          rotate: [0, 180, 360],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-
-      <motion.div
-        className="absolute bottom-40 left-20 w-16 h-16 bg-yellow-200 rounded-full opacity-20"
-        animate={{
-          y: [0, 20, 0],
-          scale: [1, 1.2, 1],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.5 }}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+      >
+        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+          <motion.div
+            animate={{ y: [0, 12, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className="w-1 h-3 bg-white/60 rounded-full mt-2"
+          />
+        </div>
+      </motion.div>
     </section>
-  );
+  )
 }

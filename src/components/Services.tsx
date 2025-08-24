@@ -1,96 +1,126 @@
-"use client";
+'use client'
 
-import { motion } from "framer-motion";
-import { Building2, CheckCircle, FileText, Globe, Home, Star, Truck, Users } from "lucide-react";
+import { motion } from 'framer-motion'
+import { 
+  Building, 
+  Home, 
+  Crown, 
+  Truck, 
+  MapPin, 
+  Users, 
+  CheckCircle,
+  ArrowRight
+} from 'lucide-react'
 
 const services = [
   {
-    icon: Home,
-    title: "Residential Relocation",
-    description:
-      "Complete home relocation services including packing, moving, and settling into your new Las Vegas home.",
+    icon: Building,
+    title: 'Corporate Relocation',
+    description: 'Comprehensive business relocation services with minimal disruption to operations.',
     features: [
-      "Professional packing services",
-      "Furniture disassembly/assembly",
-      "Home setup assistance",
-      "Utility transfers",
+      'Employee relocation packages',
+      'Office space coordination',
+      'HR partnership support',
+      'ROI analysis & reporting',
+      'Vendor management',
+      'Compliance & legal support'
     ],
+    benefits: ['Reduce relocation costs', 'Minimize downtime', 'Improve employee retention'],
+    color: 'from-blue-500 to-blue-600',
+    bgColor: 'bg-blue-50',
+    borderColor: 'border-blue-200'
   },
   {
-    icon: Building2,
-    title: "Corporate Relocation",
-    description:
-      "Comprehensive corporate relocation solutions for businesses and their employees moving to Las Vegas.",
+    icon: Home,
+    title: 'Residential Moving',
+    description: 'Full-service residential relocation with personalized attention to every detail.',
     features: [
-      "Employee relocation packages",
-      "Office space coordination",
-      "Vendor management",
-      "Timeline planning",
+      'Home finding & real estate',
+      'School district research',
+      'Neighborhood analysis',
+      'Packing & moving coordination',
+      'Utility setup assistance',
+      'Community integration support'
     ],
+    benefits: ['Stress-free moving experience', 'Local market expertise', 'Ongoing support'],
+    color: 'from-green-500 to-green-600',
+    bgColor: 'bg-green-50',
+    borderColor: 'border-green-200'
+  },
+  {
+    icon: Crown,
+    title: 'Luxury Relocation',
+    description: 'Premium white-glove service for high-value properties and discerning clients.',
+    features: [
+      'Concierge-level support',
+      'Fine art & valuable handling',
+      'Interior design coordination',
+      'Privacy & discretion',
+      'Custom moving solutions',
+      'VIP treatment throughout'
+    ],
+    benefits: ['Exceptional service quality', 'Attention to detail', 'Complete privacy'],
+    color: 'from-purple-500 to-purple-600',
+    bgColor: 'bg-purple-50',
+    borderColor: 'border-purple-200'
   },
   {
     icon: Truck,
-    title: "Moving & Transportation",
-    description:
-      "Reliable moving and transportation services with experienced professionals and quality equipment.",
+    title: 'Moving Coordination',
+    description: 'Professional coordination of all moving logistics and transportation needs.',
     features: [
-      "Full-service moving",
-      "Specialty item handling",
-      "Storage solutions",
-      "Insurance coverage",
+      'Packing & crating services',
+      'Transportation coordination',
+      'Insurance coverage',
+      'Storage solutions',
+      'Timeline management',
+      'Quality control'
     ],
+    benefits: ['Reliable transportation', 'Comprehensive insurance', 'On-time delivery'],
+    color: 'from-orange-500 to-orange-600',
+    bgColor: 'bg-orange-50',
+    borderColor: 'border-orange-200'
+  },
+  {
+    icon: MapPin,
+    title: 'Home Finding Services',
+    description: 'Expert real estate assistance to find your perfect home in the new location.',
+    features: [
+      'Property search & tours',
+      'Market analysis',
+      'Negotiation support',
+      'Closing coordination',
+      'Post-purchase assistance',
+      'Investment guidance'
+    ],
+    benefits: ['Local market expertise', 'Best value deals', 'Smooth transactions'],
+    color: 'from-red-500 to-red-600',
+    bgColor: 'bg-red-50',
+    borderColor: 'border-red-200'
   },
   {
     icon: Users,
-    title: "Settling-In Services",
-    description:
-      "Help you get settled in your new Las Vegas community with local area orientation and services.",
+    title: 'Settling In Support',
+    description: 'Comprehensive assistance to help you feel at home in your new location.',
     features: [
-      "Area orientation tours",
-      "Local service connections",
-      "School district information",
-      "Community integration",
+      'Utility & service setup',
+      'Local business connections',
+      'Community introductions',
+      'School enrollment help',
+      'Healthcare provider referrals',
+      'Ongoing support network'
     ],
-  },
-  {
-    icon: FileText,
-    title: "Relocation Planning",
-    description:
-      "Strategic relocation planning to ensure a smooth transition to your new Las Vegas location.",
-    features: [
-      "Custom relocation plans",
-      "Budget management",
-      "Timeline coordination",
-      "Risk mitigation",
-    ],
-  },
-  {
-    icon: Globe,
-    title: "International Relocation",
-    description:
-      "Expert international relocation services for clients moving to Las Vegas from abroad.",
-    features: [
-      "Visa assistance",
-      "Customs coordination",
-      "Cultural orientation",
-      "Language support",
-    ],
-  },
-];
-
-const benefits = [
-  "Berkshire Hathaway backed reliability",
-  "Dr. Jan Duffy's expert guidance",
-  "Local Las Vegas market knowledge",
-  "Comprehensive service coverage",
-  "Dedicated relocation specialists",
-  "Proven track record of success",
-];
+    benefits: ['Faster community integration', 'Reduced stress', 'Long-term support'],
+    color: 'from-indigo-500 to-indigo-600',
+    bgColor: 'bg-indigo-50',
+    borderColor: 'border-indigo-200'
+  }
+]
 
 export default function Services() {
   return (
-    <section className="section-padding bg-white">
-      <div className="container mx-auto container-padding">
+    <section className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -99,12 +129,12 @@ export default function Services() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-900 mb-6">
-            Comprehensive <span className="gradient-text">Relocation Services</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Comprehensive Relocation Solutions
           </h2>
-          <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
-            From initial planning to settling into your new Las Vegas home, we provide end-to-end
-            relocation solutions tailored to your unique needs.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            From corporate moves to luxury relocations, we provide end-to-end services 
+            that ensure your transition is seamless, stress-free, and successful.
           </p>
         </motion.div>
 
@@ -117,64 +147,76 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="card group hover:scale-105 transition-transform duration-300"
+              className={`${service.bgColor} rounded-2xl p-8 border ${service.borderColor} hover:shadow-xl transition-all duration-300 group`}
             >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-primary-100 rounded-lg group-hover:bg-primary-200 transition-colors">
-                  <service.icon className="w-8 h-8 text-primary-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary-900">{service.title}</h3>
+              {/* Icon */}
+              <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                <service.icon className="w-8 h-8 text-white" />
               </div>
-              <p className="text-secondary-600 mb-4">{service.description}</p>
-              <ul className="space-y-2">
+
+              {/* Content */}
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+
+              {/* Features */}
+              <div className="space-y-3 mb-6">
                 {service.features.map((feature, featureIndex) => (
-                  <li
-                    key={featureIndex}
-                    className="flex items-center gap-2 text-sm text-secondary-600"
-                  >
-                    <CheckCircle className="w-4 h-4 text-primary-600 flex-shrink-0" />
-                    {feature}
-                  </li>
+                  <div key={featureIndex} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-700">{feature}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
+
+              {/* Benefits */}
+              <div className="bg-white rounded-xl p-4 mb-6">
+                <h4 className="font-semibold text-gray-900 mb-3">Key Benefits:</h4>
+                <div className="space-y-2">
+                  {service.benefits.map((benefit, benefitIndex) => (
+                    <div key={benefitIndex} className="flex items-center gap-2 text-sm text-gray-600">
+                      <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                      <span>{benefit}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* CTA */}
+              <button
+                type="button"
+                className={`w-full bg-gradient-to-r ${service.color} text-white py-3 px-6 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 group-hover:scale-105 flex items-center justify-center gap-2`}
+              >
+                Learn More
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
             </motion.div>
           ))}
         </div>
 
-        {/* Benefits Section */}
+        {/* Bottom CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-primary-50 to-accent-50 rounded-2xl p-8 md:p-12"
+          className="text-center"
         >
-          <div className="text-center mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-4">
-              Why Choose Our Relocation Services?
-            </h3>
-            <p className="text-lg text-secondary-600">
-              Experience the difference that comes with professional expertise and local knowledge
+          <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-white">
+            <h3 className="text-2xl font-bold mb-4">Ready to Start Your Relocation?</h3>
+            <p className="text-blue-100 mb-6">
+              Get a personalized quote and discover how we can make your move stress-free.
             </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={benefit}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="flex items-center gap-3"
-              >
-                <Star className="w-5 h-5 text-accent-500 flex-shrink-0" />
-                <span className="text-secondary-700 font-medium">{benefit}</span>
-              </motion.div>
-            ))}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button type="button" className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+                Get Free Quote
+              </button>
+              <button type="button" className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-800 transition-colors">
+                Schedule Consultation
+              </button>
+            </div>
           </div>
         </motion.div>
       </div>
     </section>
-  );
+  )
 }
