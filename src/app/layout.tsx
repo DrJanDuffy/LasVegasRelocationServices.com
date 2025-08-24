@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import Navigation from '@/components/Navigation'
 import PerformanceMonitor from '@/components/PerformanceMonitor'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 
@@ -251,6 +252,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} font-sans antialiased`}>
         <PerformanceMonitor />
+        <Navigation />
         {children}
         <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-XXXXXXXXXX'} />
       </body>

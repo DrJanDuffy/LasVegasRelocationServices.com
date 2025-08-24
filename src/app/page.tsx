@@ -16,11 +16,21 @@ export default function HomePage() {
   return (
     <main className="min-h-screen">
       <Hero />
-      <Services />
-      <About />
-      <Team />
-      <Testimonials />
-      <Contact />
+      <div id="services">
+        <Services />
+      </div>
+      <div id="about">
+        <About />
+      </div>
+      <div id="team">
+        <Team />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
+      </div>
+      <div id="contact">
+        <Contact />
+      </div>
       <CTA />
     </main>
   )
