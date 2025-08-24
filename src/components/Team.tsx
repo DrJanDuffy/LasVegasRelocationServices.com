@@ -40,6 +40,12 @@ const teamMembers = [
       phone: '(702) 707-7274',
       email: 'Michael@LasVegasRelocationServices.com',
       linkedin: 'https://linkedin.com/in/michael-rodriguez'
+    },
+    stats: {
+      relocations: '200+',
+      satisfaction: '97%',
+      years: '8+',
+      clients: '150+'
     }
   },
   {
@@ -56,6 +62,12 @@ const teamMembers = [
       phone: '(702) 707-7275',
       email: 'Sarah@LasVegasRelocationServices.com',
       linkedin: 'https://linkedin.com/in/sarah-chen'
+    },
+    stats: {
+      homes: '100+',
+      satisfaction: '99%',
+      years: '6+',
+      neighborhoods: '25+'
     }
   }
 ]
@@ -125,7 +137,7 @@ export default function Team() {
                 
                 {/* Stats Grid */}
                 <div className="grid grid-cols-2 gap-4 mb-6">
-                  {Object.entries(teamMembers[0].stats).map(([key, value]) => (
+                  {teamMembers[0].stats && Object.entries(teamMembers[0].stats).map(([key, value]) => (
                     <div key={key} className="text-center p-4 bg-white rounded-xl shadow-sm">
                       <div className="text-2xl font-bold text-blue-600 mb-1">{value}</div>
                       <div className="text-xs text-gray-600 font-medium capitalize">

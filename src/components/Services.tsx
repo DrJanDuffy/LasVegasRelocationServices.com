@@ -9,111 +9,93 @@ import {
   MapPin, 
   Users, 
   CheckCircle,
-  ArrowRight
+  ArrowRight,
+  Globe,
+  Award,
+  Shield
 } from 'lucide-react'
 
 const services = [
   {
-    icon: Building,
-    title: 'Corporate Relocation',
-    description: 'Comprehensive business relocation services with minimal disruption to operations.',
+    icon: Home,
+    title: 'Home Buying & Renting Services',
+    description: 'Comprehensive assistance for finding your perfect home in Las Vegas.',
     features: [
-      'Employee relocation packages',
-      'Office space coordination',
-      'HR partnership support',
-      'ROI analysis & reporting',
-      'Vendor management',
-      'Compliance & legal support'
+      'Las Vegas area overviews and neighborhood tours',
+      'Temporary housing coordination',
+      'Home finding assistance from certified specialists',
+      'Rental property assistance',
+      'International settling-in services'
     ],
-    benefits: ['Reduce relocation costs', 'Minimize downtime', 'Improve employee retention'],
+    benefits: ['Local market expertise', 'Personalized home search', 'Ongoing support'],
     color: 'from-blue-500 to-blue-600',
     bgColor: 'bg-blue-50',
     borderColor: 'border-blue-200'
   },
   {
-    icon: Home,
-    title: 'Residential Moving',
-    description: 'Full-service residential relocation with personalized attention to every detail.',
+    icon: Building,
+    title: 'Home Sale & Marketing Services',
+    description: 'Advanced property marketing and professional broker services.',
     features: [
-      'Home finding & real estate',
-      'School district research',
-      'Neighborhood analysis',
-      'Packing & moving coordination',
-      'Utility setup assistance',
-      'Community integration support'
+      'Advanced property marketing strategies',
+      'Professional broker price opinions',
+      'Corporate inventory management',
+      'Full-service property management',
+      'Maximum market exposure guaranteed'
     ],
-    benefits: ['Stress-free moving experience', 'Local market expertise', 'Ongoing support'],
+    benefits: ['Maximum market exposure', 'Professional marketing', 'Optimal pricing'],
     color: 'from-green-500 to-green-600',
     bgColor: 'bg-green-50',
     borderColor: 'border-green-200'
   },
   {
-    icon: Crown,
-    title: 'Luxury Relocation',
-    description: 'Premium white-glove service for high-value properties and discerning clients.',
+    icon: Users,
+    title: 'Specialized Relocation Support',
+    description: 'Corporate and international relocation services with global reach.',
     features: [
-      'Concierge-level support',
-      'Fine art & valuable handling',
-      'Interior design coordination',
-      'Privacy & discretion',
-      'Custom moving solutions',
-      'VIP treatment throughout'
+      'Corporate and group move coordination',
+      'International relocation services',
+      'Affinity program partnerships',
+      'Individual needs analysis',
+      'Worldwide broker referral network'
     ],
-    benefits: ['Exceptional service quality', 'Attention to detail', 'Complete privacy'],
+    benefits: ['Global expertise', 'Corporate partnerships', 'Customized solutions'],
     color: 'from-purple-500 to-purple-600',
     bgColor: 'bg-purple-50',
     borderColor: 'border-purple-200'
   },
   {
-    icon: Truck,
-    title: 'Moving Coordination',
-    description: 'Professional coordination of all moving logistics and transportation needs.',
+    icon: Award,
+    title: 'Complete Relocation Services',
+    description: 'Full-service relocation division with over 1,300 local Las Vegas experts.',
     features: [
-      'Packing & crating services',
-      'Transportation coordination',
-      'Insurance coverage',
-      'Storage solutions',
-      'Timeline management',
-      'Quality control'
+      'Single point of contact with Dr. Jan Duffy',
+      'Personal oversight of entire process',
+      'Seamless communication throughout',
+      'Exceptional results guaranteed',
+      'Nationally recognized team'
     ],
-    benefits: ['Reliable transportation', 'Comprehensive insurance', 'On-time delivery'],
+    benefits: ['Personal attention', 'Seamless process', 'Proven results'],
     color: 'from-orange-500 to-orange-600',
     bgColor: 'bg-orange-50',
     borderColor: 'border-orange-200'
   },
   {
-    icon: MapPin,
-    title: 'Home Finding Services',
-    description: 'Expert real estate assistance to find your perfect home in the new location.',
+    icon: Shield,
+    title: 'Corporate Relocation Services',
+    description: 'Primary service provider for Las Vegas metro with BGRS partnership.',
     features: [
-      'Property search & tours',
-      'Market analysis',
-      'Negotiation support',
-      'Closing coordination',
-      'Post-purchase assistance',
-      'Investment guidance'
+      'Fortune 100 company partnerships',
+      'Employee relocation packages',
+      'HR partnership support',
+      'ROI analysis & reporting',
+      'Vendor management',
+      'Compliance & legal support'
     ],
-    benefits: ['Local market expertise', 'Best value deals', 'Smooth transactions'],
+    benefits: ['Reduce relocation costs', 'Minimize downtime', 'Improve retention'],
     color: 'from-red-500 to-red-600',
     bgColor: 'bg-red-50',
     borderColor: 'border-red-200'
-  },
-  {
-    icon: Users,
-    title: 'Settling In Support',
-    description: 'Comprehensive assistance to help you feel at home in your new location.',
-    features: [
-      'Utility & service setup',
-      'Local business connections',
-      'Community introductions',
-      'School enrollment help',
-      'Healthcare provider referrals',
-      'Ongoing support network'
-    ],
-    benefits: ['Faster community integration', 'Reduced stress', 'Long-term support'],
-    color: 'from-indigo-500 to-indigo-600',
-    bgColor: 'bg-indigo-50',
-    borderColor: 'border-indigo-200'
   }
 ]
 

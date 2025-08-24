@@ -1,193 +1,184 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { CheckCircle, Award, Star, Users, Clock, Shield, Building, Heart } from 'lucide-react'
+import { CheckCircle, Award, Users, MapPin, Shield, Star } from 'lucide-react'
 
-const highlights = [
-  '15+ years of Las Vegas real estate expertise',
-  'Berkshire Hathaway Services Relocation Team member',
-  'Certified relocation specialist with proven track record',
-  'Personalized approach for every client family',
-  'Local market knowledge and community connections',
-  'Ongoing support throughout your relocation journey'
-]
-
-const stats = [
+const whyChooseUs = [
   {
     icon: Users,
-    number: '500+',
-    label: 'Families Relocated',
-    description: 'Successfully moved across the country'
-  },
-  {
-    icon: Star,
-    number: '98%',
-    label: 'Satisfaction Rate',
-    description: 'Based on post-move surveys'
-  },
-  {
-    icon: Clock,
-    number: '15+',
-    label: 'Years Experience',
-    description: 'Professional relocation expertise'
+    title: '🏠 Complete Relocation Services',
+    description: 'Full-service relocation division with over 1,300 local Las Vegas experts providing valuable insights relevant to your family and lifestyle.',
+    color: 'text-blue-600'
   },
   {
     icon: Award,
-    number: 'A+',
-    label: 'BBB Rating',
-    description: 'Better Business Bureau accredited'
-  }
-]
-
-const values = [
-  {
-    icon: Heart,
-    title: 'Personalized Care',
-    description: 'Every relocation is unique. We treat your move as if it were our own family\'s move.'
-  },
-  {
-    icon: Shield,
-    title: 'Trust & Reliability',
-    description: 'Built on 15+ years of trust, transparency, and consistent delivery of promises.'
-  },
-  {
-    icon: Building,
-    title: 'Local Expertise',
-    description: 'Deep knowledge of Las Vegas neighborhoods, schools, and real estate markets.'
+    title: '🎯 Single Point of Contact',
+    description: 'Dr. Jan Duffy personally oversees your entire relocation process, ensuring seamless communication and exceptional results.',
+    color: 'text-green-600'
   },
   {
     icon: Star,
-    title: 'Excellence',
-    description: 'Committed to exceeding expectations in every aspect of your relocation.'
+    title: '🏆 Award-Winning Team',
+    description: 'Our nationally recognized team has received multiple awards for service and performance, representing the majority of Las Vegas relocations.',
+    color: 'text-purple-600'
   }
+]
+
+const credentials = [
+  'Primary service provider for Las Vegas metro with BGRS',
+  '2nd largest relocation provider worldwide',
+  'Primary or preferred broker status with most third-party companies',
+  'Serving Fortune 100 companies nationwide',
+  '35% Fortune 100 market share',
+  '125+ countries served annually'
 ]
 
 export default function About() {
   return (
-    <section className="py-20 bg-white">
+    <section id="about" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Column - Story & Highlights */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Meet <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Dr. Jan Duffy</span>
-            </h2>
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Why Choose Dr. Jan Duffy for Your Las Vegas Relocation?
+          </h2>
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            Relocating to Las Vegas can be overwhelming. Dr. Jan Duffy and our team of certified relocation specialists provide exceptional, personalized service you can depend on. Whether you're moving for work, retirement, or lifestyle, we make your Las Vegas relocation seamless and stress-free.
+          </p>
+        </motion.div>
 
-            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              Dr. Jan Duffy leads our Las Vegas relocation services team with over 15 years of
-              experience in helping families and businesses successfully transition to the vibrant
-              Las Vegas community.
-            </p>
-
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              As part of the prestigious Berkshire Hathaway Services Relocation Services Team, we
-              bring unmatched expertise, reliability, and local market knowledge to every relocation
-              project. Our commitment to excellence ensures that your move to Las Vegas is not just
-              successful, but truly exceptional.
-            </p>
-
-            {/* Highlights */}
-            <div className="space-y-3 mb-8">
-              {highlights.map((highlight, index) => (
-                <motion.div
-                  key={`highlight-${highlight}-${index}`}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex items-center gap-3"
-                >
-                  <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                  <span className="text-gray-700">{highlight}</span>
-                </motion.div>
-              ))}
-            </div>
-
-            <button type="button" className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
-              Learn More About Dr. Duffy
-            </button>
-          </motion.div>
-
-          {/* Right Column - Stats & Values */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="space-y-8"
-          >
-            {/* Stats Grid */}
-            <div className="grid grid-cols-2 gap-6">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="text-center p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl border border-blue-100 hover:shadow-lg transition-all duration-300"
-                >
-                  <div className="flex justify-center mb-3">
-                    <div className="p-3 bg-blue-100 rounded-xl">
-                      <stat.icon className="w-6 h-6 text-blue-600" />
-                    </div>
-                  </div>
-                  <div className="text-3xl font-bold text-blue-600 mb-2">{stat.number}</div>
-                  <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
-                  <div className="text-xs text-gray-500 mt-1">{stat.description}</div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Company Values */}
-            <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl p-8 border border-gray-100">
-              <h4 className="text-xl font-bold text-gray-900 mb-6 text-center">Our Core Values</h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {values.map((value, index) => (
-                  <motion.div
-                    key={value.title}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm"
-                  >
-                    <div className="p-2 bg-blue-100 rounded-lg">
-                      <value.icon className="w-5 h-5 text-blue-600" />
-                    </div>
-                    <div>
-                      <h5 className="font-semibold text-gray-900 mb-1">{value.title}</h5>
-                      <p className="text-sm text-gray-600">{value.description}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-
-            {/* Berkshire Hathaway Badge */}
+        {/* Why Choose Us Grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="grid md:grid-cols-3 gap-8 mb-16"
+        >
+          {whyChooseUs.map((item, index) => (
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              key={item.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-6 text-white text-center"
+              className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
-              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Award className="w-8 h-8 text-white" />
+              <div className={`mx-auto mb-4 ${item.color}`}>
+                <item.icon className="w-12 h-12" />
               </div>
-              <h4 className="text-lg font-semibold mb-2">Berkshire Hathaway Services</h4>
-              <p className="text-blue-100 text-sm">Relocation Services Team Member</p>
-              <p className="text-xs text-blue-200 font-medium mt-2">
-                Quality • Reliability • Excellence
+              <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">
+                {item.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed text-center">
+                {item.description}
               </p>
             </motion.div>
-          </motion.div>
-        </div>
+          ))}
+        </motion.div>
+
+        {/* Credentials Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="bg-gradient-to-br from-blue-900 to-indigo-900 rounded-3xl p-8 md:p-12 text-white"
+        >
+          <div className="text-center mb-12">
+            <h3 className="text-3xl md:text-4xl font-bold mb-6">
+              Trusted by Fortune 100 Companies
+            </h3>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+              We are the primary service provider for Las Vegas metro with BGRS (2nd largest relocation provider worldwide). Our team has earned "primary" or "preferred" broker status with most third-party relocation companies.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {credentials.map((credential, index) => (
+              <motion.div
+                key={credential}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="flex items-start gap-3"
+              >
+                <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
+                <span className="text-blue-100 leading-relaxed">{credential}</span>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Personal Touch Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          viewport={{ once: true }}
+          className="mt-16 text-center"
+        >
+          <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-3xl p-8 md:p-12">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+              Personal Attention from Dr. Jan Duffy
+            </h3>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+              Unlike large corporate relocation companies where you're just a number, Dr. Jan Duffy personally oversees every aspect of your relocation. 
+              From initial consultation to final settlement, you'll have direct access to her expertise and dedication.
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <div className="text-left">
+                <h4 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                  <Shield className="w-6 h-6 text-blue-600" />
+                  What You Get
+                </h4>
+                <ul className="space-y-3 text-gray-600">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>Direct access to Dr. Jan Duffy</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>Personalized relocation strategy</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>Ongoing support throughout the process</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="text-left">
+                <h4 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                  <MapPin className="w-6 h-6 text-blue-600" />
+                  Local Expertise
+                </h4>
+                <ul className="space-y-3 text-gray-600">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>Deep knowledge of Las Vegas market</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>Established local business relationships</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>Community insights and recommendations</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   )

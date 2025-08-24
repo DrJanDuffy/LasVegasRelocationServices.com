@@ -1,117 +1,150 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Shield, Award, Star, CheckCircle, Users, Clock } from 'lucide-react'
+import { Award, Shield, Star, Users, Globe, Building, MapPin } from 'lucide-react'
 
-const trustMetrics = [
+const stats = [
   {
+    number: '85K+',
+    label: 'Annual Employee Relocations',
     icon: Users,
-    number: '500+',
-    label: 'Families Relocated',
-    description: 'Successfully moved across the country'
+    color: 'text-orange-500'
   },
   {
-    icon: Star,
-    number: '98%',
-    label: 'Satisfaction Rate',
-    description: 'Based on post-move surveys'
+    number: '125',
+    label: 'Countries Served',
+    icon: Globe,
+    color: 'text-blue-500'
   },
   {
-    icon: Clock,
-    number: '15+',
-    label: 'Years Experience',
-    description: 'Professional relocation expertise'
+    number: '35%',
+    label: 'Fortune 100 Market Share',
+    icon: Building,
+    color: 'text-green-500'
   },
   {
-    icon: Award,
-    number: 'A+',
-    label: 'BBB Rating',
-    description: 'Better Business Bureau accredited'
+    number: '1,300+',
+    label: 'Local Las Vegas Experts',
+    icon: MapPin,
+    color: 'text-purple-500'
   }
 ]
 
-const certifications = [
-  'Berkshire Hathaway Services',
-  'Licensed Real Estate Agent',
-  'Certified Relocation Specialist',
-  'Insured & Bonded',
-  'Member of NAR',
-  'Local Market Expert'
+const trustBadges = [
+  {
+    icon: Award,
+    title: 'Nationally Recognized Team',
+    description: 'Multiple awards for service and performance',
+    color: 'text-yellow-500'
+  },
+  {
+    icon: Shield,
+    title: 'Primary BGRS Provider',
+    description: '2nd largest relocation provider worldwide',
+    color: 'text-blue-500'
+  },
+  {
+    icon: Star,
+    title: 'Preferred Broker Status',
+    description: 'Primary or preferred with most third-party companies',
+    color: 'text-green-500'
+  }
 ]
 
 export default function TrustIndicators() {
   return (
-    <section className="bg-gradient-to-r from-blue-50 to-indigo-50 py-16">
+    <section className="py-20 bg-gradient-to-br from-blue-900 to-indigo-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Trust Metrics */}
-        <motion.div 
+        {/* Header */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Trusted by Fortune 100 Companies
+          </h2>
+          <p className="text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
+            We are the primary service provider for Las Vegas metro with BGRS (2nd largest relocation provider worldwide). 
+            Our team has earned "primary" or "preferred" broker status with most third-party relocation companies.
+          </p>
+        </motion.div>
+
+        {/* Statistics Grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
           className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16"
         >
-          {trustMetrics.map((metric, index) => (
+          {stats.map((stat, index) => (
             <motion.div
-              key={metric.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              key={stat.label}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <metric.icon className="w-8 h-8 text-blue-600" />
+              <div className={`text-4xl md:text-5xl font-bold mb-2 ${stat.color}`}>
+                {stat.number}
               </div>
-              <div className="text-3xl font-bold text-blue-600 mb-2">{metric.number}</div>
-              <div className="text-lg font-semibold text-gray-900 mb-1">{metric.label}</div>
-              <div className="text-sm text-gray-600">{metric.description}</div>
+              <div className="text-blue-100 text-sm md:text-base">
+                {stat.label}
+              </div>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Certifications & Trust Signals */}
+        {/* Trust Badges */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="text-center"
+          className="grid md:grid-cols-3 gap-8"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
-            Trusted & Certified by Industry Leaders
-          </h2>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
-            {certifications.map((cert, index) => (
-              <motion.div
-                key={cert}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm border border-gray-100"
-              >
-                <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
-                <span className="text-sm font-medium text-gray-700">{cert}</span>
-              </motion.div>
-            ))}
-          </div>
+          {trustBadges.map((badge, index) => (
+            <motion.div
+              key={badge.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20"
+            >
+              <div className={`mx-auto mb-4 ${badge.color}`}>
+                <badge.icon className="w-12 h-12" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">
+                {badge.title}
+              </h3>
+              <p className="text-blue-100 text-sm leading-relaxed">
+                {badge.description}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
 
-          {/* Security & Trust Badges */}
-          <div className="flex flex-wrap justify-center items-center gap-6 text-gray-600">
-            <div className="flex items-center gap-2">
-              <Shield className="w-5 h-5 text-blue-600" />
-              <span className="text-sm">SSL Secured</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Award className="w-5 h-5 text-yellow-600" />
-              <span className="text-sm">Licensed & Insured</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Star className="w-5 h-5 text-green-600" />
-              <span className="text-sm">5-Star Rated</span>
-            </div>
+        {/* Additional Trust Statement */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mt-16"
+        >
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 max-w-4xl mx-auto">
+            <h3 className="text-2xl font-semibold mb-4">
+              Representing the Majority of Las Vegas Relocations
+            </h3>
+            <p className="text-blue-100 text-lg leading-relaxed">
+              Our expertise and track record make us the go-to choice for individuals, families, and corporations 
+              seeking professional relocation services in the Las Vegas area.
+            </p>
           </div>
         </motion.div>
       </div>

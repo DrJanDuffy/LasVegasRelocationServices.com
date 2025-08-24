@@ -1,117 +1,85 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Calendar, CheckCircle, Phone } from "lucide-react";
-
-const benefits = [
-  "Free initial consultation",
-  "Customized relocation plan",
-  "Local market expertise",
-  "Ongoing support throughout the process",
-];
+import { Phone, Calendar, ArrowRight } from "lucide-react";
 
 export default function CTA() {
   return (
-    <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 relative overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-4xl mx-auto">
-          {/* Header */}
+    <>
+      {/* Main CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-700 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="mb-12"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Ready to Start Your <span className="text-yellow-300">Las Vegas Journey?</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Ready to Start Your Las Vegas Relocation?
             </h2>
-            <p className="text-xl text-blue-100 leading-relaxed">
-              Join hundreds of satisfied clients who have successfully relocated to Las Vegas with
-              Dr. Jan Duffy and our expert team. Your dream move starts with a simple conversation.
+            <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+              Don't let the stress of moving hold you back. Dr. Jan Duffy and our team are here to make your 
+              Las Vegas relocation seamless, successful, and stress-free.
             </p>
-          </motion.div>
-
-          {/* Benefits */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12 max-w-2xl mx-auto"
-          >
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={benefit}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                viewport={{ once: true }}
-                className="flex items-center gap-3 text-white"
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
+              <a
+                href="#contact"
+                className="group bg-white text-blue-600 hover:bg-gray-100 px-10 py-5 rounded-full font-semibold text-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center gap-3"
               >
-                <CheckCircle className="w-5 h-5 text-yellow-300 flex-shrink-0" />
-                <span className="font-medium">{benefit}</span>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
-          >
-            <button type="button" className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-blue-700 group">
-              <div className="flex items-center gap-2">
-                <Phone className="w-5 h-5" />
+                Get Free Consultation
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              </a>
+              
+              <a
+                href="tel:+17027077273"
+                className="group border-2 border-white text-white hover:bg-white hover:text-blue-600 px-10 py-5 rounded-full font-semibold text-xl transition-all duration-300 transform hover:scale-105 flex items-center gap-3"
+              >
+                <Phone className="w-6 h-6" />
                 Call Now: (702) 707-7273
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </button>
+              </a>
+            </div>
 
-            <button type="button" className="bg-white hover:bg-gray-100 text-blue-700 font-semibold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-700 group">
-              <div className="flex items-center gap-2">
-                <Calendar className="w-5 h-5" />
-                Schedule Free Consultation
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 max-w-2xl mx-auto">
+              <div className="flex items-center justify-center gap-3 mb-3">
+                <Calendar className="w-5 h-5 text-blue-200" />
+                <span className="text-sm font-medium text-blue-200">Available 7 Days a Week</span>
               </div>
-            </button>
-          </motion.div>
-
-          {/* Trust Indicators */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            viewport={{ once: true }}
-            className="border-t border-blue-500 pt-8"
-          >
-            <p className="text-blue-200 text-sm mb-4">
-              Trusted by leading organizations and families across the country
-            </p>
-            <div className="flex flex-wrap justify-center items-center gap-6 text-blue-200 text-sm">
-              <span className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-yellow-300" />
-                Berkshire Hathaway Backed
-              </span>
-              <span className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-yellow-300" />
-                Licensed & Insured
-              </span>
-              <span className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-yellow-300" />
-                BBB Accredited
-              </span>
-              <span className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-yellow-300" />
-                15+ Years Experience
-              </span>
+              <p className="text-sm text-blue-100">
+                Schedule your consultation today and start your stress-free relocation journey to Las Vegas
+              </p>
             </div>
           </motion.div>
         </div>
+      </section>
+
+      {/* Sticky Phone CTA Bar */}
+      <div className="fixed bottom-0 left-0 right-0 bg-green-600 text-white py-4 px-4 z-50 shadow-2xl">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="text-center sm:text-left">
+            <p className="text-sm font-medium">Ready to speak with Dr. Jan Duffy now?</p>
+            <a 
+              href="tel:+17027077273" 
+              className="text-2xl font-bold hover:text-green-200 transition-colors"
+            >
+              (702) 707-7273
+            </a>
+          </div>
+          
+          <div className="text-center sm:text-right">
+            <p className="text-xs opacity-90">
+              Free consultation • Available 7 days a week
+            </p>
+            <a
+              href="#contact"
+              className="inline-block mt-2 bg-white text-green-600 px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors"
+            >
+              Get Free Consultation
+            </a>
+          </div>
+        </div>
       </div>
-    </section>
-  );
+    </>
+  )
 }

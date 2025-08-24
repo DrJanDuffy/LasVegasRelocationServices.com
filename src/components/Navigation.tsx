@@ -55,8 +55,8 @@ export default function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200"
-          : "bg-transparent"
+          ? "bg-white/98 backdrop-blur-md shadow-xl border-b border-gray-200"
+          : "bg-white/90 backdrop-blur-md shadow-lg border-b border-white/20"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,12 +64,12 @@ export default function Navigation() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-yellow-500 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center shadow-lg">
                 <span className="text-white font-bold text-lg">LV</span>
               </div>
               <div className="hidden sm:block">
                 <div className="text-lg font-bold text-gray-900">Las Vegas</div>
-                <div className="text-sm text-gray-600">Relocation Services</div>
+                <div className="text-sm text-gray-700 font-medium">Relocation Services</div>
               </div>
             </Link>
           </div>
@@ -81,7 +81,7 @@ export default function Navigation() {
                 {item.submenu ? (
                   <button
                     onClick={() => handleSubmenuToggle(item.name)}
-                    className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-200"
+                    className="flex items-center space-x-1 text-gray-800 hover:text-blue-700 px-3 py-2 text-sm font-semibold transition-colors duration-200"
                   >
                     <span>{item.name}</span>
                     <ChevronDown
@@ -93,7 +93,7 @@ export default function Navigation() {
                 ) : (
                   <button
                     onClick={() => scrollToSection(item.href)}
-                    className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-200"
+                    className="text-gray-800 hover:text-blue-700 px-3 py-2 text-sm font-semibold transition-colors duration-200"
                   >
                     {item.name}
                   </button>
@@ -101,13 +101,13 @@ export default function Navigation() {
 
                 {/* Desktop Submenu */}
                 {item.submenu && (
-                  <div className="absolute top-full left-0 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                    <div className="py-2">
+                  <div className="absolute top-full left-0 w-64 bg-white rounded-xl shadow-2xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                    <div className="py-3">
                       {item.submenu.map((subItem) => (
                         <button
                           key={subItem.name}
                           onClick={() => scrollToSection(subItem.href)}
-                          className="w-full text-left px-4 py-3 text-sm text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200"
+                          className="w-full text-left px-4 py-3 text-sm text-gray-700 hover:text-blue-700 hover:bg-blue-50 transition-colors duration-200 font-medium"
                         >
                           {subItem.name}
                         </button>
@@ -121,13 +121,13 @@ export default function Navigation() {
 
           {/* Contact Info & CTA */}
           <div className="hidden lg:flex items-center space-x-4">
-            <div className="flex items-center space-x-2 text-sm text-gray-600">
-              <Phone className="w-4 h-4" />
+            <div className="flex items-center space-x-2 text-sm text-gray-700 font-medium">
+              <Phone className="w-4 h-4 text-blue-600" />
               <span>(702) 707-7273</span>
             </div>
             <button
               onClick={() => scrollToSection("#contact")}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-200"
+              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg"
             >
               Get Started
             </button>
@@ -137,7 +137,7 @@ export default function Navigation() {
           <div className="lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-blue-600 p-2"
+              className="text-gray-800 hover:text-blue-700 p-2 bg-white/80 rounded-lg backdrop-blur-sm"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -152,7 +152,7 @@ export default function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t border-gray-200"
+            className="lg:hidden bg-white/98 backdrop-blur-md border-t border-gray-200 shadow-xl"
           >
             <div className="px-4 py-6 space-y-4">
               {navigationItems.map((item) => (
@@ -161,11 +161,11 @@ export default function Navigation() {
                     <div>
                       <button
                         onClick={() => handleSubmenuToggle(item.name)}
-                        className="flex items-center justify-between w-full text-left text-gray-700 hover:text-blue-600 py-2 font-medium"
+                        className="flex items-center justify-between w-full text-left text-gray-800 hover:text-blue-700 py-3 font-semibold text-base"
                       >
                         {item.name}
                         <ChevronDown
-                          className={`w-4 h-4 transition-transform duration-200 ${
+                          className={`w-5 h-5 transition-transform duration-200 ${
                             activeSubmenu === item.name ? "rotate-180" : ""
                           }`}
                         />
@@ -176,13 +176,13 @@ export default function Navigation() {
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: "auto" }}
                             exit={{ opacity: 0, height: 0 }}
-                            className="pl-4 mt-2 space-y-2"
+                            className="pl-4 mt-2 space-y-2 border-l-2 border-blue-200"
                           >
                             {item.submenu.map((subItem) => (
                               <button
                                 key={subItem.name}
                                 onClick={() => scrollToSection(subItem.href)}
-                                className="block w-full text-left text-gray-600 hover:text-blue-600 py-1"
+                                className="block w-full text-left text-gray-700 hover:text-blue-700 py-2 font-medium text-sm"
                               >
                                 {subItem.name}
                               </button>
@@ -194,7 +194,7 @@ export default function Navigation() {
                   ) : (
                     <button
                       onClick={() => scrollToSection(item.href)}
-                      className="block w-full text-left text-gray-700 hover:text-blue-600 py-2 font-medium"
+                      className="block w-full text-left text-gray-800 hover:text-blue-700 py-3 font-semibold text-base"
                     >
                       {item.name}
                     </button>
@@ -203,22 +203,22 @@ export default function Navigation() {
               ))}
 
               {/* Mobile Contact Info */}
-              <div className="pt-4 border-t border-gray-200 space-y-3">
-                <div className="flex items-center space-x-2 text-sm text-gray-600">
-                  <Phone className="w-4 h-4" />
+              <div className="pt-6 border-t border-gray-200 space-y-4 bg-gray-50 rounded-xl p-4">
+                <div className="flex items-center space-x-3 text-sm text-gray-700 font-medium">
+                  <Phone className="w-4 h-4 text-blue-600" />
                   <span>(702) 707-7273</span>
                 </div>
-                <div className="flex items-center space-x-2 text-sm text-gray-600">
-                  <Mail className="w-4 h-4" />
+                <div className="flex items-center space-x-3 text-sm text-gray-700 font-medium">
+                  <Mail className="w-4 h-4 text-blue-600" />
                   <span>DrJan@LasVegasRelocationServices.com</span>
                 </div>
-                <div className="flex items-center space-x-2 text-sm text-gray-600">
-                  <MapPin className="w-4 h-4" />
+                <div className="flex items-center space-x-3 text-sm text-gray-700 font-medium">
+                  <MapPin className="w-4 h-4 text-blue-600" />
                   <span>Las Vegas, NV</span>
                 </div>
                 <button
                   onClick={() => scrollToSection("#contact")}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
+                  className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg"
                 >
                   Get Started
                 </button>

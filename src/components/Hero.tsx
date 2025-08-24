@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Phone, Calendar, ArrowRight, Star, Shield, Award } from 'lucide-react'
+import { Phone, Calendar, ArrowRight, Star, Shield, Award, MapPin } from 'lucide-react'
 
 export default function Hero() {
   return (
@@ -41,21 +41,27 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
         >
-          Your Dream Move to
-          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-indigo-200">
-            Las Vegas Starts Here
-          </span>
+          Las Vegas Relocation Services
         </motion.h1>
+
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="text-xl md:text-2xl text-blue-100 mb-8 max-w-4xl mx-auto leading-relaxed"
+        >
+          Expert relocation assistance with Dr. Jan Duffy | Serving individuals, families & corporations relocating to Las Vegas
+        </motion.p>
 
         {/* Value Proposition */}
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-xl md:text-2xl text-blue-100 mb-8 max-w-4xl mx-auto leading-relaxed"
+          className="text-lg md:text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed"
         >
-          Professional relocation services that transform stressful moves into exciting new beginnings. 
-          From home finding to settling in, we handle every detail with precision and care.
+          Relocating to Las Vegas can be overwhelming. Dr. Jan Duffy and our team of certified relocation specialists provide exceptional, personalized service you can depend on.
         </motion.p>
 
         {/* Trust Indicators */}
@@ -74,8 +80,8 @@ export default function Hero() {
             <span className="text-sm">Berkshire Hathaway Services</span>
           </div>
           <div className="flex items-center gap-2">
-            <Star className="w-5 h-5 text-blue-400" />
-            <span className="text-sm">15+ Years Experience</span>
+            <MapPin className="w-5 h-5 text-blue-400" />
+            <span className="text-sm">1,300+ Local Las Vegas Experts</span>
           </div>
         </motion.div>
 
@@ -86,21 +92,21 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
         >
-          <button
-            type="button"
-            className="group bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-10 py-5 rounded-xl font-semibold text-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center gap-3"
+          <a
+            href="#contact"
+            className="group bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-10 py-5 rounded-full font-semibold text-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center gap-3"
           >
             Get Free Consultation
             <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-          </button>
+          </a>
           
-          <button
-            type="button"
-            className="group border-2 border-white text-white hover:bg-white hover:text-blue-900 px-10 py-5 rounded-xl font-semibold text-xl transition-all duration-300 transform hover:scale-105 flex items-center gap-3"
+          <a
+            href="tel:+17027077273"
+            className="group border-2 border-white text-white hover:bg-white hover:text-blue-900 px-10 py-5 rounded-full font-semibold text-xl transition-all duration-300 transform hover:scale-105 flex items-center gap-3"
           >
             <Phone className="w-6 h-6" />
             Call Now: (702) 707-7273
-          </button>
+          </a>
         </motion.div>
 
         {/* Quick Contact */}
@@ -115,7 +121,7 @@ export default function Hero() {
             <span className="text-sm font-medium text-blue-200">Available 7 Days a Week</span>
           </div>
           <p className="text-sm text-blue-100">
-            Schedule your consultation today and start your stress-free relocation journey
+            Free consultation • Available 7 days a week
           </p>
         </motion.div>
       </div>
