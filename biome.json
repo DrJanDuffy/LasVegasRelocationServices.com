@@ -3,29 +3,44 @@
   "root": true,
   "files": {
     "ignoreUnknown": false,
-    "includes": ["src/**/*.{js,jsx,ts,tsx}", "*.{js,jsx,ts,tsx,json}"]
+    "includes": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "*.{js,jsx,ts,tsx,json}"
+    ]
   },
   "formatter": {
     "enabled": true,
-    "useEditorconfig": true,
     "indentStyle": "space",
     "indentWidth": 2,
-    "lineWidth": 100
+    "lineWidth": 100,
+    "useEditorconfig": true
   },
   "linter": {
     "enabled": true,
     "rules": {
       "recommended": true,
       "correctness": {
-        "noUnusedVariables": "warn"
+        "noUnusedVariables": "error",
+        "noUnusedImports": "error"
       },
       "suspicious": {
         "noDebugger": "error",
-        "noConsole": "error"
+        "noArrayIndexKey": "warn"
       },
       "style": {
         "useConst": "error",
-        "useTemplate": "error"
+        "useTemplate": "error",
+        "useImportType": "error"
+      },
+      "a11y": {
+        "useButtonType": "warn",
+        "noLabelWithoutControl": "warn"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "warn"
+      },
+      "complexity": {
+        "noExcessiveCognitiveComplexity": "warn"
       }
     }
   },

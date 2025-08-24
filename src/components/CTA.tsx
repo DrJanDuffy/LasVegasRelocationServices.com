@@ -66,7 +66,7 @@ export default function CTA() {
             <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-blue-700 group">
               <div className="flex items-center gap-2">
                 <Phone className="w-5 h-5" />
-                Call Now: (702) 555-0123
+                Call Now: (702) 707-7273
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </div>
             </button>

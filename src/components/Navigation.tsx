@@ -123,7 +123,7 @@ export default function Navigation() {
           <div className="hidden lg:flex items-center space-x-4">
             <div className="flex items-center space-x-2 text-sm text-gray-600">
               <Phone className="w-4 h-4" />
-              <span>+1-702-555-0123</span>
+                              <span>(702) 707-7273</span>
             </div>
             <button
               onClick={() => scrollToSection("#contact")}
@@ -206,11 +206,11 @@ export default function Navigation() {
               <div className="pt-4 border-t border-gray-200 space-y-3">
                 <div className="flex items-center space-x-2 text-sm text-gray-600">
                   <Phone className="w-4 h-4" />
-                  <span>+1-702-555-0123</span>
+                  <span>(702) 707-7273</span>
                 </div>
                 <div className="flex items-center space-x-2 text-sm text-gray-600">
                   <Mail className="w-4 h-4" />
-                  <span>info@lasvegasrelocationservices.com</span>
+                  <span>DrJan@LasVegasRelocationServices.com</span>
                 </div>
                 <div className="flex items-center space-x-2 text-sm text-gray-600">
                   <MapPin className="w-4 h-4" />

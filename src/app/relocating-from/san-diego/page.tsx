@@ -1,8 +1,6 @@
 import {
   Building,
   Calendar,
-  Car,
-  Clock,
   DollarSign,
   Home,
   Mail,
@@ -12,7 +10,6 @@ import {
   Plane,
   Star,
   Sun,
-  Users,
 } from "lucide-react";
 import type { Metadata } from "next";
 

@@ -2,7 +2,6 @@ import {
   Building,
   Calendar,
   Car,
-  Clock,
   DollarSign,
   Home,
   Mail,

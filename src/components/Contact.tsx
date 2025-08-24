@@ -7,13 +7,13 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    details: ["(702) 555-0123", "(702) 555-0124"],
+            details: ["(702) 707-7273"],
     action: "Call Now",
   },
   {
     icon: Mail,
     title: "Email",
-    details: ["info@lasvegasrelocationservices.com", "dr.duffy@lasvegasrelocationservices.com"],
+            details: ["DrJan@LasVegasRelocationServices.com"],
     action: "Send Email",
   },
   {

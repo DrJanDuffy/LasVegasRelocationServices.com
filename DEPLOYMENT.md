@@ -41,8 +41,8 @@ Create a `.env.local` file for local development:
 
 ```env
 NEXT_PUBLIC_SITE_URL=https://lasvegasrelocationservices.com
-NEXT_PUBLIC_CONTACT_EMAIL=info@lasvegasrelocationservices.com
-NEXT_PUBLIC_PHONE_NUMBER=(702) 555-0123
+NEXT_PUBLIC_CONTACT_EMAIL=DrJan@LasVegasRelocationServices.com
+NEXT_PUBLIC_PHONE_NUMBER=(702) 707-7273
 ```
 
 ## 🔧 Production Build

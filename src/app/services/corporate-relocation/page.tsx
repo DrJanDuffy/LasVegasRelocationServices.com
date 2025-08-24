@@ -7,7 +7,6 @@ import {
   Clock,
   DollarSign,
   Globe,
-  Home,
   Mail,
   Phone,
   Plane,

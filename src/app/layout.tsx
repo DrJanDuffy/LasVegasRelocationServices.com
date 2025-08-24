@@ -4,6 +4,7 @@ import "./globals.css";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Navigation from "@/components/Navigation";
 import PerformanceMonitor from "@/components/PerformanceMonitor";
+import MicrosoftClarity from "@/components/MicrosoftClarity";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -113,8 +114,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               url: "https://lasvegasrelocationservices.com",
               logo: "https://lasvegasrelocationservices.com/logo.png",
               image: "https://lasvegasrelocationservices.com/og-image.jpg",
-              telephone: "+1-702-555-0123",
-              email: "info@lasvegasrelocationservices.com",
+              telephone: "(702) 707-7273",
+              email: "DrJan@LasVegasRelocationServices.com",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "1234 Las Vegas Blvd",
@@ -232,8 +233,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               name: "Las Vegas Relocation Services",
               description: "Professional relocation services in Las Vegas",
               url: "https://lasvegasrelocationservices.com",
-              telephone: "+1-702-555-0123",
-              email: "info@lasvegasrelocationservices.com",
+              telephone: "(702) 707-7273",
+              email: "DrJan@LasVegasRelocationServices.com",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "1234 Las Vegas Blvd",
@@ -261,6 +262,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <GoogleAnalytics
           GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-XXXXXXXXXX"}
+        />
+        <MicrosoftClarity
+          projectId={process.env.NEXT_PUBLIC_CLARITY_ID || ""}
+          enabled={!!process.env.NEXT_PUBLIC_CLARITY_ID}
         />
       </body>
     </html>
