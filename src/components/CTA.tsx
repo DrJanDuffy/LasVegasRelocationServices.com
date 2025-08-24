@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { ArrowRight, Calendar, CheckCircle, Phone } from 'lucide-react';
+import { motion } from "framer-motion";
+import { ArrowRight, Calendar, CheckCircle, Phone } from "lucide-react";
 
 const benefits = [
-  'Free initial consultation',
-  'Customized relocation plan',
-  'Local market expertise',
-  'Ongoing support throughout the process',
+  "Free initial consultation",
+  "Customized relocation plan",
+  "Local market expertise",
+  "Ongoing support throughout the process",
 ];
 
 export default function CTA() {

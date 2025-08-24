@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { ArrowRight, Award, Clock, Mail, MapPin, Phone, Star, Users } from 'lucide-react';
+import { motion } from "framer-motion";
+import { ArrowRight, Award, Clock, Mail, MapPin, Phone, Star, Users } from "lucide-react";
 
 export default function Hero() {
   const containerVariants = {
@@ -22,16 +22,16 @@ export default function Hero() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: 'easeOut',
+        ease: "easeOut",
       },
     },
   };
 
   const stats = [
-    { icon: Star, value: '4.9', label: 'Client Rating', color: 'text-yellow-500' },
-    { icon: Award, value: '500+', label: 'Successful Relocations', color: 'text-blue-500' },
-    { icon: Users, value: '15+', label: 'Years Experience', color: 'text-green-500' },
-    { icon: Clock, value: '24/7', label: 'Support Available', color: 'text-purple-500' },
+    { icon: Star, value: "4.9", label: "Client Rating", color: "text-yellow-500" },
+    { icon: Award, value: "500+", label: "Successful Relocations", color: "text-blue-500" },
+    { icon: Users, value: "15+", label: "Years Experience", color: "text-green-500" },
+    { icon: Clock, value: "24/7", label: "Support Available", color: "text-purple-500" },
   ];
 
   return (
@@ -69,7 +69,7 @@ export default function Hero() {
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
             variants={itemVariants}
           >
-            Your Trusted Partner for{' '}
+            Your Trusted Partner for{" "}
             <span className="bg-gradient-to-r from-blue-600 to-yellow-500 bg-clip-text text-transparent">
               Las Vegas Relocation
             </span>
@@ -166,7 +166,7 @@ export default function Hero() {
           <motion.div
             className="w-6 h-10 border-2 border-gray-300 rounded-full flex justify-center cursor-pointer"
             animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
@@ -185,7 +185,7 @@ export default function Hero() {
         transition={{
           duration: 8,
           repeat: Infinity,
-          ease: 'easeInOut',
+          ease: "easeInOut",
         }}
       />
 
@@ -198,7 +198,7 @@ export default function Hero() {
         transition={{
           duration: 6,
           repeat: Infinity,
-          ease: 'easeInOut',
+          ease: "easeInOut",
         }}
       />
     </section>

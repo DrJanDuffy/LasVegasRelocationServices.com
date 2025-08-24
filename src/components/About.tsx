@@ -1,22 +1,22 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Award, CheckCircle, MapPin, Users } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Award, CheckCircle, MapPin, Users } from "lucide-react";
 
 const stats = [
-  { number: '500+', label: 'Successful Relocations', icon: CheckCircle },
-  { number: '15+', label: 'Years of Experience', icon: Award },
-  { number: '50+', label: 'Corporate Clients', icon: Users },
-  { number: '100%', label: 'Local Las Vegas Focus', icon: MapPin },
+  { number: "500+", label: "Successful Relocations", icon: CheckCircle },
+  { number: "15+", label: "Years of Experience", icon: Award },
+  { number: "50+", label: "Corporate Clients", icon: Users },
+  { number: "100%", label: "Local Las Vegas Focus", icon: MapPin },
 ];
 
 const highlights = [
-  'Expert knowledge of Las Vegas real estate market',
-  'Strong relationships with local service providers',
-  'Comprehensive understanding of relocation challenges',
-  'Personalized approach to every client',
-  'Berkshire Hathaway quality standards',
-  'Ongoing support throughout the relocation process',
+  "Expert knowledge of Las Vegas real estate market",
+  "Strong relationships with local service providers",
+  "Comprehensive understanding of relocation challenges",
+  "Personalized approach to every client",
+  "Berkshire Hathaway quality standards",
+  "Ongoing support throughout the relocation process",
 ];
 
 export default function About() {

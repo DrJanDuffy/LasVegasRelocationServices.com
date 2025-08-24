@@ -1,32 +1,32 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Clock, Mail, MapPin, Phone, Send } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Clock, Mail, MapPin, Phone, Send } from "lucide-react";
 
 const contactInfo = [
   {
     icon: Phone,
-    title: 'Phone',
-    details: ['(702) 555-0123', '(702) 555-0124'],
-    action: 'Call Now',
+    title: "Phone",
+    details: ["(702) 555-0123", "(702) 555-0124"],
+    action: "Call Now",
   },
   {
     icon: Mail,
-    title: 'Email',
-    details: ['info@lasvegasrelocationservices.com', 'dr.duffy@lasvegasrelocationservices.com'],
-    action: 'Send Email',
+    title: "Email",
+    details: ["info@lasvegasrelocationservices.com", "dr.duffy@lasvegasrelocationservices.com"],
+    action: "Send Email",
   },
   {
     icon: MapPin,
-    title: 'Office',
-    details: ['1234 Las Vegas Blvd', 'Las Vegas, NV 89101'],
-    action: 'Get Directions',
+    title: "Office",
+    details: ["1234 Las Vegas Blvd", "Las Vegas, NV 89101"],
+    action: "Get Directions",
   },
   {
     icon: Clock,
-    title: 'Hours',
-    details: ['Monday - Friday: 8:00 AM - 6:00 PM', 'Saturday: 9:00 AM - 3:00 PM'],
-    action: 'Schedule Appointment',
+    title: "Hours",
+    details: ["Monday - Friday: 8:00 AM - 6:00 PM", "Saturday: 9:00 AM - 3:00 PM"],
+    action: "Schedule Appointment",
   },
 ];
 

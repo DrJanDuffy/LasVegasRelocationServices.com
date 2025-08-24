@@ -1,90 +1,90 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Building2, CheckCircle, FileText, Globe, Home, Star, Truck, Users } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Building2, CheckCircle, FileText, Globe, Home, Star, Truck, Users } from "lucide-react";
 
 const services = [
   {
     icon: Home,
-    title: 'Residential Relocation',
+    title: "Residential Relocation",
     description:
-      'Complete home relocation services including packing, moving, and settling into your new Las Vegas home.',
+      "Complete home relocation services including packing, moving, and settling into your new Las Vegas home.",
     features: [
-      'Professional packing services',
-      'Furniture disassembly/assembly',
-      'Home setup assistance',
-      'Utility transfers',
+      "Professional packing services",
+      "Furniture disassembly/assembly",
+      "Home setup assistance",
+      "Utility transfers",
     ],
   },
   {
     icon: Building2,
-    title: 'Corporate Relocation',
+    title: "Corporate Relocation",
     description:
-      'Comprehensive corporate relocation solutions for businesses and their employees moving to Las Vegas.',
+      "Comprehensive corporate relocation solutions for businesses and their employees moving to Las Vegas.",
     features: [
-      'Employee relocation packages',
-      'Office space coordination',
-      'Vendor management',
-      'Timeline planning',
+      "Employee relocation packages",
+      "Office space coordination",
+      "Vendor management",
+      "Timeline planning",
     ],
   },
   {
     icon: Truck,
-    title: 'Moving & Transportation',
+    title: "Moving & Transportation",
     description:
-      'Reliable moving and transportation services with experienced professionals and quality equipment.',
+      "Reliable moving and transportation services with experienced professionals and quality equipment.",
     features: [
-      'Full-service moving',
-      'Specialty item handling',
-      'Storage solutions',
-      'Insurance coverage',
+      "Full-service moving",
+      "Specialty item handling",
+      "Storage solutions",
+      "Insurance coverage",
     ],
   },
   {
     icon: Users,
-    title: 'Settling-In Services',
+    title: "Settling-In Services",
     description:
-      'Help you get settled in your new Las Vegas community with local area orientation and services.',
+      "Help you get settled in your new Las Vegas community with local area orientation and services.",
     features: [
-      'Area orientation tours',
-      'Local service connections',
-      'School district information',
-      'Community integration',
+      "Area orientation tours",
+      "Local service connections",
+      "School district information",
+      "Community integration",
     ],
   },
   {
     icon: FileText,
-    title: 'Relocation Planning',
+    title: "Relocation Planning",
     description:
-      'Strategic relocation planning to ensure a smooth transition to your new Las Vegas location.',
+      "Strategic relocation planning to ensure a smooth transition to your new Las Vegas location.",
     features: [
-      'Custom relocation plans',
-      'Budget management',
-      'Timeline coordination',
-      'Risk mitigation',
+      "Custom relocation plans",
+      "Budget management",
+      "Timeline coordination",
+      "Risk mitigation",
     ],
   },
   {
     icon: Globe,
-    title: 'International Relocation',
+    title: "International Relocation",
     description:
-      'Expert international relocation services for clients moving to Las Vegas from abroad.',
+      "Expert international relocation services for clients moving to Las Vegas from abroad.",
     features: [
-      'Visa assistance',
-      'Customs coordination',
-      'Cultural orientation',
-      'Language support',
+      "Visa assistance",
+      "Customs coordination",
+      "Cultural orientation",
+      "Language support",
     ],
   },
 ];
 
 const benefits = [
-  'Berkshire Hathaway backed reliability',
+  "Berkshire Hathaway backed reliability",
   "Dr. Jan Duffy's expert guidance",
-  'Local Las Vegas market knowledge',
-  'Comprehensive service coverage',
-  'Dedicated relocation specialists',
-  'Proven track record of success',
+  "Local Las Vegas market knowledge",
+  "Comprehensive service coverage",
+  "Dedicated relocation specialists",
+  "Proven track record of success",
 ];
 
 export default function Services() {

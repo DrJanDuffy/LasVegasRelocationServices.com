@@ -1,62 +1,62 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Quote, Star } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Quote, Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: 'Jennifer Martinez',
-    role: 'Corporate Client',
-    company: 'Tech Solutions Inc.',
+    name: "Jennifer Martinez",
+    role: "Corporate Client",
+    company: "Tech Solutions Inc.",
     content:
-      'Dr. Duffy and her team made our corporate relocation to Las Vegas incredibly smooth. Their attention to detail and local market knowledge exceeded our expectations. The entire process was professional and stress-free.',
+      "Dr. Duffy and her team made our corporate relocation to Las Vegas incredibly smooth. Their attention to detail and local market knowledge exceeded our expectations. The entire process was professional and stress-free.",
     rating: 5,
-    image: '/testimonials/jennifer-martinez.jpg',
+    image: "/testimonials/jennifer-martinez.jpg",
   },
   {
-    name: 'Robert & Sarah Thompson',
-    role: 'Family Relocation',
-    company: 'Residential Clients',
+    name: "Robert & Sarah Thompson",
+    role: "Family Relocation",
+    company: "Residential Clients",
     content:
       "Moving our family of five to Las Vegas seemed overwhelming, but Dr. Duffy's team handled everything perfectly. From finding the right neighborhood to setting up utilities, they were there every step of the way.",
     rating: 5,
-    image: '/testimonials/thompson-family.jpg',
+    image: "/testimonials/thompson-family.jpg",
   },
   {
-    name: 'David Chen',
-    role: 'International Relocation',
-    company: 'Global Enterprises',
+    name: "David Chen",
+    role: "International Relocation",
+    company: "Global Enterprises",
     content:
-      'As an international client, I was concerned about the complexity of moving to Las Vegas. Michael and the team provided exceptional support with visa processes and cultural integration. Highly recommended!',
+      "As an international client, I was concerned about the complexity of moving to Las Vegas. Michael and the team provided exceptional support with visa processes and cultural integration. Highly recommended!",
     rating: 5,
-    image: '/testimonials/david-chen.jpg',
+    image: "/testimonials/david-chen.jpg",
   },
   {
-    name: 'Amanda Rodriguez',
-    role: 'Senior Executive',
-    company: 'Healthcare Partners',
+    name: "Amanda Rodriguez",
+    role: "Senior Executive",
+    company: "Healthcare Partners",
     content:
       "The Berkshire Hathaway team's professionalism and local expertise made our healthcare facility relocation seamless. Dr. Duffy's strategic planning saved us time and resources.",
     rating: 5,
-    image: '/testimonials/amanda-rodriguez.jpg',
+    image: "/testimonials/amanda-rodriguez.jpg",
   },
   {
-    name: 'Mark & Lisa Williams',
-    role: 'Retirement Relocation',
-    company: 'Individual Clients',
+    name: "Mark & Lisa Williams",
+    role: "Retirement Relocation",
+    company: "Individual Clients",
     content:
       "Retiring to Las Vegas was a dream come true, and Dr. Duffy's team made it a reality. Their knowledge of retirement communities and local amenities was invaluable.",
     rating: 5,
-    image: '/testimonials/williams-family.jpg',
+    image: "/testimonials/williams-family.jpg",
   },
   {
-    name: 'Carlos Mendez',
-    role: 'Business Owner',
-    company: 'Mendez Construction',
+    name: "Carlos Mendez",
+    role: "Business Owner",
+    company: "Mendez Construction",
     content:
       "Relocating our construction business to Las Vegas required careful planning. The team's expertise in commercial relocation and local business regulations was outstanding.",
     rating: 5,
-    image: '/testimonials/carlos-mendez.jpg',
+    image: "/testimonials/carlos-mendez.jpg",
   },
 ];
 
@@ -114,9 +114,9 @@ export default function Testimonials() {
                 <div className="w-12 h-12 bg-gradient-to-br from-primary-100 to-accent-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <span className="text-sm font-bold text-primary-600">
                     {testimonial.name
-                      .split(' ')
+                      .split(" ")
                       .map((n) => n[0])
-                      .join('')}
+                      .join("")}
                   </span>
                 </div>
                 <div>

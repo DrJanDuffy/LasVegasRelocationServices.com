@@ -1,44 +1,44 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Linkedin, Mail, Phone, Star } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Linkedin, Mail, Phone, Star } from "lucide-react";
 
 const teamMembers = [
   {
-    name: 'Dr. Jan Duffy',
-    role: 'Lead Relocation Specialist',
-    bio: 'Dr. Duffy brings over 15 years of relocation expertise and deep knowledge of the Las Vegas market. She leads our team with a commitment to excellence and personalized service.',
-    specialties: ['Residential Relocation', 'Corporate Relocation', 'Market Analysis'],
-    experience: '15+ Years',
-    education: 'Ph.D. in Business Administration',
-    image: '/team/dr-jan-duffy.jpg',
+    name: "Dr. Jan Duffy",
+    role: "Lead Relocation Specialist",
+    bio: "Dr. Duffy brings over 15 years of relocation expertise and deep knowledge of the Las Vegas market. She leads our team with a commitment to excellence and personalized service.",
+    specialties: ["Residential Relocation", "Corporate Relocation", "Market Analysis"],
+    experience: "15+ Years",
+    education: "Ph.D. in Business Administration",
+    image: "/team/dr-jan-duffy.jpg",
   },
   {
-    name: 'Sarah Johnson',
-    role: 'Senior Relocation Coordinator',
-    bio: 'Sarah specializes in corporate relocation packages and employee transition support. Her attention to detail ensures seamless corporate moves.',
-    specialties: ['Corporate Relocation', 'Employee Support', 'Vendor Management'],
-    experience: '12+ Years',
-    education: 'MBA in Business Management',
-    image: '/team/sarah-johnson.jpg',
+    name: "Sarah Johnson",
+    role: "Senior Relocation Coordinator",
+    bio: "Sarah specializes in corporate relocation packages and employee transition support. Her attention to detail ensures seamless corporate moves.",
+    specialties: ["Corporate Relocation", "Employee Support", "Vendor Management"],
+    experience: "12+ Years",
+    education: "MBA in Business Management",
+    image: "/team/sarah-johnson.jpg",
   },
   {
-    name: 'Michael Chen',
-    role: 'International Relocation Specialist',
-    bio: 'Michael handles international relocations with expertise in visa processes, customs coordination, and cultural integration support.',
-    specialties: ['International Relocation', 'Visa Assistance', 'Cultural Integration'],
-    experience: '10+ Years',
+    name: "Michael Chen",
+    role: "International Relocation Specialist",
+    bio: "Michael handles international relocations with expertise in visa processes, customs coordination, and cultural integration support.",
+    specialties: ["International Relocation", "Visa Assistance", "Cultural Integration"],
+    experience: "10+ Years",
     education: "Master's in International Relations",
-    image: '/team/michael-chen.jpg',
+    image: "/team/michael-chen.jpg",
   },
   {
-    name: 'Lisa Rodriguez',
-    role: 'Settling-In Coordinator',
-    bio: 'Lisa helps families integrate into the Las Vegas community, providing local area knowledge and service connections.',
-    specialties: ['Community Integration', 'Local Services', 'Family Support'],
-    experience: '8+ Years',
+    name: "Lisa Rodriguez",
+    role: "Settling-In Coordinator",
+    bio: "Lisa helps families integrate into the Las Vegas community, providing local area knowledge and service connections.",
+    specialties: ["Community Integration", "Local Services", "Family Support"],
+    experience: "8+ Years",
     education: "Bachelor's in Social Work",
-    image: '/team/lisa-rodriguez.jpg',
+    image: "/team/lisa-rodriguez.jpg",
   },
 ];
 
@@ -80,9 +80,9 @@ export default function Team() {
                 <div className="w-32 h-32 bg-gradient-to-br from-primary-100 to-accent-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <span className="text-2xl font-bold text-primary-600">
                     {member.name
-                      .split(' ')
+                      .split(" ")
                       .map((n) => n[0])
-                      .join('')}
+                      .join("")}
                   </span>
                 </div>
 

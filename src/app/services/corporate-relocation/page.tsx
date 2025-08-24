@@ -13,19 +13,19 @@ import {
   Plane,
   Shield,
   Users,
-} from 'lucide-react';
-import type { Metadata } from 'next';
+} from "lucide-react";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Corporate Relocation Services Las Vegas | Dr. Jan Duffy',
+  title: "Corporate Relocation Services Las Vegas | Dr. Jan Duffy",
   description:
-    'Professional corporate relocation services in Las Vegas. Expert assistance for businesses and employees moving to Las Vegas with Dr. Jan Duffy and Berkshire Hathaway.',
+    "Professional corporate relocation services in Las Vegas. Expert assistance for businesses and employees moving to Las Vegas with Dr. Jan Duffy and Berkshire Hathaway.",
   keywords:
-    'corporate relocation Las Vegas, business relocation, employee relocation, Las Vegas corporate services, Dr. Jan Duffy',
+    "corporate relocation Las Vegas, business relocation, employee relocation, Las Vegas corporate services, Dr. Jan Duffy",
   openGraph: {
-    title: 'Corporate Relocation Services Las Vegas',
+    title: "Corporate Relocation Services Las Vegas",
     description:
-      'Professional corporate relocation services in Las Vegas with Dr. Jan Duffy and Berkshire Hathaway.',
+      "Professional corporate relocation services in Las Vegas with Dr. Jan Duffy and Berkshire Hathaway.",
   },
 };
 
