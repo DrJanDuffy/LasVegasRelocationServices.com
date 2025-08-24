@@ -1,15 +1,33 @@
-import type { Metadata } from 'next'
-import { Building, Users, Plane, Home, DollarSign, Clock, CheckCircle, Phone, Mail, Calendar, Briefcase, Globe, Award, Shield } from 'lucide-react'
+import {
+  Award,
+  Briefcase,
+  Building,
+  Calendar,
+  CheckCircle,
+  Clock,
+  DollarSign,
+  Globe,
+  Home,
+  Mail,
+  Phone,
+  Plane,
+  Shield,
+  Users,
+} from 'lucide-react';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Corporate Relocation Services Las Vegas | Dr. Jan Duffy',
-  description: 'Professional corporate relocation services in Las Vegas. Expert assistance for businesses and employees moving to Las Vegas with Dr. Jan Duffy and Berkshire Hathaway.',
-  keywords: 'corporate relocation Las Vegas, business relocation, employee relocation, Las Vegas corporate services, Dr. Jan Duffy',
+  description:
+    'Professional corporate relocation services in Las Vegas. Expert assistance for businesses and employees moving to Las Vegas with Dr. Jan Duffy and Berkshire Hathaway.',
+  keywords:
+    'corporate relocation Las Vegas, business relocation, employee relocation, Las Vegas corporate services, Dr. Jan Duffy',
   openGraph: {
     title: 'Corporate Relocation Services Las Vegas',
-    description: 'Professional corporate relocation services in Las Vegas with Dr. Jan Duffy and Berkshire Hathaway.',
+    description:
+      'Professional corporate relocation services in Las Vegas with Dr. Jan Duffy and Berkshire Hathaway.',
   },
-}
+};
 
 export default function CorporateRelocationPage() {
   return (
@@ -22,12 +40,10 @@ export default function CorporateRelocationPage() {
               <Building className="w-4 h-4 mr-2" />
               Corporate Relocation Services
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Corporate Relocation Services
-            </h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">Corporate Relocation Services</h1>
             <p className="text-xl md:text-2xl text-indigo-100 mb-8 max-w-3xl mx-auto">
-              Streamline your business relocation to Las Vegas with our comprehensive corporate services. 
-              We handle every detail so you can focus on your business.
+              Streamline your business relocation to Las Vegas with our comprehensive corporate
+              services. We handle every detail so you can focus on your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
@@ -49,68 +65,84 @@ export default function CorporateRelocationPage() {
               Why Choose Our Corporate Services?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We understand the unique challenges of corporate relocations and provide solutions that work for businesses of all sizes
+              We understand the unique challenges of corporate relocations and provide solutions
+              that work for businesses of all sizes
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-gray-50 p-8 rounded-xl">
               <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6 mx-auto">
                 <Award className="w-8 h-8 text-indigo-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Berkshire Hathaway Expertise</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">
+                Berkshire Hathaway Expertise
+              </h3>
               <p className="text-gray-600 text-center">
-                Access to industry-leading resources and networks through the Berkshire Hathaway brand.
+                Access to industry-leading resources and networks through the Berkshire Hathaway
+                brand.
               </p>
             </div>
-            
+
             <div className="bg-gray-50 p-8 rounded-xl">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
                 <Clock className="w-8 h-8 text-green-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Minimal Business Disruption</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">
+                Minimal Business Disruption
+              </h3>
               <p className="text-gray-600 text-center">
-                Efficient relocation processes that keep your business running smoothly during transitions.
+                Efficient relocation processes that keep your business running smoothly during
+                transitions.
               </p>
             </div>
-            
+
             <div className="bg-gray-50 p-8 rounded-xl">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
                 <Users className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Employee Support</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">
+                Employee Support
+              </h3>
               <p className="text-gray-600 text-center">
                 Comprehensive assistance for relocating employees and their families.
               </p>
             </div>
-            
+
             <div className="bg-gray-50 p-8 rounded-xl">
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6 mx-auto">
                 <DollarSign className="w-8 h-8 text-purple-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Cost-Effective Solutions</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">
+                Cost-Effective Solutions
+              </h3>
               <p className="text-gray-600 text-center">
                 Optimized relocation packages that maximize value and minimize expenses.
               </p>
             </div>
-            
+
             <div className="bg-gray-50 p-8 rounded-xl">
               <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6 mx-auto">
                 <Shield className="w-8 h-8 text-red-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Risk Management</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">
+                Risk Management
+              </h3>
               <p className="text-gray-600 text-center">
                 Comprehensive planning and execution to minimize relocation risks and delays.
               </p>
             </div>
-            
+
             <div className="bg-gray-50 p-8 rounded-xl">
               <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6 mx-auto">
                 <Globe className="w-8 h-8 text-yellow-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Local Market Knowledge</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">
+                Local Market Knowledge
+              </h3>
               <p className="text-gray-600 text-center">
-                Deep understanding of Las Vegas real estate, business climate, and regulatory environment.
+                Deep understanding of Las Vegas real estate, business climate, and regulatory
+                environment.
               </p>
             </div>
           </div>
@@ -128,7 +160,7 @@ export default function CorporateRelocationPage() {
               Comprehensive solutions designed to meet the unique needs of corporate relocations
             </p>
           </div>
-          
+
           <div className="grid lg:grid-cols-2 gap-12">
             <div className="space-y-8">
               <div className="bg-white p-8 rounded-xl shadow-lg">
@@ -137,7 +169,9 @@ export default function CorporateRelocationPage() {
                     <Building className="w-6 h-6 text-indigo-600" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">Commercial Real Estate</h3>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                      Commercial Real Estate
+                    </h3>
                     <ul className="space-y-2 text-gray-600">
                       <li className="flex items-center">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
@@ -159,14 +193,16 @@ export default function CorporateRelocationPage() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="bg-white p-8 rounded-xl shadow-lg">
                 <div className="flex items-start">
                   <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                     <Users className="w-6 h-6 text-green-600" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">Employee Relocation</h3>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                      Employee Relocation
+                    </h3>
                     <ul className="space-y-2 text-gray-600">
                       <li className="flex items-center">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
@@ -189,7 +225,7 @@ export default function CorporateRelocationPage() {
                 </div>
               </div>
             </div>
-            
+
             <div className="space-y-8">
               <div className="bg-white p-8 rounded-xl shadow-lg">
                 <div className="flex items-start">
@@ -219,14 +255,16 @@ export default function CorporateRelocationPage() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="bg-white p-8 rounded-xl shadow-lg">
                 <div className="flex items-start">
                   <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                     <Plane className="w-6 h-6 text-purple-600" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">Logistics & Coordination</h3>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                      Logistics & Coordination
+                    </h3>
                     <ul className="space-y-2 text-gray-600">
                       <li className="flex items-center">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
@@ -264,7 +302,7 @@ export default function CorporateRelocationPage() {
               A structured approach that ensures successful corporate relocations
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="w-20 h-20 bg-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -272,37 +310,41 @@ export default function CorporateRelocationPage() {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Discovery & Planning</h3>
               <p className="text-gray-600">
-                We assess your business needs, timeline, and relocation requirements to create a comprehensive plan.
+                We assess your business needs, timeline, and relocation requirements to create a
+                comprehensive plan.
               </p>
             </div>
-            
+
             <div className="text-center">
               <div className="w-20 h-20 bg-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-white text-2xl font-bold">2</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Site Selection</h3>
               <p className="text-gray-600">
-                We identify and evaluate potential locations that meet your business criteria and budget.
+                We identify and evaluate potential locations that meet your business criteria and
+                budget.
               </p>
             </div>
-            
+
             <div className="text-center">
               <div className="w-20 h-20 bg-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-white text-2xl font-bold">3</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Execution & Coordination</h3>
               <p className="text-gray-600">
-                We coordinate all aspects of the relocation, from property acquisition to employee moves.
+                We coordinate all aspects of the relocation, from property acquisition to employee
+                moves.
               </p>
             </div>
-            
+
             <div className="text-center">
               <div className="w-20 h-20 bg-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-white text-2xl font-bold">4</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Post-Move Support</h3>
               <p className="text-gray-600">
-                We provide ongoing support to ensure smooth business operations in your new location.
+                We provide ongoing support to ensure smooth business operations in your new
+                location.
               </p>
             </div>
           </div>
@@ -317,10 +359,11 @@ export default function CorporateRelocationPage() {
               Ready to Discuss Your Corporate Relocation?
             </h2>
             <p className="text-xl text-indigo-100 max-w-3xl mx-auto">
-              Contact Dr. Jan Duffy today for a personalized consultation about your business relocation needs
+              Contact Dr. Jan Duffy today for a personalized consultation about your business
+              relocation needs
             </p>
           </div>
-          
+
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
               <h3 className="text-2xl font-semibold mb-6">Get in Touch</h3>
@@ -338,7 +381,7 @@ export default function CorporateRelocationPage() {
                   <span>Available 7 days a week</span>
                 </div>
               </div>
-              
+
               <div className="mt-8">
                 <h4 className="text-lg font-semibold mb-4">Why Choose Dr. Jan Duffy?</h4>
                 <ul className="space-y-2 text-indigo-100">
@@ -350,7 +393,7 @@ export default function CorporateRelocationPage() {
                 </ul>
               </div>
             </div>
-            
+
             <div className="bg-white rounded-xl p-8 text-gray-900">
               <h3 className="text-2xl font-semibold mb-6">Corporate Consultation Request</h3>
               <form className="space-y-4">
@@ -364,7 +407,7 @@ export default function CorporateRelocationPage() {
                     placeholder="Your company name"
                   />
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Contact Person
@@ -375,34 +418,30 @@ export default function CorporateRelocationPage() {
                     placeholder="Your full name"
                   />
                 </div>
-                
+
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Email
-                  </label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
                   <input
                     type="email"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
                     placeholder="your.email@company.com"
                   />
                 </div>
-                
+
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone
-                  </label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
                   <input
                     type="tel"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
                     placeholder="(555) 123-4567"
                   />
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Number of Employees Relocating
                   </label>
-                  <select 
+                  <select
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
                     aria-label="Number of employees relocating"
                     title="Select the number of employees relocating"
@@ -414,7 +453,7 @@ export default function CorporateRelocationPage() {
                     <option>50+ employees</option>
                   </select>
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Target Relocation Date
@@ -426,7 +465,7 @@ export default function CorporateRelocationPage() {
                     title="Select your target relocation date"
                   />
                 </div>
-                
+
                 <button
                   type="submit"
                   className="w-full bg-indigo-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-indigo-700 transition-colors"
@@ -439,5 +478,5 @@ export default function CorporateRelocationPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }

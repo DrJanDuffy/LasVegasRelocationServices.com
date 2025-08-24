@@ -1,9 +1,9 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Phone, Mail, MapPin, ChevronDown } from 'lucide-react'
-import Link from 'next/link'
+import { AnimatePresence, motion } from 'framer-motion';
+import { ChevronDown, Mail, MapPin, Menu, Phone, X } from 'lucide-react';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 const navigationItems = [
   {
@@ -15,48 +15,50 @@ const navigationItems = [
       { name: 'International Relocation', href: '#international' },
       { name: 'Moving & Transportation', href: '#moving' },
       { name: 'Settling-In Services', href: '#settling' },
-      { name: 'Relocation Planning', href: '#planning' }
-    ]
+      { name: 'Relocation Planning', href: '#planning' },
+    ],
   },
   { name: 'About', href: '#about' },
   { name: 'Team', href: '#team' },
   { name: 'Testimonials', href: '#testimonials' },
-  { name: 'Contact', href: '#contact' }
-]
+  { name: 'Contact', href: '#contact' },
+];
 
 export default function Navigation() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null)
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
-    }
+      setIsScrolled(window.scrollY > 10);
+    };
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleSubmenuToggle = (itemName: string) => {
-    setActiveSubmenu(activeSubmenu === itemName ? null : itemName)
-  }
+    setActiveSubmenu(activeSubmenu === itemName ? null : itemName);
+  };
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href)
+    const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      element.scrollIntoView({ behavior: 'smooth' });
     }
-    setIsOpen(false)
-    setActiveSubmenu(null)
-  }
+    setIsOpen(false);
+    setActiveSubmenu(null);
+  };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200' 
-        : 'bg-transparent'
-    }`}>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200'
+          : 'bg-transparent'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
@@ -82,9 +84,11 @@ export default function Navigation() {
                     className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-200"
                   >
                     <span>{item.name}</span>
-                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
-                      activeSubmenu === item.name ? 'rotate-180' : ''
-                    }`} />
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform duration-200 ${
+                        activeSubmenu === item.name ? 'rotate-180' : ''
+                      }`}
+                    />
                   </button>
                 ) : (
                   <button
@@ -160,9 +164,11 @@ export default function Navigation() {
                         className="flex items-center justify-between w-full text-left text-gray-700 hover:text-blue-600 py-2 font-medium"
                       >
                         {item.name}
-                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
-                          activeSubmenu === item.name ? 'rotate-180' : ''
-                        }`} />
+                        <ChevronDown
+                          className={`w-4 h-4 transition-transform duration-200 ${
+                            activeSubmenu === item.name ? 'rotate-180' : ''
+                          }`}
+                        />
                       </button>
                       <AnimatePresence>
                         {activeSubmenu === item.name && (
@@ -195,7 +201,7 @@ export default function Navigation() {
                   )}
                 </div>
               ))}
-              
+
               {/* Mobile Contact Info */}
               <div className="pt-4 border-t border-gray-200 space-y-3">
                 <div className="flex items-center space-x-2 text-sm text-gray-600">
@@ -222,5 +228,5 @@ export default function Navigation() {
         )}
       </AnimatePresence>
     </nav>
-  )
+  );
 }

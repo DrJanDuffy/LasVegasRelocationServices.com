@@ -1,34 +1,34 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
-import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react'
+import { motion } from 'framer-motion';
+import { Clock, Mail, MapPin, Phone, Send } from 'lucide-react';
 
 const contactInfo = [
   {
     icon: Phone,
     title: 'Phone',
     details: ['(702) 555-0123', '(702) 555-0124'],
-    action: 'Call Now'
+    action: 'Call Now',
   },
   {
     icon: Mail,
     title: 'Email',
     details: ['info@lasvegasrelocationservices.com', 'dr.duffy@lasvegasrelocationservices.com'],
-    action: 'Send Email'
+    action: 'Send Email',
   },
   {
     icon: MapPin,
     title: 'Office',
     details: ['1234 Las Vegas Blvd', 'Las Vegas, NV 89101'],
-    action: 'Get Directions'
+    action: 'Get Directions',
   },
   {
     icon: Clock,
     title: 'Hours',
     details: ['Monday - Friday: 8:00 AM - 6:00 PM', 'Saturday: 9:00 AM - 3:00 PM'],
-    action: 'Schedule Appointment'
-  }
-]
+    action: 'Schedule Appointment',
+  },
+];
 
 export default function Contact() {
   return (
@@ -43,12 +43,11 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-900 mb-6">
-            Get in{' '}
-            <span className="gradient-text">Touch</span>
+            Get in <span className="gradient-text">Touch</span>
           </h2>
           <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
-            Ready to start your Las Vegas relocation journey? Contact us today for a 
-            free consultation and let us help you make your move seamless and stress-free.
+            Ready to start your Las Vegas relocation journey? Contact us today for a free
+            consultation and let us help you make your move seamless and stress-free.
           </p>
         </motion.div>
 
@@ -61,14 +60,15 @@ export default function Contact() {
             viewport={{ once: true }}
             className="bg-secondary-50 rounded-2xl p-8"
           >
-            <h3 className="text-2xl font-bold text-secondary-900 mb-6">
-              Send Us a Message
-            </h3>
-            
+            <h3 className="text-2xl font-bold text-secondary-900 mb-6">Send Us a Message</h3>
+
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-secondary-700 mb-2">
+                  <label
+                    htmlFor="firstName"
+                    className="block text-sm font-medium text-secondary-700 mb-2"
+                  >
                     First Name *
                   </label>
                   <input
@@ -81,7 +81,10 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-secondary-700 mb-2">
+                  <label
+                    htmlFor="lastName"
+                    className="block text-sm font-medium text-secondary-700 mb-2"
+                  >
                     Last Name *
                   </label>
                   <input
@@ -97,7 +100,10 @@ export default function Contact() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-secondary-700 mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-secondary-700 mb-2"
+                  >
                     Email *
                   </label>
                   <input
@@ -110,7 +116,10 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-secondary-700 mb-2">
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-medium text-secondary-700 mb-2"
+                  >
                     Phone
                   </label>
                   <input
@@ -124,7 +133,10 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="relocationType" className="block text-sm font-medium text-secondary-700 mb-2">
+                <label
+                  htmlFor="relocationType"
+                  className="block text-sm font-medium text-secondary-700 mb-2"
+                >
                   Relocation Type *
                 </label>
                 <select
@@ -143,7 +155,10 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="timeline" className="block text-sm font-medium text-secondary-700 mb-2">
+                <label
+                  htmlFor="timeline"
+                  className="block text-sm font-medium text-secondary-700 mb-2"
+                >
                   Preferred Timeline
                 </label>
                 <select
@@ -160,7 +175,10 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-secondary-700 mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-secondary-700 mb-2"
+                >
                   Message *
                 </label>
                 <textarea
@@ -173,10 +191,7 @@ export default function Contact() {
                 />
               </div>
 
-              <button
-                type="submit"
-                className="btn-primary w-full group"
-              >
+              <button type="submit" className="btn-primary w-full group">
                 Send Message
                 <Send className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </button>
@@ -192,12 +207,10 @@ export default function Contact() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold text-secondary-900 mb-6">
-                Contact Information
-              </h3>
+              <h3 className="text-2xl font-bold text-secondary-900 mb-6">Contact Information</h3>
               <p className="text-lg text-secondary-600 mb-8">
-                We're here to help with all your Las Vegas relocation needs. 
-                Reach out to us through any of the channels below.
+                We're here to help with all your Las Vegas relocation needs. Reach out to us through
+                any of the channels below.
               </p>
             </div>
 
@@ -215,9 +228,7 @@ export default function Contact() {
                     <info.icon className="w-6 h-6 text-primary-600" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-semibold text-secondary-900 mb-2">
-                      {info.title}
-                    </h4>
+                    <h4 className="font-semibold text-secondary-900 mb-2">{info.title}</h4>
                     {info.details.map((detail, detailIndex) => (
                       <p key={detailIndex} className="text-secondary-600 text-sm mb-1">
                         {detail}
@@ -243,7 +254,8 @@ export default function Contact() {
                 Emergency Relocation Support
               </h4>
               <p className="text-primary-700 mb-4">
-                Need immediate assistance? Our emergency support line is available 24/7 for urgent relocation needs.
+                Need immediate assistance? Our emergency support line is available 24/7 for urgent
+                relocation needs.
               </p>
               <div className="flex items-center gap-2 text-primary-600 font-semibold">
                 <Phone className="w-5 h-5" />
@@ -254,5 +266,5 @@ export default function Contact() {
         </div>
       </div>
     </section>
-  )
+  );
 }

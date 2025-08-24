@@ -1,15 +1,31 @@
-import type { Metadata } from 'next'
-import { MapPin, Clock, DollarSign, Home, Car, Plane, Building, Users, Star, Phone, Mail, Calendar } from 'lucide-react'
+import {
+  Building,
+  Calendar,
+  Car,
+  Clock,
+  DollarSign,
+  Home,
+  Mail,
+  MapPin,
+  Phone,
+  Plane,
+  Star,
+  Users,
+} from 'lucide-react';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Los Angeles to Las Vegas Relocation Services | Dr. Jan Duffy',
-  description: 'Professional relocation services from Los Angeles to Las Vegas. Expert assistance with housing, schools, and settling into your new Las Vegas home.',
-  keywords: 'Los Angeles to Las Vegas relocation, LA to Vegas move, California to Nevada relocation, Dr. Jan Duffy, Berkshire Hathaway',
+  description:
+    'Professional relocation services from Los Angeles to Las Vegas. Expert assistance with housing, schools, and settling into your new Las Vegas home.',
+  keywords:
+    'Los Angeles to Las Vegas relocation, LA to Vegas move, California to Nevada relocation, Dr. Jan Duffy, Berkshire Hathaway',
   openGraph: {
     title: 'Los Angeles to Las Vegas Relocation Services',
-    description: 'Professional relocation services from Los Angeles to Las Vegas with Dr. Jan Duffy and Berkshire Hathaway.',
+    description:
+      'Professional relocation services from Los Angeles to Las Vegas with Dr. Jan Duffy and Berkshire Hathaway.',
   },
-}
+};
 
 export default function LosAngelesToLasVegasPage() {
   return (
@@ -22,12 +38,10 @@ export default function LosAngelesToLasVegasPage() {
               <MapPin className="w-4 h-4 mr-2" />
               Los Angeles → Las Vegas
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Moving from LA to Las Vegas?
-            </h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">Moving from LA to Las Vegas?</h1>
             <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto">
-              Let Dr. Jan Duffy and the Berkshire Hathaway team make your transition seamless. 
-              We know both cities intimately and will guide you every step of the way.
+              Let Dr. Jan Duffy and the Berkshire Hathaway team make your transition seamless. We
+              know both cities intimately and will guide you every step of the way.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
@@ -52,18 +66,21 @@ export default function LosAngelesToLasVegasPage() {
               Discover the advantages of living in Las Vegas compared to Los Angeles
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-gray-50 p-8 rounded-xl">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
                 <DollarSign className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Lower Cost of Living</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">
+                Lower Cost of Living
+              </h3>
               <p className="text-gray-600 text-center">
-                Housing costs are significantly lower, and no state income tax means more money in your pocket.
+                Housing costs are significantly lower, and no state income tax means more money in
+                your pocket.
               </p>
             </div>
-            
+
             <div className="bg-gray-50 p-8 rounded-xl">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
                 <Home className="w-8 h-8 text-green-600" />
@@ -73,7 +90,7 @@ export default function LosAngelesToLasVegasPage() {
                 Get more square footage for your money. Las Vegas offers spacious homes and yards.
               </p>
             </div>
-            
+
             <div className="bg-gray-50 p-8 rounded-xl">
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6 mx-auto">
                 <Car className="w-8 h-8 text-purple-600" />
@@ -83,34 +100,40 @@ export default function LosAngelesToLasVegasPage() {
                 Say goodbye to LA traffic jams. Las Vegas has much more manageable commute times.
               </p>
             </div>
-            
+
             <div className="bg-gray-50 p-8 rounded-xl">
               <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6 mx-auto">
                 <Plane className="w-8 h-8 text-yellow-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Easy Travel</h3>
               <p className="text-gray-600 text-center">
-                McCarran International Airport offers direct flights to LA and major cities worldwide.
+                McCarran International Airport offers direct flights to LA and major cities
+                worldwide.
               </p>
             </div>
-            
+
             <div className="bg-gray-50 p-8 rounded-xl">
               <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6 mx-auto">
                 <Building className="w-8 h-8 text-red-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Business Friendly</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">
+                Business Friendly
+              </h3>
               <p className="text-gray-600 text-center">
                 Nevada's business-friendly environment with no corporate income tax.
               </p>
             </div>
-            
+
             <div className="bg-gray-50 p-8 rounded-xl">
               <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6 mx-auto">
                 <Users className="w-8 h-8 text-indigo-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Growing Community</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">
+                Growing Community
+              </h3>
               <p className="text-gray-600 text-center">
-                Join a rapidly growing, diverse community with excellent amenities and entertainment.
+                Join a rapidly growing, diverse community with excellent amenities and
+                entertainment.
               </p>
             </div>
           </div>
@@ -128,7 +151,7 @@ export default function LosAngelesToLasVegasPage() {
               We handle every detail of your move from Los Angeles to Las Vegas
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -139,7 +162,7 @@ export default function LosAngelesToLasVegasPage() {
                 We discuss your needs, timeline, and preferences for your new Las Vegas home.
               </p>
             </div>
-            
+
             <div className="text-center">
               <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-white text-2xl font-bold">2</span>
@@ -149,7 +172,7 @@ export default function LosAngelesToLasVegasPage() {
                 We research neighborhoods, schools, and amenities that match your lifestyle.
               </p>
             </div>
-            
+
             <div className="text-center">
               <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-white text-2xl font-bold">3</span>
@@ -159,7 +182,7 @@ export default function LosAngelesToLasVegasPage() {
                 We find and show you properties that meet your criteria and budget.
               </p>
             </div>
-            
+
             <div className="text-center">
               <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-white text-2xl font-bold">4</span>
@@ -184,7 +207,7 @@ export default function LosAngelesToLasVegasPage() {
               Discover the best neighborhoods for your lifestyle and budget
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               <div className="h-48 bg-gradient-to-br from-blue-400 to-blue-600"></div>
@@ -199,7 +222,7 @@ export default function LosAngelesToLasVegasPage() {
                 </div>
               </div>
             </div>
-            
+
             <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               <div className="h-48 bg-gradient-to-br from-green-400 to-green-600"></div>
               <div className="p-6">
@@ -213,7 +236,7 @@ export default function LosAngelesToLasVegasPage() {
                 </div>
               </div>
             </div>
-            
+
             <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               <div className="h-48 bg-gradient-to-br from-purple-400 to-purple-600"></div>
               <div className="p-6">
@@ -227,7 +250,7 @@ export default function LosAngelesToLasVegasPage() {
                 </div>
               </div>
             </div>
-            
+
             <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               <div className="h-48 bg-gradient-to-br from-red-400 to-red-600"></div>
               <div className="p-6">
@@ -241,7 +264,7 @@ export default function LosAngelesToLasVegasPage() {
                 </div>
               </div>
             </div>
-            
+
             <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               <div className="h-48 bg-gradient-to-br from-yellow-400 to-yellow-600"></div>
               <div className="p-6">
@@ -255,7 +278,7 @@ export default function LosAngelesToLasVegasPage() {
                 </div>
               </div>
             </div>
-            
+
             <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               <div className="h-48 bg-gradient-to-br from-indigo-400 to-indigo-600"></div>
               <div className="p-6">
@@ -284,7 +307,7 @@ export default function LosAngelesToLasVegasPage() {
               Contact Dr. Jan Duffy today for a personalized consultation about your relocation
             </p>
           </div>
-          
+
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
               <h3 className="text-2xl font-semibold mb-6">Get in Touch</h3>
@@ -302,7 +325,7 @@ export default function LosAngelesToLasVegasPage() {
                   <span>Available 7 days a week</span>
                 </div>
               </div>
-              
+
               <div className="mt-8">
                 <h4 className="text-lg font-semibold mb-4">Why Choose Dr. Jan Duffy?</h4>
                 <ul className="space-y-2 text-blue-100">
@@ -314,43 +337,37 @@ export default function LosAngelesToLasVegasPage() {
                 </ul>
               </div>
             </div>
-            
+
             <div className="bg-white rounded-xl p-8 text-gray-900">
               <h3 className="text-2xl font-semibold mb-6">Free Consultation Request</h3>
               <form className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name
-                  </label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
                   <input
                     type="text"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="Your full name"
                   />
                 </div>
-                
+
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Email
-                  </label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
                   <input
                     type="email"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="your.email@example.com"
                   />
                 </div>
-                
+
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone
-                  </label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
                   <input
                     type="tel"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="(555) 123-4567"
                   />
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Current LA Neighborhood
@@ -361,7 +378,7 @@ export default function LosAngelesToLasVegasPage() {
                     placeholder="e.g., Beverly Hills, Santa Monica, etc."
                   />
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Target Move Date
@@ -373,7 +390,7 @@ export default function LosAngelesToLasVegasPage() {
                     title="Select your target move date"
                   />
                 </div>
-                
+
                 <button
                   type="submit"
                   className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
@@ -386,5 +403,5 @@ export default function LosAngelesToLasVegasPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }

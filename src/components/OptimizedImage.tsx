@@ -1,22 +1,22 @@
-'use client'
+'use client';
 
-import Image from 'next/image'
-import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import { useState } from 'react';
 
 interface OptimizedImageProps {
-  src: string
-  alt: string
-  width: number
-  height: number
-  className?: string
-  priority?: boolean
-  placeholder?: 'blur' | 'empty'
-  blurDataURL?: string
-  sizes?: string
-  quality?: number
-  fill?: boolean
-  style?: React.CSSProperties
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  className?: string;
+  priority?: boolean;
+  placeholder?: 'blur' | 'empty';
+  blurDataURL?: string;
+  sizes?: string;
+  quality?: number;
+  fill?: boolean;
+  style?: React.CSSProperties;
 }
 
 export default function OptimizedImage({
@@ -34,27 +34,27 @@ export default function OptimizedImage({
   style,
   ...props
 }: OptimizedImageProps) {
-  const [isLoading, setIsLoading] = useState(true)
-  const [isError, setIsError] = useState(false)
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
 
   const handleLoad = () => {
-    setIsLoading(false)
-  }
+    setIsLoading(false);
+  };
 
   const handleError = () => {
-    setIsError(true)
-    setIsLoading(false)
-  }
+    setIsError(true);
+    setIsLoading(false);
+  };
 
   if (isError) {
     return (
-      <div 
+      <div
         className={`bg-gray-200 flex items-center justify-center text-gray-500 ${className}`}
         style={{ width: fill ? '100%' : width, height: fill ? '100%' : height }}
       >
         <span className="text-sm">Image failed to load</span>
       </div>
-    )
+    );
   }
 
   return (
@@ -70,9 +70,7 @@ export default function OptimizedImage({
         alt={alt}
         width={fill ? undefined : width}
         height={fill ? undefined : height}
-        className={`transition-opacity duration-300 ${
-          isLoading ? 'opacity-0' : 'opacity-100'
-        }`}
+        className={`transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
         priority={priority}
         placeholder={placeholder}
         blurDataURL={blurDataURL}
@@ -84,7 +82,7 @@ export default function OptimizedImage({
         onError={handleError}
         {...props}
       />
-      
+
       {/* Loading skeleton */}
       {isLoading && (
         <motion.div
@@ -94,7 +92,7 @@ export default function OptimizedImage({
         />
       )}
     </motion.div>
-  )
+  );
 }
 
 // Specialized image components for common use cases
@@ -105,23 +103,17 @@ export function HeroImage(props: Omit<OptimizedImageProps, 'priority' | 'sizes'>
       priority={true}
       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
     />
-  )
+  );
 }
 
 export function ServiceImage(props: Omit<OptimizedImageProps, 'sizes'>) {
   return (
-    <OptimizedImage
-      {...props}
-      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-    />
-  )
+    <OptimizedImage {...props} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw" />
+  );
 }
 
 export function TeamImage(props: Omit<OptimizedImageProps, 'sizes'>) {
   return (
-    <OptimizedImage
-      {...props}
-      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-    />
-  )
+    <OptimizedImage {...props} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+  );
 }

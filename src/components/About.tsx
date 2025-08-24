@@ -1,14 +1,14 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
-import { Award, MapPin, Users, CheckCircle } from 'lucide-react'
+import { motion } from 'framer-motion';
+import { Award, CheckCircle, MapPin, Users } from 'lucide-react';
 
 const stats = [
   { number: '500+', label: 'Successful Relocations', icon: CheckCircle },
   { number: '15+', label: 'Years of Experience', icon: Award },
   { number: '50+', label: 'Corporate Clients', icon: Users },
-  { number: '100%', label: 'Local Las Vegas Focus', icon: MapPin }
-]
+  { number: '100%', label: 'Local Las Vegas Focus', icon: MapPin },
+];
 
 const highlights = [
   'Expert knowledge of Las Vegas real estate market',
@@ -16,8 +16,8 @@ const highlights = [
   'Comprehensive understanding of relocation challenges',
   'Personalized approach to every client',
   'Berkshire Hathaway quality standards',
-  'Ongoing support throughout the relocation process'
-]
+  'Ongoing support throughout the relocation process',
+];
 
 export default function About() {
   return (
@@ -32,21 +32,20 @@ export default function About() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-900 mb-6">
-              Meet{' '}
-              <span className="gradient-text">Dr. Jan Duffy</span>
+              Meet <span className="gradient-text">Dr. Jan Duffy</span>
             </h2>
-            
+
             <p className="text-lg text-secondary-600 mb-6 leading-relaxed">
-              Dr. Jan Duffy leads our Las Vegas relocation services team with over 15 years of 
-              experience in helping families and businesses successfully transition to the vibrant 
+              Dr. Jan Duffy leads our Las Vegas relocation services team with over 15 years of
+              experience in helping families and businesses successfully transition to the vibrant
               Las Vegas community.
             </p>
-            
+
             <p className="text-lg text-secondary-600 mb-8 leading-relaxed">
-              As part of the prestigious Berkshire Hathaway Services Relocation Services Team, 
-              we bring unmatched expertise, reliability, and local market knowledge to every 
-              relocation project. Our commitment to excellence ensures that your move to Las Vegas 
-              is not just successful, but truly exceptional.
+              As part of the prestigious Berkshire Hathaway Services Relocation Services Team, we
+              bring unmatched expertise, reliability, and local market knowledge to every relocation
+              project. Our commitment to excellence ensures that your move to Las Vegas is not just
+              successful, but truly exceptional.
             </p>
 
             {/* Highlights */}
@@ -66,9 +65,7 @@ export default function About() {
               ))}
             </div>
 
-            <button className="btn-primary">
-              Learn More About Dr. Duffy
-            </button>
+            <button className="btn-primary">Learn More About Dr. Duffy</button>
           </motion.div>
 
           {/* Stats and Visual */}
@@ -95,12 +92,8 @@ export default function About() {
                       <stat.icon className="w-6 h-6 text-primary-600" />
                     </div>
                   </div>
-                  <div className="text-3xl font-bold text-primary-600 mb-2">
-                    {stat.number}
-                  </div>
-                  <div className="text-sm text-secondary-600 font-medium">
-                    {stat.label}
-                  </div>
+                  <div className="text-3xl font-bold text-primary-600 mb-2">{stat.number}</div>
+                  <div className="text-sm text-secondary-600 font-medium">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -120,9 +113,7 @@ export default function About() {
                 <h4 className="text-lg font-semibold text-secondary-900 mb-2">
                   Berkshire Hathaway
                 </h4>
-                <p className="text-sm text-secondary-600">
-                  Relocation Services Team Member
-                </p>
+                <p className="text-sm text-secondary-600">Relocation Services Team Member</p>
                 <p className="text-xs text-primary-600 font-medium mt-2">
                   Quality • Reliability • Excellence
                 </p>
@@ -132,5 +123,5 @@ export default function About() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,15 +1,15 @@
-import type { MetadataRoute } from 'next'
+import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://lasvegasrelocationservices.com'
-  
+  const baseUrl = 'https://lasvegasrelocationservices.com';
+
   // Main page with all sections
   const mainPage = {
     url: baseUrl,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 1,
-  }
+  };
 
   // Service-specific pages
   const servicePages = [
@@ -18,8 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.9,
-    }
-  ]
+    },
+  ];
 
   // City-specific relocation pages
   const cityPages = [
@@ -34,12 +34,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
-    }
-  ]
+    },
+  ];
 
-  return [
-    mainPage,
-    ...servicePages,
-    ...cityPages,
-  ]
+  return [mainPage, ...servicePages, ...cityPages];
 }

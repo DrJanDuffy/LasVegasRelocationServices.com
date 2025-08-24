@@ -1,58 +1,64 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
-import { Star, Quote } from 'lucide-react'
+import { motion } from 'framer-motion';
+import { Quote, Star } from 'lucide-react';
 
 const testimonials = [
   {
     name: 'Jennifer Martinez',
     role: 'Corporate Client',
     company: 'Tech Solutions Inc.',
-    content: 'Dr. Duffy and her team made our corporate relocation to Las Vegas incredibly smooth. Their attention to detail and local market knowledge exceeded our expectations. The entire process was professional and stress-free.',
+    content:
+      'Dr. Duffy and her team made our corporate relocation to Las Vegas incredibly smooth. Their attention to detail and local market knowledge exceeded our expectations. The entire process was professional and stress-free.',
     rating: 5,
-    image: '/testimonials/jennifer-martinez.jpg'
+    image: '/testimonials/jennifer-martinez.jpg',
   },
   {
     name: 'Robert & Sarah Thompson',
     role: 'Family Relocation',
     company: 'Residential Clients',
-    content: 'Moving our family of five to Las Vegas seemed overwhelming, but Dr. Duffy\'s team handled everything perfectly. From finding the right neighborhood to setting up utilities, they were there every step of the way.',
+    content:
+      "Moving our family of five to Las Vegas seemed overwhelming, but Dr. Duffy's team handled everything perfectly. From finding the right neighborhood to setting up utilities, they were there every step of the way.",
     rating: 5,
-    image: '/testimonials/thompson-family.jpg'
+    image: '/testimonials/thompson-family.jpg',
   },
   {
     name: 'David Chen',
     role: 'International Relocation',
     company: 'Global Enterprises',
-    content: 'As an international client, I was concerned about the complexity of moving to Las Vegas. Michael and the team provided exceptional support with visa processes and cultural integration. Highly recommended!',
+    content:
+      'As an international client, I was concerned about the complexity of moving to Las Vegas. Michael and the team provided exceptional support with visa processes and cultural integration. Highly recommended!',
     rating: 5,
-    image: '/testimonials/david-chen.jpg'
+    image: '/testimonials/david-chen.jpg',
   },
   {
     name: 'Amanda Rodriguez',
     role: 'Senior Executive',
     company: 'Healthcare Partners',
-    content: 'The Berkshire Hathaway team\'s professionalism and local expertise made our healthcare facility relocation seamless. Dr. Duffy\'s strategic planning saved us time and resources.',
+    content:
+      "The Berkshire Hathaway team's professionalism and local expertise made our healthcare facility relocation seamless. Dr. Duffy's strategic planning saved us time and resources.",
     rating: 5,
-    image: '/testimonials/amanda-rodriguez.jpg'
+    image: '/testimonials/amanda-rodriguez.jpg',
   },
   {
     name: 'Mark & Lisa Williams',
     role: 'Retirement Relocation',
     company: 'Individual Clients',
-    content: 'Retiring to Las Vegas was a dream come true, and Dr. Duffy\'s team made it a reality. Their knowledge of retirement communities and local amenities was invaluable.',
+    content:
+      "Retiring to Las Vegas was a dream come true, and Dr. Duffy's team made it a reality. Their knowledge of retirement communities and local amenities was invaluable.",
     rating: 5,
-    image: '/testimonials/williams-family.jpg'
+    image: '/testimonials/williams-family.jpg',
   },
   {
     name: 'Carlos Mendez',
     role: 'Business Owner',
     company: 'Mendez Construction',
-    content: 'Relocating our construction business to Las Vegas required careful planning. The team\'s expertise in commercial relocation and local business regulations was outstanding.',
+    content:
+      "Relocating our construction business to Las Vegas required careful planning. The team's expertise in commercial relocation and local business regulations was outstanding.",
     rating: 5,
-    image: '/testimonials/carlos-mendez.jpg'
-  }
-]
+    image: '/testimonials/carlos-mendez.jpg',
+  },
+];
 
 export default function Testimonials() {
   return (
@@ -67,12 +73,11 @@ export default function Testimonials() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-900 mb-6">
-            What Our{' '}
-            <span className="gradient-text">Clients Say</span>
+            What Our <span className="gradient-text">Clients Say</span>
           </h2>
           <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
-            Don't just take our word for it. Here's what our satisfied clients have to say 
-            about their Las Vegas relocation experience with our team.
+            Don't just take our word for it. Here's what our satisfied clients have to say about
+            their Las Vegas relocation experience with our team.
           </p>
         </motion.div>
 
@@ -108,19 +113,16 @@ export default function Testimonials() {
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-primary-100 to-accent-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <span className="text-sm font-bold text-primary-600">
-                    {testimonial.name.split(' ').map(n => n[0]).join('')}
+                    {testimonial.name
+                      .split(' ')
+                      .map((n) => n[0])
+                      .join('')}
                   </span>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-secondary-900">
-                    {testimonial.name}
-                  </h4>
-                  <p className="text-sm text-primary-600 font-medium">
-                    {testimonial.role}
-                  </p>
-                  <p className="text-xs text-secondary-500">
-                    {testimonial.company}
-                  </p>
+                  <h4 className="font-semibold text-secondary-900">{testimonial.name}</h4>
+                  <p className="text-sm text-primary-600 font-medium">{testimonial.role}</p>
+                  <p className="text-xs text-secondary-500">{testimonial.company}</p>
                 </div>
               </div>
             </motion.div>
@@ -161,5 +163,5 @@ export default function Testimonials() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

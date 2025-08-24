@@ -1,14 +1,14 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
-import { ArrowRight, Phone, Calendar, CheckCircle } from 'lucide-react'
+import { motion } from 'framer-motion';
+import { ArrowRight, Calendar, CheckCircle, Phone } from 'lucide-react';
 
 const benefits = [
   'Free initial consultation',
   'Customized relocation plan',
   'Local market expertise',
-  'Ongoing support throughout the process'
-]
+  'Ongoing support throughout the process',
+];
 
 export default function CTA() {
   return (
@@ -24,12 +24,11 @@ export default function CTA() {
             className="mb-12"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Ready to Start Your{' '}
-              <span className="text-yellow-300">Las Vegas Journey?</span>
+              Ready to Start Your <span className="text-yellow-300">Las Vegas Journey?</span>
             </h2>
             <p className="text-xl text-blue-100 leading-relaxed">
-              Join hundreds of satisfied clients who have successfully relocated to Las Vegas 
-              with Dr. Jan Duffy and our expert team. Your dream move starts with a simple conversation.
+              Join hundreds of satisfied clients who have successfully relocated to Las Vegas with
+              Dr. Jan Duffy and our expert team. Your dream move starts with a simple conversation.
             </p>
           </motion.div>
 
@@ -71,7 +70,7 @@ export default function CTA() {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </div>
             </button>
-            
+
             <button className="bg-white hover:bg-gray-100 text-blue-700 font-semibold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-700 group">
               <div className="flex items-center gap-2">
                 <Calendar className="w-5 h-5" />
@@ -114,5 +113,5 @@ export default function CTA() {
         </div>
       </div>
     </section>
-  )
+  );
 }

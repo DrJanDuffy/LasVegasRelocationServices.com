@@ -12,32 +12,37 @@
     "format:check": "prettier --check .",
     "analyze": "cross-env ANALYZE=true next build",
     "deploy": "powershell -ExecutionPolicy Bypass -File deploy.ps1",
-    "deploy:simple": "deploy.bat"
+    "deploy:simple": "deploy.bat",
+    "biome:check": "biome check .",
+    "biome:format": "biome format --write .",
+    "biome:lint": "biome lint .",
+    "biome:fix": "biome check --write ."
   },
   "dependencies": {
+    "@headlessui/react": "^2.0.0",
+    "@heroicons/react": "^2.1.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.0.8",
+    "lucide-react": "^0.344.0",
     "next": "14.2.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "framer-motion": "^11.0.8",
-    "lucide-react": "^0.344.0",
-    "clsx": "^2.1.1",
-    "tailwind-merge": "^2.2.1",
-    "@headlessui/react": "^2.0.0",
-    "@heroicons/react": "^2.1.1"
+    "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.2.2",
+    "@next/bundle-analyzer": "^14.2.5",
     "@types/node": "^22.10.2",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "typescript": "^5.6.3",
-    "tailwindcss": "^3.4.4",
     "autoprefixer": "^10.4.19",
-    "postcss": "^8.4.38",
+    "cross-env": "^7.0.3",
     "eslint": "^8.57.0",
     "eslint-config-next": "14.2.5",
+    "postcss": "^8.4.38",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.5.12",
-    "@next/bundle-analyzer": "^14.2.5",
-    "cross-env": "^7.0.3"
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.6.3"
   }
 }
