@@ -7,7 +7,8 @@ import {
   Heart, 
   CheckCircle, 
   Phone, 
-  Calendar
+  Calendar,
+  Truck
 } from 'lucide-react'
 
 export const metadata: Metadata = {
