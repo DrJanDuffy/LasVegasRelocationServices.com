@@ -63,7 +63,7 @@ export default function CTA() {
             viewport={{ once: true }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
           >
-            <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-blue-700 group">
+            <button type="button" className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-blue-700 group">
               <div className="flex items-center gap-2">
                 <Phone className="w-5 h-5" />
                 Call Now: (702) 707-7273
@@ -71,7 +71,7 @@ export default function CTA() {
               </div>
             </button>
 
-            <button className="bg-white hover:bg-gray-100 text-blue-700 font-semibold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-700 group">
+            <button type="button" className="bg-white hover:bg-gray-100 text-blue-700 font-semibold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-700 group">
               <div className="flex items-center gap-2">
                 <Calendar className="w-5 h-5" />
                 Schedule Free Consultation

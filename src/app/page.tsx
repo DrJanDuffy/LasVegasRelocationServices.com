@@ -17,19 +17,19 @@ export default function HomePage() {
   return (
     <main className="min-h-screen">
       <Hero />
-      <div id="services">
+      <div id="home-services">
         <Services />
       </div>
-      <div id="about">
+      <div id="home-about">
         <About />
       </div>
-      <div id="team">
+      <div id="home-team">
         <Team />
       </div>
-      <div id="testimonials">
+      <div id="home-testimonials">
         <Testimonials />
       </div>
-      <div id="contact">
+      <div id="home-contact">
         <Contact />
       </div>
       <CTA />

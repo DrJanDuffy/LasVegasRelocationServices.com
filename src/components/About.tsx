@@ -52,7 +52,7 @@ export default function About() {
             <div className="space-y-3 mb-8">
               {highlights.map((highlight, index) => (
                 <motion.div
-                  key={index}
+                  key={`highlight-${highlight}-${index}`}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -65,7 +65,9 @@ export default function About() {
               ))}
             </div>
 
-            <button className="btn-primary">Learn More About Dr. Duffy</button>
+            <button type="button" className="btn-primary">
+              Learn More About Dr. Duffy
+            </button>
           </motion.div>
 
           {/* Stats and Visual */}

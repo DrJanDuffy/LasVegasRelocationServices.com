@@ -43,10 +43,16 @@ export default function LosAngelesToLasVegasPage() {
               know both cities intimately and will guide you every step of the way.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+              <button
+                type="button"
+                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
+              >
                 Get Free Consultation
               </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors">
+              <button
+                type="button"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors"
+              >
                 View Las Vegas Areas
               </button>
             </div>
@@ -341,8 +347,14 @@ export default function LosAngelesToLasVegasPage() {
               <h3 className="text-2xl font-semibold mb-6">Free Consultation Request</h3>
               <form className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                  <label
+                    htmlFor="la-fullName"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
+                    Full Name
+                  </label>
                   <input
+                    id="la-fullName"
                     type="text"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="Your full name"
@@ -350,8 +362,14 @@ export default function LosAngelesToLasVegasPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                  <label
+                    htmlFor="la-email"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
+                    Email
+                  </label>
                   <input
+                    id="la-email"
                     type="email"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="your.email@example.com"
@@ -359,8 +377,14 @@ export default function LosAngelesToLasVegasPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                  <label
+                    htmlFor="la-phone"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
+                    Phone
+                  </label>
                   <input
+                    id="la-phone"
                     type="tel"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="(555) 123-4567"
@@ -368,10 +392,14 @@ export default function LosAngelesToLasVegasPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="la-neighborhood"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Current LA Neighborhood
                   </label>
                   <input
+                    id="la-neighborhood"
                     type="text"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="e.g., Beverly Hills, Santa Monica, etc."
@@ -379,10 +407,14 @@ export default function LosAngelesToLasVegasPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="la-moveDate"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Target Move Date
                   </label>
                   <input
+                    id="la-moveDate"
                     type="date"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     aria-label="Target move date"

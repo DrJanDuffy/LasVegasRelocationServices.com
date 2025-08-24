@@ -120,7 +120,7 @@ export default function Hero() {
               whileTap={{ scale: 0.95 }}
             >
               <Phone className="w-5 h-5 text-blue-600 group-hover:scale-110 transition-transform" />
-                              <span className="font-medium">(702) 707-7273</span>
+              <span className="font-medium">(702) 707-7273</span>
             </motion.div>
 
             <motion.div
@@ -129,7 +129,7 @@ export default function Hero() {
               whileTap={{ scale: 0.95 }}
             >
               <Mail className="w-5 h-5 text-blue-600 group-hover:scale-110 transition-transform" />
-                              <span className="font-medium">DrJan@LasVegasRelocationServices.com</span>
+              <span className="font-medium">DrJan@LasVegasRelocationServices.com</span>
             </motion.div>
           </motion.div>
 
