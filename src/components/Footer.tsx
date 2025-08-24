@@ -1,7 +1,7 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react'
+import { motion } from '@/components/motion'
+import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin, ArrowUp } from 'lucide-react'
 
 const footerLinks = {
   services: [

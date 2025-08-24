@@ -1,5 +1,6 @@
-import type { Metadata } from 'next'
-import { motion } from 'framer-motion'
+'use client'
+
+import { motion } from '@/components/motion'
 import { 
   Home, 
   Users, 
@@ -12,18 +13,6 @@ import {
   MapPin,
   Shield
 } from 'lucide-react'
-
-export const metadata: Metadata = {
-  title: 'Residential Moving Services | Las Vegas Family Relocation Experts',
-  description: 'Professional residential moving services in Las Vegas. Family-focused relocation with home finding, school district assistance, and community integration support.',
-  keywords: 'residential moving, family relocation, home finding, school districts, Las Vegas moving',
-  openGraph: {
-    title: 'Residential Moving Services | Las Vegas Family Relocation Experts',
-    description: 'Professional residential moving services in Las Vegas. Family-focused relocation with home finding and community integration.',
-    type: 'website',
-    locale: 'en_US',
-  },
-}
 
 const serviceFeatures = [
   {

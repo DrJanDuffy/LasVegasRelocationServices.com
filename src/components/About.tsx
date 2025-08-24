@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion } from '@/components/motion'
 import { CheckCircle, Award, Users, MapPin, Shield, Star } from 'lucide-react'
 
 const whyChooseUs = [

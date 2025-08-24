@@ -1,7 +1,24 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    optimizePackageImports: ["framer-motion", "lucide-react", "@heroicons/react"],
+    optimizePackageImports: ["lucide-react", "@heroicons/react"],
+  },
+  transpilePackages: ['framer-motion'],
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+      };
+    }
+    
+    // Handle framer-motion module resolution
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'framer-motion': require.resolve('framer-motion'),
+    };
+    
+    return config;
   },
   images: {
     formats: ["image/webp", "image/avif"],

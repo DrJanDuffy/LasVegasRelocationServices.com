@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion } from '@/components/motion'
 import { useState, useId } from 'react'
 import { Phone, Mail, MapPin, Clock, Calendar, MessageSquare, CheckCircle, ArrowRight, ArrowLeft } from 'lucide-react'
 

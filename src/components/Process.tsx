@@ -1,7 +1,7 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { MapPin, Home, Truck, CheckCircle, Users, Calendar } from 'lucide-react'
+import { motion } from '@/components/motion'
+import { CheckCircle, ArrowRight, Phone, Calendar, Users, MapPin, Home, Truck } from 'lucide-react'
 
 const processSteps = [
   {

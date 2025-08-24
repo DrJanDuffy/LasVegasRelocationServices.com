@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Phone, Calendar, ArrowRight } from "lucide-react";
+import { motion } from '@/components/motion'
+import { Phone, Calendar, ArrowRight } from 'lucide-react'
 
 export default function CTA() {
   return (
