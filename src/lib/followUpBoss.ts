@@ -240,8 +240,28 @@ class FollowUpBossAPI {
   }
 }
 
-// Export singleton instance
-export const followUpBossAPI = new FollowUpBossAPI();
+// Export lazy singleton instance
+let _followUpBossAPI: FollowUpBossAPI | null = null;
+
+export const getFollowUpBossAPI = (): FollowUpBossAPI | null => {
+  if (typeof window !== 'undefined') {
+    // Client-side only
+    return null;
+  }
+  
+  if (!_followUpBossAPI) {
+    try {
+      _followUpBossAPI = new FollowUpBossAPI();
+    } catch (error) {
+      console.warn('Follow Up Boss API not available:', error);
+      return null;
+    }
+  }
+  
+  return _followUpBossAPI;
+};
+
+export const followUpBossAPI = getFollowUpBossAPI();
 
 // Utility functions for common operations
 export const createRelocationLead = async (contactData: {
@@ -256,8 +276,13 @@ export const createRelocationLead = async (contactData: {
   notes?: string;
 }) => {
   try {
+    const api = getFollowUpBossAPI();
+    if (!api) {
+      throw new Error('Follow Up Boss API not available');
+    }
+
     // Create contact
-    const contact = await followUpBossAPI.createContact({
+    const contact = await api.createContact({
       firstName: contactData.firstName,
       lastName: contactData.lastName,
       email: contactData.email,
@@ -270,7 +295,7 @@ export const createRelocationLead = async (contactData: {
     });
 
     // Create lead
-    const lead = await followUpBossAPI.createLead({
+    const lead = await api.createLead({
       contactId: contact.id,
       status: "new",
       type: "buyer",
@@ -280,7 +305,7 @@ export const createRelocationLead = async (contactData: {
     });
 
     // Create follow-up task
-    await followUpBossAPI.createTask({
+    await api.createTask({
       contactId: contact.id,
       title: "Follow up on relocation inquiry",
       description: `Contact ${contactData.firstName} about their relocation from ${contactData.currentCity} to ${contactData.targetCity}`,
@@ -298,10 +323,15 @@ export const createRelocationLead = async (contactData: {
 
 export const addContactToCampaign = async (contactId: string, campaignName: string) => {
   try {
-    await followUpBossAPI.addTagsToContact(contactId, [campaignName, "active-campaign"]);
+    const api = getFollowUpBossAPI();
+    if (!api) {
+      throw new Error('Follow Up Boss API not available');
+    }
+
+    await api.addTagsToContact(contactId, [campaignName, "active-campaign"]);
 
     // Create campaign task
-    await followUpBossAPI.createTask({
+    await api.createTask({
       contactId,
       title: `Campaign: ${campaignName}`,
       description: `Contact added to ${campaignName} campaign`,

@@ -1,5 +1,5 @@
 import { type NextRequest, NextResponse } from "next/server";
-import { followUpBossAPI } from "@/lib/followUpBoss";
+import { getFollowUpBossAPI } from "@/lib/followUpBoss";
 
 // Verify webhook signature (you should implement this for security)
 function verifyWebhookSignature(request: NextRequest, _body: string): boolean {
@@ -94,12 +94,18 @@ async function handleContactUpdated(contact: { id: string; tags?: string[] }) {
   try {
     console.log("Contact updated:", contact);
 
+    const api = getFollowUpBossAPI();
+    if (!api) {
+      console.warn("Follow Up Boss API not available");
+      return;
+    }
+
     // Check if contact has relocation-related tags
     if (contact.tags?.some((tag: string) => tag.includes("relocation"))) {
-      await followUpBossAPI.addTagsToContact(contact.id, ["relocation-interest"]);
+      await api.addTagsToContact(contact.id, ["relocation-interest"]);
 
       // Create relocation follow-up task
-      await followUpBossAPI.createTask({
+      await api.createTask({
         contactId: contact.id,
         title: "Relocation follow-up",
         description: "Contact has shown relocation interest - follow up with resources",
@@ -117,11 +123,17 @@ async function handleLeadCreated(lead: { contactId: string; type: string }) {
   try {
     console.log("New lead created:", lead);
 
+    const api = getFollowUpBossAPI();
+    if (!api) {
+      console.warn("Follow Up Boss API not available");
+      return;
+    }
+
     // Add lead-specific tags
-    await followUpBossAPI.addTagsToContact(lead.contactId, ["active-lead", `lead-${lead.type}`]);
+    await api.addTagsToContact(lead.contactId, ["active-lead", `lead-${lead.type}`]);
 
     // Create lead qualification task
-    await followUpBossAPI.createTask({
+    await api.createTask({
       contactId: lead.contactId,
       title: "Qualify new lead",
       description: `Qualify ${lead.type} lead and determine next steps`,
@@ -138,9 +150,15 @@ async function handleLeadStatusChanged(lead: { contactId: string; status: string
   try {
     console.log("Lead status changed:", lead);
 
+    const api = getFollowUpBossAPI();
+    if (!api) {
+      console.warn("Follow Up Boss API not available");
+      return;
+    }
+
     if (lead.status === "qualified") {
       // Lead was qualified - create next steps
-      await followUpBossAPI.createTask({
+      await api.createTask({
         contactId: lead.contactId,
         title: "Qualified lead - next steps",
         description: "Lead has been qualified. Schedule consultation and send materials.",
@@ -150,10 +168,10 @@ async function handleLeadStatusChanged(lead: { contactId: string; status: string
       });
 
       // Add qualified lead tag
-      await followUpBossAPI.addTagsToContact(lead.contactId, ["qualified-lead"]);
+      await api.addTagsToContact(lead.contactId, ["qualified-lead"]);
     } else if (lead.status === "closed") {
       // Lead was closed - create follow-up task
-      await followUpBossAPI.createTask({
+      await api.createTask({
         contactId: lead.contactId,
         title: "Closed lead follow-up",
         description: "Lead was closed. Follow up for feedback and future opportunities.",
