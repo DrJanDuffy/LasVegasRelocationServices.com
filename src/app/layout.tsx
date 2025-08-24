@@ -4,6 +4,7 @@ import "./globals.css";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import MicrosoftClarity from "@/components/MicrosoftClarity";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import PerformanceMonitor from "@/components/PerformanceMonitor";
 
 const inter = Inter({
@@ -260,6 +261,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <PerformanceMonitor />
         <Navigation />
         {children}
+        <Footer />
         <GoogleAnalytics
           GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-XXXXXXXXXX"}
         />
