@@ -13,7 +13,9 @@ const navigationItems = [
       { name: "Residential Relocation", href: "/services/residential-moving" },
       { name: "Corporate Relocation", href: "/services/corporate-relocation" },
       { name: "International Relocation", href: "/services/international-relocation" },
+      { name: "Moving & Transportation", href: "/services/moving-transportation" },
       { name: "Settling-In Services", href: "/services/settling-in" },
+      { name: "Relocation Planning", href: "/services/relocation-planning" },
     ],
   },
   { name: "About", href: "/about" },
@@ -23,10 +25,11 @@ const navigationItems = [
     submenu: [
       { name: "Los Angeles", href: "/relocating-from/los-angeles" },
       { name: "San Diego", href: "/relocating-from/san-diego" },
+      { name: "New York", href: "/relocating-from/new-york" },
+      { name: "Chicago", href: "/relocating-from/chicago" },
     ],
   },
   { name: "Team", href: "#team" },
-  { name: "Testimonials", href: "#testimonials" },
   { name: "Contact", href: "#contact" },
 ];
 

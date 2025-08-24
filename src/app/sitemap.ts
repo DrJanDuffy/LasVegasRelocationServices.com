@@ -40,15 +40,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/services/moving-transportation`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/services/settling-in`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/services/relocation-planning`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.9,
     },
   ];
 
-  // City-specific relocation pages
-  const cityPages = [
+  // Relocation from pages
+  const relocationPages = [
     {
       url: `${baseUrl}/relocating-from/los-angeles`,
       lastModified: new Date(),
@@ -61,7 +73,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/relocating-from/new-york`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/relocating-from/chicago`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
   ];
 
-  return [mainPage, aboutPage, ...servicePages, ...cityPages];
+  return [
+    mainPage,
+    aboutPage,
+    ...servicePages,
+    ...relocationPages,
+  ];
 }
