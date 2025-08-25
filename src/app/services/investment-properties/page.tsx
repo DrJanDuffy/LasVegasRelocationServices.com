@@ -8,6 +8,7 @@ import {
   DollarSign,
   Home,
   Phone,
+  Shield,
   Target,
   TrendingUp,
 } from 'lucide-react';
