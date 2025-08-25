@@ -361,13 +361,14 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <div className="bg-gray-100 rounded-xl p-8 text-center">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Featured Properties</h3>
-              <p className="text-gray-600 mb-4">Discover exceptional properties in Las Vegas</p>
-              <button type="button" className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
-                View Properties
-              </button>
-            </div>
+            <realscout-office-listings
+              agent-encoded-id="QWdlbnQtMjI1MDUw"
+              sort-order="PRICE_HIGH"
+              listing-status="For Sale,For Rent"
+              property-types="MF,SFR,OTHER,LAL"
+              price-min="500000"
+              price-max="750000"
+            ></realscout-office-listings>
           </motion.div>
 
           {/* Additional Property Categories */}
@@ -381,12 +382,14 @@ export default function HomePage() {
               className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow"
             >
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Luxury Properties</h3>
-              <div className="bg-gray-100 rounded-lg p-4 text-center">
-                <p className="text-gray-600 mb-3">Luxury homes starting at $750K</p>
-                <button type="button" className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm">
-                  View Luxury Homes
-                </button>
-              </div>
+              <realscout-office-listings
+                agent-encoded-id="QWdlbnQtMjI1MDUw"
+                sort-order="PRICE_HIGH"
+                listing-status="For Sale"
+                property-types="SFR,OTHER"
+                price-min="750000"
+                price-max="1500000"
+              ></realscout-office-listings>
             </motion.div>
 
             {/* Investment Properties */}
@@ -398,12 +401,14 @@ export default function HomePage() {
               className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow"
             >
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Investment Properties</h3>
-              <div className="bg-gray-100 rounded-lg p-4 text-center">
-                <p className="text-gray-600 mb-3">Investment opportunities $300K-$600K</p>
-                <button type="button" className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm">
-                  View Investments
-                </button>
-              </div>
+              <realscout-office-listings
+                agent-encoded-id="QWdlbnQtMjI1MDUw"
+                sort-order="PRICE_LOW"
+                listing-status="For Sale"
+                property-types="MF,SFR"
+                price-min="300000"
+                price-max="600000"
+              ></realscout-office-listings>
             </motion.div>
 
             {/* Starter Homes */}
@@ -415,12 +420,14 @@ export default function HomePage() {
               className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow"
             >
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Starter Homes</h3>
-              <div className="bg-gray-100 rounded-lg p-4 text-center">
-                <p className="text-gray-600 mb-3">Affordable homes $200K-$400K</p>
-                <button type="button" className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm">
-                  View Starter Homes
-                </button>
-              </div>
+              <realscout-office-listings
+                agent-encoded-id="QWdlbnQtMjI1MDUw"
+                sort-order="PRICE_LOW"
+                listing-status="For Sale"
+                property-types="SFR"
+                price-min="200000"
+                price-max="400000"
+              ></realscout-office-listings>
             </motion.div>
           </div>
         </div>
