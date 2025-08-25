@@ -36,7 +36,7 @@ export default function Breadcrumbs({ items, className = '' }: BreadcrumbsProps)
       ...items.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 2,
-        name: item.name,
+        name: item.label,
         item: `https://www.lasvegasrelocationservices.com${item.href}`,
       })),
     ],
