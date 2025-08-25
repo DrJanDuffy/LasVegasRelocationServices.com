@@ -14,10 +14,140 @@ import {
   Sun,
 } from 'lucide-react';
 import { motion } from '@/components/motion';
+import { useId } from 'react';
+import { 
+  SchemaMarkup, 
+  FAQSection, 
+  QuickFacts, 
+  Breadcrumbs,
+  ComparisonTable 
+} from '@/components/seo';
 
 export default function SanDiegoPageClient() {
+  const fullNameId = useId();
+  const emailId = useId();
+  const phoneId = useId();
+  const neighborhoodId = useId();
+  const moveDateId = useId();
+
+  // FAQ data for AI search optimization
+  const sdRelocationFAQs = [
+    {
+      question: "What are the best neighborhoods in Las Vegas for families relocating from San Diego?",
+      answer: "Summerlin, Henderson, and Green Valley are excellent choices for San Diego families. Summerlin offers top-rated schools, parks, and shopping centers similar to SD's upscale areas. Henderson provides a safe, family-oriented environment with beautiful parks and excellent schools. Green Valley features mature trees and established amenities. All three areas offer spacious homes, great schools, and family-friendly activities at a fraction of San Diego housing costs."
+    },
+    {
+      question: "How much does it cost to move from San Diego to Las Vegas?",
+      answer: "Moving costs from San Diego to Las Vegas typically range from $2,500 to $6,000 depending on household size and moving services. This includes professional movers, packing services, and transportation. The 330-mile journey takes about 5-6 hours by car. Las Vegas offers significant long-term savings with no state income tax and housing costs that are 40-50% lower than San Diego, making the move financially beneficial."
+    },
+    {
+      question: "What's the job market like in Las Vegas compared to San Diego?",
+      answer: "Las Vegas has a diverse job market with strong opportunities in hospitality, gaming, technology, healthcare, and construction. The city is experiencing growth in tech startups and remote work opportunities. While salaries may be slightly lower than San Diego, the cost of living is significantly lower, resulting in better overall financial outcomes. Many San Diego professionals find they can maintain similar lifestyles with much lower expenses in Las Vegas."
+    },
+    {
+      question: "How do I find the right real estate agent for my San Diego to Las Vegas relocation?",
+      answer: "Look for agents with relocation expertise, local market knowledge, and proven track records. Dr. Jan Duffy has 15+ years of Las Vegas real estate experience and specializes in helping families relocate from California. She provides comprehensive services including area research, property search, and settlement support. Her deep understanding of both San Diego and Las Vegas markets makes her ideal for this transition."
+    },
+    {
+      question: "What are the tax benefits of moving from San Diego to Las Vegas?",
+      answer: "Nevada offers significant tax advantages over California: no state income tax (vs. 13.3% in CA), no state corporate tax, and no inheritance tax. Property taxes are also lower (0.84% vs. 1.25% in CA). This can result in thousands of dollars in annual savings. Combined with lower housing costs, the financial benefits of Las Vegas relocation are substantial for San Diego residents."
+    },
+    {
+      question: "What's the weather like in Las Vegas compared to San Diego?",
+      answer: "Las Vegas enjoys 300+ days of sunshine annually with a desert climate. Summers are hot (90-110°F) but dry, unlike San Diego's marine layer and humidity. Winters are mild (40-60°F) with occasional rain. Spring and fall are pleasant (60-80°F). The dry climate is great for outdoor activities year-round, and you'll say goodbye to San Diego's coastal fog. Many find the consistent sunshine and clear skies refreshing."
+    }
+  ];
+
+  // Quick facts for AI search optimization
+  const sdToVegasFacts = [
+    {
+      label: "Distance",
+      value: "330 miles",
+      description: "5-6 hour drive from SD"
+    },
+    {
+      label: "Housing Savings",
+      value: "40-50%",
+      description: "Lower than SD prices"
+    },
+    {
+      label: "State Income Tax",
+      value: "0% vs 13.3%",
+      description: "Massive tax savings"
+    },
+    {
+      label: "Property Tax",
+      value: "0.84% vs 1.25%",
+      description: "Lower property taxes"
+    },
+    {
+      label: "Cost of Living",
+      value: "25% lower",
+      description: "Significantly more affordable"
+    },
+    {
+      label: "Traffic",
+      value: "Minimal",
+      description: "No more SD congestion"
+    }
+  ];
+
+  // San Diego vs Las Vegas comparison data
+  const sdVegasComparison = [
+    {
+      category: "Median Home Price",
+      originCity: "$900,000",
+      lasVegas: "$450,000",
+      difference: "better" as const,
+      description: "50%+ savings on housing"
+    },
+    {
+      category: "State Income Tax",
+      originCity: "13.3%",
+      lasVegas: "0%",
+      difference: "better",
+      description: "No state income tax"
+    },
+    {
+      category: "Property Tax Rate",
+      originCity: "1.25%",
+      lasVegas: "0.84%",
+      difference: "better",
+      description: "Lower property taxes"
+    },
+    {
+      category: "Sales Tax",
+      originCity: "7.75%",
+      lasVegas: "8.38%",
+      difference: "worse",
+      description: "Slightly higher sales tax"
+    },
+    {
+      category: "Traffic Congestion",
+      originCity: "Moderate",
+      lasVegas: "Minimal",
+      difference: "better",
+      description: "Much less traffic"
+    },
+    {
+      category: "Housing Space",
+      originCity: "Limited",
+      lasVegas: "Spacious",
+      difference: "better",
+      description: "More square footage"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Breadcrumbs */}
+      <Breadcrumbs 
+        items={[
+          { label: "Relocating From", href: "/relocating-from" },
+          { label: "San Diego", href: "/relocating-from/san-diego" }
+        ]} 
+      />
+
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-green-600 via-green-700 to-green-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,6 +180,13 @@ export default function SanDiegoPageClient() {
           </div>
         </div>
       </section>
+
+      {/* Quick Facts Section */}
+      <QuickFacts 
+        title="San Diego to Las Vegas: Key Facts" 
+        facts={sdToVegasFacts}
+        className="py-16"
+      />
 
       {/* Why Choose Las Vegas Section */}
       <section className="py-20 bg-white">
@@ -96,8 +233,8 @@ export default function SanDiegoPageClient() {
                 Better Weather
               </h3>
               <p className="text-gray-600 text-center">
-                Enjoy 300+ days of sunshine annually. Say goodbye to San Diego's marine layer and hello to
-                year-round outdoor activities.
+                Enjoy 300+ days of sunshine annually. Say goodbye to San Diego's marine layer and
+                hello to year-round outdoor activities.
               </p>
             </div>
 
@@ -132,12 +269,21 @@ export default function SanDiegoPageClient() {
                 Outdoor Recreation
               </h3>
               <p className="text-gray-600 text-center">
-                Access to Red Rock Canyon, Mount Charleston, and Lake Mead for hiking and outdoor activities.
+                Access to Red Rock Canyon, Mount Charleston, and Lake Mead for hiking and outdoor
+                activities.
               </p>
             </div>
           </div>
         </div>
       </section>
+
+      {/* City Comparison Section */}
+      <ComparisonTable
+        title="San Diego vs. Las Vegas Comparison"
+        originCity="San Diego"
+        rows={sdVegasComparison}
+        className="py-16"
+      />
 
       {/* Relocation Process Section */}
       <section className="py-20 bg-gray-50">
@@ -374,6 +520,13 @@ export default function SanDiegoPageClient() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <FAQSection 
+        title="Frequently Asked Questions: San Diego to Las Vegas Relocation"
+        faqs={sdRelocationFAQs}
+        className="py-16"
+      />
+
       {/* Contact Section */}
       <section className="py-20 bg-green-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -421,13 +574,13 @@ export default function SanDiegoPageClient() {
               <form className="space-y-4">
                 <div>
                   <label
-                    htmlFor="sd-fullName"
+                    htmlFor={fullNameId}
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
                     Full Name
                   </label>
                   <input
-                    id="sd-fullName"
+                    id={fullNameId}
                     type="text"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     placeholder="Your full name"
@@ -436,13 +589,13 @@ export default function SanDiegoPageClient() {
 
                 <div>
                   <label
-                    htmlFor="sd-email"
+                    htmlFor={emailId}
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
                     Email
                   </label>
                   <input
-                    id="sd-email"
+                    id={emailId}
                     type="email"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     placeholder="your.email@example.com"
@@ -451,13 +604,13 @@ export default function SanDiegoPageClient() {
 
                 <div>
                   <label
-                    htmlFor="sd-phone"
+                    htmlFor={phoneId}
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
                     Phone
                   </label>
                   <input
-                    id="sd-phone"
+                    id={phoneId}
                     type="tel"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     placeholder="(555) 123-4567"
@@ -466,13 +619,13 @@ export default function SanDiegoPageClient() {
 
                 <div>
                   <label
-                    htmlFor="sd-neighborhood"
+                    htmlFor={neighborhoodId}
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
                     Current San Diego Neighborhood
                   </label>
                   <input
-                    id="sd-neighborhood"
+                    id={neighborhoodId}
                     type="text"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     placeholder="e.g., La Jolla, Del Mar, etc."
@@ -481,13 +634,13 @@ export default function SanDiegoPageClient() {
 
                 <div>
                   <label
-                    htmlFor="sd-moveDate"
+                    htmlFor={moveDateId}
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
                     Target Move Date
                   </label>
                   <input
-                    id="sd-moveDate"
+                    id={moveDateId}
                     type="date"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     aria-label="Target move date"
@@ -506,6 +659,50 @@ export default function SanDiegoPageClient() {
           </div>
         </div>
       </section>
+
+      {/* Schema Markup for San Diego Relocation Page */}
+      <SchemaMarkup 
+        type="howTo" 
+        data={{
+          name: "How to Relocate from San Diego to Las Vegas",
+          description: "Complete guide for moving from San Diego to Las Vegas with expert real estate guidance and relocation services.",
+          steps: [
+            {
+              '@type': 'HowToStep',
+              name: 'Initial Consultation',
+              text: 'Schedule a consultation with Dr. Jan Duffy to discuss your San Diego to Las Vegas relocation needs and timeline'
+            },
+            {
+              '@type': 'HowToStep',
+              name: 'Area Research',
+              text: 'Research Las Vegas neighborhoods that match your lifestyle and budget, comparing them to San Diego areas'
+            },
+            {
+              '@type': 'HowToStep',
+              name: 'Property Search',
+              text: 'Find and view properties in Las Vegas that offer better value than San Diego'
+            },
+            {
+              '@type': 'HowToStep',
+              name: 'Settlement Support',
+              text: 'Get assistance with settling into your new Las Vegas home with local connections and ongoing support'
+            }
+          ]
+        }} 
+      />
+
+      <SchemaMarkup 
+        type="place" 
+        data={{
+          name: "San Diego",
+          description: "San Diego, California - Coastal city with high cost of living and marine climate",
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: 32.7157,
+            longitude: -117.1611
+          }
+        }} 
+      />
     </div>
   );
 }

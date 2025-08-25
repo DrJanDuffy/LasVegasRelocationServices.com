@@ -14,10 +14,140 @@ import {
   Users,
 } from 'lucide-react';
 import { motion } from '@/components/motion';
+import { useId } from 'react';
+import { 
+  SchemaMarkup, 
+  FAQSection, 
+  QuickFacts, 
+  Breadcrumbs,
+  ComparisonTable 
+} from '@/components/seo';
 
 export default function LosAngelesPageClient() {
+  const fullNameId = useId();
+  const emailId = useId();
+  const phoneId = useId();
+  const neighborhoodId = useId();
+  const moveDateId = useId();
+
+  // FAQ data for AI search optimization
+  const laRelocationFAQs = [
+    {
+      question: "What are the best neighborhoods in Las Vegas for families relocating from Los Angeles?",
+      answer: "Summerlin, Henderson, and Green Valley are excellent choices for LA families. Summerlin offers top-rated schools, parks, and shopping centers similar to LA's upscale areas. Henderson provides a safe, family-oriented environment with beautiful parks and excellent schools. Green Valley features mature trees and established amenities. All three areas offer spacious homes, great schools, and family-friendly activities at a fraction of LA housing costs."
+    },
+    {
+      question: "How much does it cost to move from Los Angeles to Las Vegas?",
+      answer: "Moving costs from LA to Las Vegas typically range from $2,000 to $5,000 depending on household size and moving services. This includes professional movers, packing services, and transportation. The 270-mile journey takes about 4-5 hours by car. Las Vegas offers significant long-term savings with no state income tax and housing costs that are 40-50% lower than LA, making the move financially beneficial."
+    },
+    {
+      question: "What's the job market like in Las Vegas compared to Los Angeles?",
+      answer: "Las Vegas has a diverse job market with strong opportunities in hospitality, gaming, technology, healthcare, and construction. The city is experiencing growth in tech startups and remote work opportunities. While salaries may be slightly lower than LA, the cost of living is significantly lower, resulting in better overall financial outcomes. Many LA professionals find they can maintain similar lifestyles with much lower expenses in Las Vegas."
+    },
+    {
+      question: "How do I find the right real estate agent for my LA to Las Vegas relocation?",
+      answer: "Look for agents with relocation expertise, local market knowledge, and proven track records. Dr. Jan Duffy has 15+ years of Las Vegas real estate experience and specializes in helping families relocate from California. She provides comprehensive services including area research, property search, and settlement support. Her deep understanding of both LA and Las Vegas markets makes her ideal for this transition."
+    },
+    {
+      question: "What are the tax benefits of moving from Los Angeles to Las Vegas?",
+      answer: "Nevada offers significant tax advantages over California: no state income tax (vs. 13.3% in CA), no state corporate tax, and no inheritance tax. Property taxes are also lower (0.84% vs. 1.25% in CA). This can result in thousands of dollars in annual savings. Combined with lower housing costs, the financial benefits of Las Vegas relocation are substantial for LA residents."
+    },
+    {
+      question: "What's the weather like in Las Vegas compared to Los Angeles?",
+      answer: "Las Vegas enjoys 300+ days of sunshine annually with a desert climate. Summers are hot (90-110°F) but dry, unlike LA's humidity. Winters are mild (40-60°F) with occasional rain. Spring and fall are pleasant (60-80°F). The dry climate is great for outdoor activities year-round, and you'll say goodbye to LA's marine layer and traffic. Many find the consistent sunshine and clear skies refreshing."
+    }
+  ];
+
+  // Quick facts for AI search optimization
+  const laToVegasFacts = [
+    {
+      label: "Distance",
+      value: "270 miles",
+      description: "4-5 hour drive from LA"
+    },
+    {
+      label: "Housing Savings",
+      value: "40-50%",
+      description: "Lower than LA prices"
+    },
+    {
+      label: "State Income Tax",
+      value: "0% vs 13.3%",
+      description: "Massive tax savings"
+    },
+    {
+      label: "Property Tax",
+      value: "0.84% vs 1.25%",
+      description: "Lower property taxes"
+    },
+    {
+      label: "Cost of Living",
+      value: "25% lower",
+      description: "Significantly more affordable"
+    },
+    {
+      label: "Traffic",
+      value: "Minimal",
+      description: "No more LA gridlock"
+    }
+  ];
+
+  // LA vs Las Vegas comparison data
+  const laVegasComparison = [
+    {
+      category: "Median Home Price",
+      originCity: "$850,000",
+      lasVegas: "$450,000",
+      difference: "better" as const,
+      description: "40%+ savings on housing"
+    },
+    {
+      category: "State Income Tax",
+      originCity: "13.3%",
+      lasVegas: "0%",
+      difference: "better",
+      description: "No state income tax"
+    },
+    {
+      category: "Property Tax Rate",
+      originCity: "1.25%",
+      lasVegas: "0.84%",
+      difference: "better",
+      description: "Lower property taxes"
+    },
+    {
+      category: "Sales Tax",
+      originCity: "9.5%",
+      lasVegas: "8.38%",
+      difference: "better",
+      description: "Lower sales tax"
+    },
+    {
+      category: "Traffic Congestion",
+      originCity: "Severe",
+      lasVegas: "Minimal",
+      difference: "better",
+      description: "No more gridlock"
+    },
+    {
+      category: "Housing Space",
+      originCity: "Limited",
+      lasVegas: "Spacious",
+      difference: "better",
+      description: "More square footage"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Breadcrumbs */}
+      <Breadcrumbs 
+        items={[
+          { label: "Relocating From", href: "/relocating-from" },
+          { label: "Los Angeles", href: "/relocating-from/los-angeles" }
+        ]} 
+      />
+
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,6 +178,13 @@ export default function LosAngelesPageClient() {
           </div>
         </div>
       </section>
+
+      {/* Quick Facts Section */}
+      <QuickFacts 
+        title="LA to Las Vegas: Key Facts" 
+        facts={laToVegasFacts}
+        className="py-16"
+      />
 
       {/* Why Choose Las Vegas Section */}
       <section className="py-20 bg-white">
@@ -133,6 +270,14 @@ export default function LosAngelesPageClient() {
           </div>
         </div>
       </section>
+
+      {/* City Comparison Section */}
+      <ComparisonTable
+        title="Los Angeles vs. Las Vegas Comparison"
+        originCity="Los Angeles"
+        rows={laVegasComparison}
+        className="py-16"
+      />
 
       {/* Relocation Process Section */}
       <section className="py-20 bg-gray-50">
@@ -369,6 +514,13 @@ export default function LosAngelesPageClient() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <FAQSection 
+        title="Frequently Asked Questions: LA to Las Vegas Relocation"
+        faqs={laRelocationFAQs}
+        className="py-16"
+      />
+
       {/* Contact Section */}
       <section className="py-20 bg-blue-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -416,13 +568,13 @@ export default function LosAngelesPageClient() {
               <form className="space-y-4">
                 <div>
                   <label
-                    htmlFor="la-fullName"
+                    htmlFor={fullNameId}
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
                     Full Name
                   </label>
                   <input
-                    id="la-fullName"
+                    id={fullNameId}
                     type="text"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="Your full name"
@@ -431,13 +583,13 @@ export default function LosAngelesPageClient() {
 
                 <div>
                   <label
-                    htmlFor="la-email"
+                    htmlFor={emailId}
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
                     Email
                   </label>
                   <input
-                    id="la-email"
+                    id={emailId}
                     type="email"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="your.email@example.com"
@@ -446,13 +598,13 @@ export default function LosAngelesPageClient() {
 
                 <div>
                   <label
-                    htmlFor="la-phone"
+                    htmlFor={phoneId}
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
                     Phone
                   </label>
                   <input
-                    id="la-phone"
+                    id={phoneId}
                     type="tel"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="(555) 123-4567"
@@ -461,13 +613,13 @@ export default function LosAngelesPageClient() {
 
                 <div>
                   <label
-                    htmlFor="la-neighborhood"
+                    htmlFor={neighborhoodId}
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
                     Current LA Neighborhood
                   </label>
                   <input
-                    id="la-neighborhood"
+                    id={neighborhoodId}
                     type="text"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="e.g., Beverly Hills, Santa Monica, etc."
@@ -476,13 +628,13 @@ export default function LosAngelesPageClient() {
 
                 <div>
                   <label
-                    htmlFor="la-moveDate"
+                    htmlFor={moveDateId}
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
                     Target Move Date
                   </label>
                   <input
-                    id="la-moveDate"
+                    id={moveDateId}
                     type="date"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     aria-label="Target move date"
@@ -501,6 +653,50 @@ export default function LosAngelesPageClient() {
           </div>
         </div>
       </section>
+
+      {/* Schema Markup for LA Relocation Page */}
+      <SchemaMarkup 
+        type="howTo" 
+        data={{
+          name: "How to Relocate from Los Angeles to Las Vegas",
+          description: "Complete guide for moving from Los Angeles to Las Vegas with expert real estate guidance and relocation services.",
+          steps: [
+            {
+              '@type': 'HowToStep',
+              name: 'Initial Consultation',
+              text: 'Schedule a consultation with Dr. Jan Duffy to discuss your LA to Las Vegas relocation needs and timeline'
+            },
+            {
+              '@type': 'HowToStep',
+              name: 'Area Research',
+              text: 'Research Las Vegas neighborhoods that match your lifestyle and budget, comparing them to LA areas'
+            },
+            {
+              '@type': 'HowToStep',
+              name: 'Property Search',
+              text: 'Find and view properties in Las Vegas that offer better value than Los Angeles'
+            },
+            {
+              '@type': 'HowToStep',
+              name: 'Settlement Support',
+              text: 'Get assistance with settling into your new Las Vegas home with local connections and ongoing support'
+            }
+          ]
+        }} 
+      />
+
+      <SchemaMarkup 
+        type="place" 
+        data={{
+          name: "Los Angeles",
+          description: "Los Angeles, California - Major US city with high cost of living and traffic congestion",
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: 34.0522,
+            longitude: -118.2437
+          }
+        }} 
+      />
     </div>
   );
 }
