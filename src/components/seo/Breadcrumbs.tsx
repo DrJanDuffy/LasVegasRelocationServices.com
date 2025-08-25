@@ -1,7 +1,7 @@
 'use client';
 
-import Link from 'next/link';
 import { ChevronRight, Home } from 'lucide-react';
+import Link from 'next/link';
 import SchemaMarkup from './SchemaMarkup';
 
 interface BreadcrumbItem {
@@ -14,7 +14,7 @@ interface BreadcrumbsProps {
   className?: string;
 }
 
-export default function Breadcrumbs({ items, className = "" }: BreadcrumbsProps) {
+export default function Breadcrumbs({ items, className = '' }: BreadcrumbsProps) {
   // Prepare breadcrumb data for schema markup
   const breadcrumbSchemaData = {
     '@context': 'https://schema.org',
@@ -24,26 +24,29 @@ export default function Breadcrumbs({ items, className = "" }: BreadcrumbsProps)
     provider: {
       '@type': 'Organization',
       name: 'Dr. Jan Duffy - Las Vegas Relocation Services',
-      url: 'https://www.lasvegasrelocationservices.com'
+      url: 'https://www.lasvegasrelocationservices.com',
     },
     breadcrumb: [
       {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://www.lasvegasrelocationservices.com'
+        item: 'https://www.lasvegasrelocationservices.com',
       },
       ...items.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 2,
         name: item.name,
-        item: `https://www.lasvegasrelocationservices.com${item.href}`
-      }))
-    ]
+        item: `https://www.lasvegasrelocationservices.com${item.href}`,
+      })),
+    ],
   };
 
   return (
-    <nav className={`py-4 bg-gray-50 border-b border-gray-200 ${className}`} aria-label="Breadcrumb">
+    <nav
+      className={`py-4 bg-gray-50 border-b border-gray-200 ${className}`}
+      aria-label="Breadcrumb"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ol className="flex items-center space-x-2 text-sm">
           <li>
@@ -55,7 +58,7 @@ export default function Breadcrumbs({ items, className = "" }: BreadcrumbsProps)
               Home
             </Link>
           </li>
-          
+
           {items.map((item, index) => (
             <li key={index} className="flex items-center">
               <ChevronRight className="w-4 h-4 text-gray-400 mx-2" />
@@ -81,4 +84,3 @@ export default function Breadcrumbs({ items, className = "" }: BreadcrumbsProps)
     </nav>
   );
 }
-
