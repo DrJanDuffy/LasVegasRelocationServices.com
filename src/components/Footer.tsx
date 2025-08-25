@@ -72,7 +72,7 @@ const contactInfo = [
   },
   {
     icon: MapPin,
-    text: 'Las Vegas, Nevada',
+    text: 'Henderson, Nevada',
     href: '#',
   },
   {

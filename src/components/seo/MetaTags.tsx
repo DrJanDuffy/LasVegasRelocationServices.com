@@ -66,15 +66,15 @@ export default function MetaTags({
       
       {/* Local Business Schema */}
       <meta name="geo.region" content="US-NV" />
-      <meta name="geo.placename" content="Las Vegas" />
-      <meta name="geo.position" content="36.1699;-115.1398" />
-      <meta name="ICBM" content="36.1699, -115.1398" />
+      <meta name="geo.placename" content="Henderson" />
+      <meta name="geo.position" content="36.0395;-115.0272" />
+      <meta name="ICBM" content="36.0395, -115.0272" />
       
       {/* Business Information */}
-      <meta name="business:contact_data:street_address" content="Las Vegas, NV" />
-      <meta name="business:contact_data:locality" content="Las Vegas" />
+      <meta name="business:contact_data:street_address" content="100 North Green Valley Parkway, Suite 330" />
+      <meta name="business:contact_data:locality" content="Henderson" />
       <meta name="business:contact_data:region" content="NV" />
-      <meta name="business:contact_data:postal_code" content="89101" />
+      <meta name="business:contact_data:postal_code" content="89074" />
       <meta name="business:contact_data:country_name" content="United States" />
       <meta name="business:contact_data:phone_number" content="+1-702-XXX-XXXX" />
       <meta name="business:contact_data:email" content="dr.jan.duffy@berkshirehathaway.com" />

@@ -21,16 +21,16 @@ export default function SchemaMarkup({ type, data }: SchemaMarkupProps) {
           email: 'dr.jan.duffy@berkshirehathaway.com',
           address: {
             '@type': 'PostalAddress',
-            streetAddress: 'Las Vegas, NV',
-            addressLocality: 'Las Vegas',
+            streetAddress: '100 North Green Valley Parkway, Suite 330',
+            addressLocality: 'Henderson',
             addressRegion: 'NV',
-            postalCode: '89101',
+            postalCode: '89074',
             addressCountry: 'US'
           },
           geo: {
             '@type': 'GeoCoordinates',
-            latitude: 36.1699,
-            longitude: -115.1398
+            latitude: 36.0395,
+            longitude: -115.0272
           },
           areaServed: {
             '@type': 'City',
@@ -40,8 +40,8 @@ export default function SchemaMarkup({ type, data }: SchemaMarkupProps) {
             '@type': 'GeoCircle',
             geoMidpoint: {
               '@type': 'GeoCoordinates',
-              latitude: 36.1699,
-              longitude: -115.1398
+              latitude: 36.0395,
+              longitude: -115.0272
             },
             geoRadius: '50000'
           },
