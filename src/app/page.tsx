@@ -405,7 +405,7 @@ export default function HomePage() {
         data={{
           name: "Dr. Jan Duffy - Las Vegas Relocation Services",
           description: "Professional relocation services from major US cities to Las Vegas. Expert real estate guidance with Berkshire Hathaway.",
-          url: "https://lasvegasrelocationservices.com",
+          url: "https://www.lasvegasrelocationservices.com",
           telephone: "+1-702-XXX-XXXX",
           email: "dr.jan.duffy@berkshirehathaway.com"
         }} 

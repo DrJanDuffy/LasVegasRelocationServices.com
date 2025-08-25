@@ -16,7 +16,7 @@ export default function SchemaMarkup({ type, data }: SchemaMarkupProps) {
           '@type': 'LocalBusiness',
           name: 'Dr. Jan Duffy - Las Vegas Relocation Services',
           description: 'Professional relocation services from major US cities to Las Vegas. Expert real estate guidance with Berkshire Hathaway.',
-          url: 'https://lasvegasrelocationservices.com',
+          url: 'https://www.lasvegasrelocationservices.com',
           telephone: '+1-702-XXX-XXXX',
           email: 'dr.jan.duffy@berkshirehathaway.com',
           address: {
@@ -75,8 +75,8 @@ export default function SchemaMarkup({ type, data }: SchemaMarkupProps) {
           '@context': 'https://schema.org',
           '@type': 'RealEstateAgent',
           name: 'Dr. Jan Duffy',
-          description: 'Experienced Las Vegas real estate agent specializing in relocation services',
-          url: 'https://lasvegasrelocationservices.com',
+          description: 'Licensed real estate agent specializing in Las Vegas relocation services',
+          url: 'https://www.lasvegasrelocationservices.com',
           telephone: '+1-702-XXX-XXXX',
           email: 'dr.jan.duffy@berkshirehathaway.com',
           worksFor: {

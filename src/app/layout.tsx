@@ -52,31 +52,29 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://lasvegasrelocationservices.com',
+    canonical: 'https://www.lasvegasrelocationservices.com',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://lasvegasrelocationservices.com',
+    url: 'https://www.lasvegasrelocationservices.com',
     siteName: 'Las Vegas Relocation Services',
-    title: 'Las Vegas Relocation Services | Dr. Jan Duffy | Berkshire Hathaway',
-    description:
-      'Professional relocation services in Las Vegas with Dr. Jan Duffy and the Berkshire Hathaway Services Relocation Services Team.',
+    title: 'Dr. Jan Duffy - Las Vegas Relocation Services | Berkshire Hathaway',
+    description: 'Expert relocation services to Las Vegas from major US cities. Dr. Jan Duffy provides personalized assistance for seamless relocations.',
     images: [
       {
-        url: 'https://lasvegasrelocationservices.com/og-image.jpg',
+        url: 'https://www.lasvegasrelocationservices.com/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Las Vegas Relocation Services - Professional relocation experts',
+        alt: 'Dr. Jan Duffy - Las Vegas Relocation Services',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Las Vegas Relocation Services | Dr. Jan Duffy',
-    description:
-      'Professional relocation services in Las Vegas with Dr. Jan Duffy and the Berkshire Hathaway Services Relocation Services Team.',
-    images: ['https://lasvegasrelocationservices.com/og-image.jpg'],
+    title: 'Dr. Jan Duffy - Las Vegas Relocation Services | Berkshire Hathaway',
+    description: 'Expert relocation services to Las Vegas from major US cities. Dr. Jan Duffy provides personalized assistance for seamless relocations.',
+    images: ['https://www.lasvegasrelocationservices.com/og-image.jpg'],
   },
   verification: {
     google: 'your-google-verification-code',
@@ -112,9 +110,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               name: 'Las Vegas Relocation Services',
               description:
                 'Professional relocation services in Las Vegas with Dr. Jan Duffy and the Berkshire Hathaway Services Relocation Services Team.',
-              url: 'https://lasvegasrelocationservices.com',
-              logo: 'https://lasvegasrelocationservices.com/logo.png',
-              image: 'https://lasvegasrelocationservices.com/og-image.jpg',
+              url: 'https://www.lasvegasrelocationservices.com',
+              logo: 'https://www.lasvegasrelocationservices.com/logo.png',
+              image: 'https://www.lasvegasrelocationservices.com/og-image.jpg',
               telephone: '(702) 707-7273',
               email: 'DrJan@LasVegasRelocationServices.com',
               address: {
@@ -233,7 +231,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               '@type': 'LocalBusiness',
               name: 'Las Vegas Relocation Services',
               description: 'Professional relocation services in Las Vegas',
-              url: 'https://lasvegasrelocationservices.com',
+              url: 'https://www.lasvegasrelocationservices.com',
               telephone: '(702) 707-7273',
               email: 'DrJan@LasVegasRelocationServices.com',
               address: {

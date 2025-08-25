@@ -17,19 +17,27 @@ interface BreadcrumbsProps {
 export default function Breadcrumbs({ items, className = "" }: BreadcrumbsProps) {
   // Prepare breadcrumb data for schema markup
   const breadcrumbSchemaData = {
-    '@type': 'BreadcrumbList',
-    itemListElement: [
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Relocation Services',
+    description: 'Professional relocation services to Las Vegas',
+    provider: {
+      '@type': 'Organization',
+      name: 'Dr. Jan Duffy - Las Vegas Relocation Services',
+      url: 'https://www.lasvegasrelocationservices.com'
+    },
+    breadcrumb: [
       {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://lasvegasrelocationservices.com'
+        item: 'https://www.lasvegasrelocationservices.com'
       },
       ...items.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 2,
-        name: item.label,
-        item: `https://lasvegasrelocationservices.com${item.href}`
+        name: item.name,
+        item: `https://www.lasvegasrelocationservices.com${item.href}`
       }))
     ]
   };

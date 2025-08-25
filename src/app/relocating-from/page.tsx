@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       'Expert relocation services from major US cities to Las Vegas. Professional assistance for Los Angeles, San Diego, New York, Chicago, Miami, and Seattle relocations.',
     type: 'website',
-    url: 'https://lasvegasrelocationservices.com/relocating-from',
+    url: 'https://www.lasvegasrelocationservices.com/relocating-from',
   },
 };
 

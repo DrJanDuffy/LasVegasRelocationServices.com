@@ -23,7 +23,7 @@ export default function MetaTags({
   twitterCard = 'summary_large_image',
   structuredData
 }: MetaTagsProps) {
-  const siteUrl = 'https://lasvegasrelocationservices.com';
+  const siteUrl = 'https://www.lasvegasrelocationservices.com';
   const fullCanonicalUrl = canonicalUrl ? `${siteUrl}${canonicalUrl}` : siteUrl;
 
   return (
