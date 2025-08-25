@@ -25,7 +25,7 @@ export default function CTA() {
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
               <a
-                href="#contact"
+                href="http://drjanduffy.realscout.com/onboarding"
                 className="group bg-white text-blue-600 hover:bg-gray-100 px-10 py-5 rounded-full font-semibold text-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center gap-3"
               >
                 Get Free Consultation
@@ -71,7 +71,7 @@ export default function CTA() {
           <div className="text-center sm:text-right">
             <p className="text-xs opacity-90">Free consultation • Available 7 days a week</p>
             <a
-              href="#contact"
+              href="http://drjanduffy.realscout.com/onboarding"
               className="inline-block mt-2 bg-white text-green-600 px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors"
             >
               Get Free Consultation

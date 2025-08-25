@@ -51,9 +51,9 @@ const footerSections = [
     links: [
       { name: 'About Us', href: '/about' },
       { name: 'Resources', href: '/resources' },
-      { name: 'Contact', href: '#contact' },
-      { name: 'Privacy Policy', href: '#privacy' },
-      { name: 'Terms of Service', href: '#terms' },
+      { name: 'Contact', href: 'http://drjanduffy.realscout.com/onboarding' },
+      { name: 'Privacy Policy', href: 'http://drjanduffy.realscout.com/onboarding' },
+      { name: 'Terms of Service', href: 'http://drjanduffy.realscout.com/onboarding' },
       { name: 'Sitemap', href: '/sitemap.xml' },
     ],
   },
@@ -73,20 +73,20 @@ const contactInfo = [
   {
     icon: MapPin,
     text: 'Henderson, Nevada',
-    href: '#',
+    href: 'http://drjanduffy.realscout.com/onboarding',
   },
   {
     icon: Clock,
     text: 'Available 7 days a week',
-    href: '#',
+    href: 'http://drjanduffy.realscout.com/onboarding',
   },
 ];
 
 const socialLinks = [
-  { name: 'Facebook', icon: Facebook, href: '#', color: 'hover:text-blue-600' },
-  { name: 'Twitter', icon: Twitter, href: '#', color: 'hover:text-blue-400' },
-  { name: 'Instagram', icon: Instagram, href: '#', color: 'hover:text-pink-500' },
-  { name: 'LinkedIn', icon: Linkedin, href: '#', color: 'hover:text-blue-700' },
+  { name: 'Facebook', icon: Facebook, href: 'http://drjanduffy.realscout.com/onboarding', color: 'hover:text-blue-600' },
+  { name: 'Twitter', icon: Twitter, href: 'http://drjanduffy.realscout.com/onboarding', color: 'hover:text-blue-400' },
+  { name: 'Instagram', icon: Instagram, href: 'http://drjanduffy.realscout.com/onboarding', color: 'hover:text-pink-500' },
+  { name: 'LinkedIn', icon: Linkedin, href: 'http://drjanduffy.realscout.com/onboarding', color: 'hover:text-blue-700' },
 ];
 
 const quickStats = [

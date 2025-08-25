@@ -99,7 +99,23 @@ const navigationItems = [
     name: 'Resources',
     href: '/resources',
     icon: BookOpen,
-    isMain: true,
+    submenu: [
+      {
+        name: 'Relocation Guide',
+        href: '/resources',
+        description: 'Comprehensive relocation resources',
+      },
+      {
+        name: 'Market Updates',
+        href: '/resources',
+        description: 'Latest Las Vegas market information',
+      },
+      {
+        name: 'Contact Us',
+        href: 'http://drjanduffy.realscout.com/onboarding',
+        description: 'Get in touch with our team',
+      },
+    ],
   },
   {
     name: 'About',
@@ -109,7 +125,7 @@ const navigationItems = [
   },
   {
     name: 'Contact',
-    href: '#contact',
+    href: 'http://drjanduffy.realscout.com/onboarding',
     icon: Phone,
     isMain: true,
   },
