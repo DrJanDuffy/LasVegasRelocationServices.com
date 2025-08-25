@@ -252,7 +252,9 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex items-center space-x-2 text-gray-400">
               <CheckCircle className="w-4 h-4 text-blue-400" />
-              <span className="text-sm">Comprehensive Real Estate Services by Dr. Jan Duffy S.0197614</span>
+              <span className="text-sm">
+                Comprehensive Real Estate Services by Dr. Jan Duffy S.0197614
+              </span>
             </div>
 
             <div className="flex items-center space-x-6 text-sm text-gray-400">
