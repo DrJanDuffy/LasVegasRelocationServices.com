@@ -25,7 +25,7 @@ export interface FUBLead {
   id: string;
   contactId: string;
   status: string;
-  type: "buyer" | "seller" | "both";
+  type: 'buyer' | 'seller' | 'both';
   priceRange?: {
     min: number;
     max: number;
@@ -43,8 +43,8 @@ export interface FUBTask {
   title: string;
   description?: string;
   dueDate?: string;
-  status: "pending" | "completed" | "cancelled";
-  priority: "low" | "medium" | "high";
+  status: 'pending' | 'completed' | 'cancelled';
+  priority: 'low' | 'medium' | 'high';
   assignedTo?: string;
   createdAt: string;
   updatedAt: string;
@@ -55,11 +55,11 @@ class FollowUpBossAPI {
   private baseUrl: string;
 
   constructor() {
-    this.apiKey = process.env.FOLLOW_UP_BOSS_API_KEY || "";
-    this.baseUrl = process.env.FOLLOW_UP_BOSS_API_URL || "https://api.followupboss.com/v1";
+    this.apiKey = process.env.FOLLOW_UP_BOSS_API_KEY || '';
+    this.baseUrl = process.env.FOLLOW_UP_BOSS_API_URL || 'https://api.followupboss.com/v1';
 
     if (!this.apiKey) {
-      throw new Error("Follow Up Boss API key is required");
+      throw new Error('Follow Up Boss API key is required');
     }
   }
 
@@ -70,7 +70,7 @@ class FollowUpBossAPI {
       ...options,
       headers: {
         Authorization: `Bearer ${this.apiKey}`,
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
         ...options.headers,
       },
     });
@@ -90,10 +90,18 @@ class FollowUpBossAPI {
     source?: string;
   }): Promise<{ contacts: FUBContact[]; total: number }> {
     const searchParams = new URLSearchParams();
-    if (params?.limit) searchParams.append("limit", params.limit.toString());
-    if (params?.offset) searchParams.append("offset", params.offset.toString());
-    if (params?.tags) searchParams.append("tags", params.tags.join(","));
-    if (params?.source) searchParams.append("source", params.source);
+    if (params?.limit) {
+      searchParams.append('limit', params.limit.toString());
+    }
+    if (params?.offset) {
+      searchParams.append('offset', params.offset.toString());
+    }
+    if (params?.tags) {
+      searchParams.append('tags', params.tags.join(','));
+    }
+    if (params?.source) {
+      searchParams.append('source', params.source);
+    }
 
     return this.request(`/contacts?${searchParams.toString()}`);
   }
@@ -103,17 +111,17 @@ class FollowUpBossAPI {
   }
 
   async createContact(
-    contact: Omit<FUBContact, "id" | "createdAt" | "updatedAt">,
+    contact: Omit<FUBContact, 'id' | 'createdAt' | 'updatedAt'>
   ): Promise<FUBContact> {
-    return this.request("/contacts", {
-      method: "POST",
+    return this.request('/contacts', {
+      method: 'POST',
       body: JSON.stringify(contact),
     });
   }
 
   async updateContact(id: string, updates: Partial<FUBContact>): Promise<FUBContact> {
     return this.request(`/contacts/${id}`, {
-      method: "PUT",
+      method: 'PUT',
       body: JSON.stringify(updates),
     });
   }
@@ -134,24 +142,32 @@ class FollowUpBossAPI {
     type?: string;
   }): Promise<{ leads: FUBLead[]; total: number }> {
     const searchParams = new URLSearchParams();
-    if (params?.limit) searchParams.append("limit", params.limit.toString());
-    if (params?.offset) searchParams.append("offset", params.offset.toString());
-    if (params?.status) searchParams.append("status", params.status);
-    if (params?.type) searchParams.append("type", params.type);
+    if (params?.limit) {
+      searchParams.append('limit', params.limit.toString());
+    }
+    if (params?.offset) {
+      searchParams.append('offset', params.offset.toString());
+    }
+    if (params?.status) {
+      searchParams.append('status', params.status);
+    }
+    if (params?.type) {
+      searchParams.append('type', params.type);
+    }
 
     return this.request(`/leads?${searchParams.toString()}`);
   }
 
-  async createLead(lead: Omit<FUBLead, "id" | "createdAt" | "updatedAt">): Promise<FUBLead> {
-    return this.request("/leads", {
-      method: "POST",
+  async createLead(lead: Omit<FUBLead, 'id' | 'createdAt' | 'updatedAt'>): Promise<FUBLead> {
+    return this.request('/leads', {
+      method: 'POST',
       body: JSON.stringify(lead),
     });
   }
 
   async updateLeadStatus(id: string, status: string): Promise<FUBLead> {
     return this.request(`/leads/${id}`, {
-      method: "PUT",
+      method: 'PUT',
       body: JSON.stringify({ status }),
     });
   }
@@ -165,26 +181,36 @@ class FollowUpBossAPI {
     dueDate?: string;
   }): Promise<{ tasks: FUBTask[]; total: number }> {
     const searchParams = new URLSearchParams();
-    if (params?.limit) searchParams.append("limit", params.limit.toString());
-    if (params?.offset) searchParams.append("offset", params.offset.toString());
-    if (params?.status) searchParams.append("status", params.status);
-    if (params?.assignedTo) searchParams.append("assignedTo", params.assignedTo);
-    if (params?.dueDate) searchParams.append("dueDate", params.dueDate);
+    if (params?.limit) {
+      searchParams.append('limit', params.limit.toString());
+    }
+    if (params?.offset) {
+      searchParams.append('offset', params.offset.toString());
+    }
+    if (params?.status) {
+      searchParams.append('status', params.status);
+    }
+    if (params?.assignedTo) {
+      searchParams.append('assignedTo', params.assignedTo);
+    }
+    if (params?.dueDate) {
+      searchParams.append('dueDate', params.dueDate);
+    }
 
     return this.request(`/tasks?${searchParams.toString()}`);
   }
 
-  async createTask(task: Omit<FUBTask, "id" | "createdAt" | "updatedAt">): Promise<FUBTask> {
-    return this.request("/tasks", {
-      method: "POST",
+  async createTask(task: Omit<FUBTask, 'id' | 'createdAt' | 'updatedAt'>): Promise<FUBTask> {
+    return this.request('/tasks', {
+      method: 'POST',
       body: JSON.stringify(task),
     });
   }
 
   async completeTask(id: string): Promise<FUBTask> {
     return this.request(`/tasks/${id}`, {
-      method: "PUT",
-      body: JSON.stringify({ status: "completed" }),
+      method: 'PUT',
+      body: JSON.stringify({ status: 'completed' }),
     });
   }
 
@@ -210,7 +236,7 @@ class FollowUpBossAPI {
     byTag: Record<string, number>;
     recentActivity: number;
   }> {
-    return this.request("/contacts/stats");
+    return this.request('/contacts/stats');
   }
 
   async getLeadStats(): Promise<{
@@ -219,23 +245,23 @@ class FollowUpBossAPI {
     byType: Record<string, number>;
     conversionRate: number;
   }> {
-    return this.request("/leads/stats");
+    return this.request('/leads/stats');
   }
 
   // Webhook Management
   async createWebhook(
     url: string,
-    events: string[],
+    events: string[]
   ): Promise<{ id: string; url: string; events: string[] }> {
-    return this.request("/webhooks", {
-      method: "POST",
+    return this.request('/webhooks', {
+      method: 'POST',
       body: JSON.stringify({ url, events }),
     });
   }
 
   async deleteWebhook(id: string): Promise<void> {
     await this.request(`/webhooks/${id}`, {
-      method: "DELETE",
+      method: 'DELETE',
     });
   }
 }
@@ -248,7 +274,7 @@ export const getFollowUpBossAPI = (): FollowUpBossAPI | null => {
     // Client-side only
     return null;
   }
-  
+
   if (!_followUpBossAPI) {
     try {
       _followUpBossAPI = new FollowUpBossAPI();
@@ -257,7 +283,7 @@ export const getFollowUpBossAPI = (): FollowUpBossAPI | null => {
       return null;
     }
   }
-  
+
   return _followUpBossAPI;
 };
 
@@ -290,33 +316,33 @@ export const createRelocationLead = async (contactData: {
       address: {
         city: contactData.currentCity,
       },
-      tags: ["relocation-lead", contactData.currentCity, contactData.targetCity],
-      source: "website-form",
+      tags: ['relocation-lead', contactData.currentCity, contactData.targetCity],
+      source: 'website-form',
     });
 
     // Create lead
     const lead = await api.createLead({
       contactId: contact.id,
-      status: "new",
-      type: "buyer",
+      status: 'new',
+      type: 'buyer',
       targetAreas: [contactData.targetCity],
       timeline: contactData.timeline,
-      notes: `Relocation from ${contactData.currentCity} to ${contactData.targetCity}. ${contactData.notes || ""}`,
+      notes: `Relocation from ${contactData.currentCity} to ${contactData.targetCity}. ${contactData.notes || ''}`,
     });
 
     // Create follow-up task
     await api.createTask({
       contactId: contact.id,
-      title: "Follow up on relocation inquiry",
+      title: 'Follow up on relocation inquiry',
       description: `Contact ${contactData.firstName} about their relocation from ${contactData.currentCity} to ${contactData.targetCity}`,
       dueDate: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(), // 24 hours from now
-      status: "pending",
-      priority: "high",
+      status: 'pending',
+      priority: 'high',
     });
 
     return { contact, lead };
   } catch (error) {
-    console.error("Error creating relocation lead:", error);
+    console.error('Error creating relocation lead:', error);
     throw error;
   }
 };
@@ -328,20 +354,20 @@ export const addContactToCampaign = async (contactId: string, campaignName: stri
       throw new Error('Follow Up Boss API not available');
     }
 
-    await api.addTagsToContact(contactId, [campaignName, "active-campaign"]);
+    await api.addTagsToContact(contactId, [campaignName, 'active-campaign']);
 
     // Create campaign task
     await api.createTask({
       contactId,
       title: `Campaign: ${campaignName}`,
       description: `Contact added to ${campaignName} campaign`,
-      status: "pending",
-      priority: "medium",
+      status: 'pending',
+      priority: 'medium',
     });
 
     return true;
   } catch (error) {
-    console.error("Error adding contact to campaign:", error);
+    console.error('Error adding contact to campaign:', error);
     throw error;
   }
 };

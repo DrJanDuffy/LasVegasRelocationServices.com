@@ -1,47 +1,51 @@
-'use client'
+'use client';
 
-import { motion } from '@/components/motion'
-import { 
-  Home, 
-  Users, 
-  School, 
-  Car, 
-  CheckCircle, 
-  Phone, 
+import {
   Calendar,
-  MapPin,
-  Shield,
+  Car,
+  CheckCircle,
+  CreditCard,
   Heart,
+  Home,
+  Phone,
+  School,
+  Shield,
+  Users,
   Wifi,
-  CreditCard
-} from 'lucide-react'
+} from 'lucide-react';
+import { motion } from '@/components/motion';
 
 const settlingServices = [
   {
     icon: Home,
     title: 'Home Setup & Utilities',
     description: 'Get your new home fully functional and comfortable',
-    benefits: ['Utility connections', 'Internet setup', 'Home security', 'Furniture arrangement']
+    benefits: ['Utility connections', 'Internet setup', 'Home security', 'Furniture arrangement'],
   },
   {
     icon: School,
     title: 'School & Education',
     description: 'Navigate the Las Vegas education system for your children',
-    benefits: ['School enrollment', 'District information', 'Extracurricular activities', 'Tutoring resources']
+    benefits: [
+      'School enrollment',
+      'District information',
+      'Extracurricular activities',
+      'Tutoring resources',
+    ],
   },
   {
     icon: Car,
     title: 'Transportation & DMV',
     description: 'Get your vehicles registered and learn local transportation',
-    benefits: ['DMV assistance', 'Driver\'s license', 'Vehicle registration', 'Public transit info']
+    benefits: ['DMV assistance', "Driver's license", 'Vehicle registration', 'Public transit info'],
   },
   {
     icon: Users,
     title: 'Community Integration',
     description: 'Connect with your new community and build relationships',
-    benefits: ['Neighborhood events', 'Local groups', 'Cultural activities', 'Social connections']
-  }
-]
+    benefits: ['Neighborhood events', 'Local groups', 'Cultural activities', 'Social connections'],
+  },
+];
 
 const settlingPackages = [
   {
@@ -53,10 +57,10 @@ const settlingPackages = [
       'Basic home orientation',
       'Local area introduction',
       'Essential service referrals',
-      '30-day follow-up support'
+      '30-day follow-up support',
     ],
     bestFor: 'Individuals and small families',
-    cta: 'Get Started'
+    cta: 'Get Started',
   },
   {
     name: 'Complete Settling-In',
@@ -68,10 +72,10 @@ const settlingPackages = [
       'Transportation setup',
       'Community integration support',
       'Local service connections',
-      '90-day ongoing support'
+      '90-day ongoing support',
     ],
     bestFor: 'Families with children',
-    cta: 'Get Started'
+    cta: 'Get Started',
   },
   {
     name: 'Premium Settling-In',
@@ -84,35 +88,35 @@ const settlingPackages = [
       'Concierge services',
       'Cultural integration programs',
       '6-month ongoing support',
-      '24/7 assistance'
+      '24/7 assistance',
     ],
     bestFor: 'Executives and luxury clients',
-    cta: 'Contact Sales'
-  }
-]
+    cta: 'Contact Sales',
+  },
+];
 
 const settlingBenefits = [
   {
     icon: Heart,
     title: 'Personal Touch',
-    description: 'One-on-one support tailored to your specific needs'
+    description: 'One-on-one support tailored to your specific needs',
   },
   {
     icon: Shield,
     title: 'Local Expertise',
-    description: 'Deep knowledge of Las Vegas services and resources'
+    description: 'Deep knowledge of Las Vegas services and resources',
   },
   {
     icon: Wifi,
     title: 'Service Connections',
-    description: 'Direct connections to reliable local service providers'
+    description: 'Direct connections to reliable local service providers',
   },
   {
     icon: CreditCard,
     title: 'Cost Savings',
-    description: 'Help finding the best deals and avoiding hidden costs'
-  }
-]
+    description: 'Help finding the best deals and avoiding hidden costs',
+  },
+];
 
 export default function SettlingInPage() {
   return (
@@ -133,16 +137,22 @@ export default function SettlingInPage() {
                 </span>
               </h1>
               <p className="text-xl text-teal-100 mb-8 leading-relaxed">
-                Get fully established in your new Las Vegas home with our comprehensive 
-                settling-in services. We help you feel at home from day one.
+                Get fully established in your new Las Vegas home with our comprehensive settling-in
+                services. We help you feel at home from day one.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-4">
-                <button type="button" className="bg-white text-teal-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors flex items-center gap-2">
+                <button
+                  type="button"
+                  className="bg-white text-teal-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors flex items-center gap-2"
+                >
                   <Phone className="w-5 h-5" />
                   Call (702) 707-7273
                 </button>
-                <button type="button" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-teal-900 transition-colors flex items-center gap-2">
+                <button
+                  type="button"
+                  className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-teal-900 transition-colors flex items-center gap-2"
+                >
                   <Calendar className="w-5 h-5" />
                   Free Consultation
                 </button>
@@ -177,8 +187,8 @@ export default function SettlingInPage() {
               Complete Settling-In Support
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From utilities to community connections, we handle every detail to help you 
-              feel at home in Las Vegas.
+              From utilities to community connections, we handle every detail to help you feel at
+              home in Las Vegas.
             </p>
           </motion.div>
 
@@ -225,8 +235,8 @@ export default function SettlingInPage() {
               Choose Your Settling-In Package
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Flexible settling-in packages designed to get you comfortable and connected 
-              in your new Las Vegas home.
+              Flexible settling-in packages designed to get you comfortable and connected in your
+              new Las Vegas home.
             </p>
           </motion.div>
 
@@ -243,7 +253,7 @@ export default function SettlingInPage() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">{pkg.name}</h3>
                 <div className="text-3xl font-bold text-teal-600 mb-4">{pkg.price}</div>
                 <p className="text-gray-600 mb-6">{pkg.description}</p>
-                
+
                 <ul className="space-y-3 mb-8">
                   {pkg.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-3">
@@ -252,12 +262,15 @@ export default function SettlingInPage() {
                     </li>
                   ))}
                 </ul>
-                
+
                 <div className="text-sm text-gray-500 mb-6">
                   <strong>Best for:</strong> {pkg.bestFor}
                 </div>
-                
-                <button type="button" className="w-full bg-teal-600 text-white py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors">
+
+                <button
+                  type="button"
+                  className="w-full bg-teal-600 text-white py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors"
+                >
                   {pkg.cta}
                 </button>
               </motion.div>
@@ -280,8 +293,8 @@ export default function SettlingInPage() {
               Why Choose Our Settling-In Services?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Experience the difference that professional settling-in support makes 
-              for your transition to Las Vegas.
+              Experience the difference that professional settling-in support makes for your
+              transition to Las Vegas.
             </p>
           </motion.div>
 
@@ -306,6 +319,85 @@ export default function SettlingInPage() {
         </div>
       </section>
 
+      {/* Property Search Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Find Your Perfect Home
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Browse available properties in Las Vegas to find the ideal home for your family
+            </p>
+          </motion.div>
+
+          {/* RealScout Widget */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <realscout-office-listings
+              agent-encoded-id="QWdlbnQtMjI1MDUw"
+              sort-order="PRICE_HIGH"
+              listing-status="For Sale"
+              property-types="SFR,MF"
+              price-min="400000"
+              price-max="800000"
+            ></realscout-office-listings>
+          </motion.div>
+
+          {/* Property Categories */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Family Homes */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl shadow-lg p-6"
+            >
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Family Homes</h3>
+              <realscout-office-listings
+                agent-encoded-id="QWdlbnQtMjI1MDUw"
+                sort-order="PRICE_HIGH"
+                listing-status="For Sale"
+                property-types="SFR"
+                price-min="500000"
+                price-max="900000"
+              ></realscout-office-listings>
+            </motion.div>
+
+            {/* Starter Homes */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl shadow-lg p-6"
+            >
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Starter Homes</h3>
+              <realscout-office-listings
+                agent-encoded-id="QWdlbnQtMjI1MDUw"
+                sort-order="PRICE_LOW"
+                listing-status="For Sale"
+                property-types="SFR,MF"
+                price-min="250000"
+                price-max="450000"
+              ></realscout-office-listings>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-teal-600 to-teal-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -319,16 +411,22 @@ export default function SettlingInPage() {
               Ready to Feel at Home in Las Vegas?
             </h2>
             <p className="text-xl text-teal-100 mb-8 max-w-3xl mx-auto">
-              Let's get you settled and connected in your new community. Schedule your free consultation 
-              and discover how we can make your transition smooth and enjoyable.
+              Let's get you settled and connected in your new community. Schedule your free
+              consultation and discover how we can make your transition smooth and enjoyable.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button type="button" className="bg-white text-teal-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors flex items-center gap-2">
+              <button
+                type="button"
+                className="bg-white text-teal-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors flex items-center gap-2"
+              >
                 <Phone className="w-5 h-5" />
                 Call (702) 707-7273
               </button>
-              <button type="button" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-teal-600 transition-colors flex items-center gap-2">
+              <button
+                type="button"
+                className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-teal-600 transition-colors flex items-center gap-2"
+              >
                 <Calendar className="w-5 h-5" />
                 Schedule Free Consultation
               </button>
@@ -337,5 +435,5 @@ export default function SettlingInPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }

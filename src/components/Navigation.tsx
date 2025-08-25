@@ -1,134 +1,197 @@
-"use client";
+'use client';
 
-import { AnimatePresence, motion } from "@/components/motion";
-import { ChevronDown, Mail, MapPin, Menu, Phone, X } from "lucide-react";
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import { BookOpen, Building, ChevronDown, Home, MapPin, Menu, Phone, Users, X } from 'lucide-react';
+import { useState } from 'react';
+import { motion } from '@/components/motion';
 
 const navigationItems = [
   {
-    name: "Services",
-    href: "#services",
-    submenu: [
-      { name: "Residential Relocation", href: "/services/residential-moving" },
-      { name: "Corporate Relocation", href: "/services/corporate-relocation" },
-      { name: "International Relocation", href: "/services/international-relocation" },
-      { name: "Moving & Transportation", href: "/services/moving-transportation" },
-      { name: "Settling-In Services", href: "/services/settling-in" },
-      { name: "Relocation Planning", href: "/services/relocation-planning" },
-    ],
+    name: 'Home',
+    href: '/',
+    icon: Home,
+    isMain: true,
   },
-  { name: "About", href: "/about" },
   {
-    name: "Relocating From",
-    href: "#relocating",
+    name: 'Services',
+    href: '#services',
+    icon: Building,
     submenu: [
-      { name: "Los Angeles", href: "/relocating-from/los-angeles" },
-      { name: "San Diego", href: "/relocating-from/san-diego" },
-      { name: "New York", href: "/relocating-from/new-york" },
-      { name: "Chicago", href: "/relocating-from/chicago" },
+      {
+        name: 'Residential Relocation',
+        href: '/services/residential-moving',
+        description: 'Complete home buying and selling services',
+      },
+      {
+        name: 'Corporate Relocation',
+        href: '/services/corporate-relocation',
+        description: 'Business relocation and employee assistance',
+      },
+      {
+        name: 'International Relocation',
+        href: '/services/international-relocation',
+        description: 'Global relocation services',
+      },
+      {
+        name: 'Moving & Transportation',
+        href: '/services/moving-transportation',
+        description: 'Professional moving and logistics',
+      },
+      {
+        name: 'Settling-In Services',
+        href: '/services/settling-in',
+        description: 'Help you settle into your new home',
+      },
+      {
+        name: 'Relocation Planning',
+        href: '/services/relocation-planning',
+        description: 'Strategic relocation planning',
+      },
+      {
+        name: 'Luxury Relocation',
+        href: '/services/luxury-relocation',
+        description: 'Premium concierge services',
+      },
+      {
+        name: 'Investment Properties',
+        href: '/services/investment-properties',
+        description: 'Real estate investment services',
+      },
     ],
   },
-  { name: "Team", href: "#team" },
-  { name: "Contact", href: "#contact" },
+  {
+    name: 'Relocating From',
+    href: '#relocating',
+    icon: MapPin,
+    submenu: [
+      {
+        name: 'Los Angeles',
+        href: '/relocating-from/los-angeles',
+        description: 'LA to Las Vegas relocation',
+      },
+      {
+        name: 'San Diego',
+        href: '/relocating-from/san-diego',
+        description: 'San Diego to Las Vegas relocation',
+      },
+      {
+        name: 'New York',
+        href: '/relocating-from/new-york',
+        description: 'NYC to Las Vegas relocation',
+      },
+      {
+        name: 'Chicago',
+        href: '/relocating-from/chicago',
+        description: 'Chicago to Las Vegas relocation',
+      },
+      {
+        name: 'Miami',
+        href: '/relocating-from/miami',
+        description: 'Miami to Las Vegas relocation',
+      },
+      {
+        name: 'Seattle',
+        href: '/relocating-from/seattle',
+        description: 'Seattle to Las Vegas relocation',
+      },
+    ],
+  },
+  {
+    name: 'Resources',
+    href: '/resources',
+    icon: BookOpen,
+    isMain: true,
+  },
+  {
+    name: 'About',
+    href: '/about',
+    icon: Users,
+    isMain: true,
+  },
+  {
+    name: 'Contact',
+    href: '#contact',
+    icon: Phone,
+    isMain: true,
+  },
 ];
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const handleSubmenuToggle = (itemName: string) => {
-    setActiveSubmenu(activeSubmenu === itemName ? null : itemName);
+  const toggleSubmenu = (name: string) => {
+    setOpenSubmenu(openSubmenu === name ? null : name);
   };
 
-  const handleNavigation = (href: string) => {
-    if (href.startsWith('/')) {
-      // External page navigation
-      window.location.href = href;
-    } else {
-      // Scroll to section
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }
+  const closeAllMenus = () => {
     setIsOpen(false);
-    setActiveSubmenu(null);
+    setOpenSubmenu(null);
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/98 backdrop-blur-md shadow-xl border-b border-gray-200"
-          : "bg-white/90 backdrop-blur-md shadow-lg border-b border-white/20"
-      }`}
-    >
+    <nav className="bg-white shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 lg:h-20">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-lg">LV</span>
-              </div>
-              <div className="hidden sm:block">
-                <div className="text-lg font-bold text-gray-900">Las Vegas</div>
-                <div className="text-sm text-gray-700 font-medium">Relocation Services</div>
-              </div>
-            </Link>
+        <div className="flex justify-between h-16">
+          {/* Logo/Brand */}
+          <div className="flex items-center">
+            <div className="flex-shrink-0">
+              <a href="/" className="flex items-center space-x-2">
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">LV</span>
+                </div>
+                <div className="hidden sm:block">
+                  <h1 className="text-lg font-bold text-gray-900">Las Vegas</h1>
+                  <p className="text-sm text-gray-600">Relocation Services</p>
+                </div>
+              </a>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-1">
             {navigationItems.map((item) => (
               <div key={item.name} className="relative group">
                 {item.submenu ? (
-                  <button
-                    onClick={() => handleSubmenuToggle(item.name)}
-                    className="flex items-center space-x-1 text-gray-800 hover:text-blue-700 px-3 py-2 text-sm font-semibold transition-colors duration-200"
-                  >
-                    <span>{item.name}</span>
-                    <ChevronDown
-                      className={`w-4 h-4 transition-transform duration-200 ${
-                        activeSubmenu === item.name ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
-                ) : (
-                  <button
-                    onClick={() => handleNavigation(item.href)}
-                    className="text-gray-800 hover:text-blue-700 px-3 py-2 text-sm font-semibold transition-colors duration-200"
-                  >
-                    {item.name}
-                  </button>
-                )}
+                  <div className="relative">
+                    <button
+                      onClick={() => toggleSubmenu(item.name)}
+                      className="flex items-center text-gray-700 hover:text-blue-600 px-4 py-2 text-sm font-medium transition-colors rounded-lg hover:bg-blue-50"
+                    >
+                      <item.icon className="w-4 h-4 mr-2" />
+                      {item.name}
+                      <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
+                    </button>
 
-                {/* Desktop Submenu */}
-                {item.submenu && (
-                  <div className="absolute top-full left-0 w-64 bg-white rounded-xl shadow-2xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                    <div className="py-3">
-                      {item.submenu.map((subItem) => (
-                        <button
-                          key={subItem.name}
-                          onClick={() => handleNavigation(subItem.href)}
-                          className="w-full text-left px-4 py-3 text-sm text-gray-700 hover:text-blue-700 hover:bg-blue-50 transition-colors duration-200 font-medium"
-                        >
-                          {subItem.name}
-                        </button>
-                      ))}
+                    {/* Desktop Submenu */}
+                    <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                      <div className="p-4">
+                        <div className="grid grid-cols-1 gap-2">
+                          {item.submenu.map((subItem) => (
+                            <a
+                              key={subItem.name}
+                              href={subItem.href}
+                              className="flex flex-col p-3 rounded-lg hover:bg-blue-50 transition-colors group/item"
+                            >
+                              <span className="font-medium text-gray-900 group-hover/item:text-blue-600">
+                                {subItem.name}
+                              </span>
+                              <span className="text-sm text-gray-500 group-hover/item:text-gray-700">
+                                {subItem.description}
+                              </span>
+                            </a>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
+                ) : (
+                  <a
+                    href={item.href}
+                    className="flex items-center text-gray-700 hover:text-blue-600 px-4 py-2 text-sm font-medium transition-colors rounded-lg hover:bg-blue-50"
+                  >
+                    <item.icon className="w-4 h-4 mr-2" />
+                    {item.name}
+                  </a>
                 )}
               </div>
             ))}
@@ -141,107 +204,106 @@ export default function Navigation() {
               <span>(702) 707-7273</span>
             </div>
             <button
-              onClick={() => handleNavigation("#contact")}
-              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg"
+              onClick={() =>
+                document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
+              }
+              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg"
             >
               Get Started
             </button>
           </div>
 
           {/* Mobile menu button */}
-          <div className="lg:hidden">
+          <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-800 hover:text-blue-700 p-2 bg-white/80 rounded-lg backdrop-blur-sm"
+              className="text-gray-700 hover:text-blue-600 focus:outline-none focus:text-blue-600 p-2"
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
       </div>
 
       {/* Mobile Navigation */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white/98 backdrop-blur-md border-t border-gray-200 shadow-xl"
-          >
-            <div className="px-4 py-6 space-y-4">
-              {navigationItems.map((item) => (
-                <div key={item.name}>
-                  {item.submenu ? (
-                    <div>
-                      <button
-                        onClick={() => handleSubmenuToggle(item.name)}
-                        className="flex items-center justify-between w-full text-left text-gray-800 hover:text-blue-700 py-3 font-semibold text-base"
-                      >
-                        {item.name}
-                        <ChevronDown
-                          className={`w-5 h-5 transition-transform duration-200 ${
-                            activeSubmenu === item.name ? "rotate-180" : ""
-                          }`}
-                        />
-                      </button>
-                      <AnimatePresence>
-                        {activeSubmenu === item.name && (
-                          <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "auto" }}
-                            exit={{ opacity: 0, height: 0 }}
-                            className="pl-4 mt-2 space-y-2 border-l-2 border-blue-200"
-                          >
-                            {item.submenu.map((subItem) => (
-                              <button
-                                key={subItem.name}
-                                onClick={() => handleNavigation(subItem.href)}
-                                className="block w-full text-left text-gray-700 hover:text-blue-700 py-2 font-medium text-sm"
-                              >
-                                {subItem.name}
-                              </button>
-                            ))}
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  ) : (
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: 'auto' }}
+          exit={{ opacity: 0, height: 0 }}
+          className="lg:hidden bg-white border-t border-gray-200 shadow-lg"
+        >
+          <div className="px-4 py-6 space-y-4">
+            {navigationItems.map((item) => (
+              <div key={item.name}>
+                {item.submenu ? (
+                  <div>
                     <button
-                      onClick={() => handleNavigation(item.href)}
-                      className="block w-full text-left text-gray-800 hover:text-blue-700 py-3 font-semibold text-base"
+                      onClick={() => toggleSubmenu(item.name)}
+                      className="flex items-center justify-between w-full text-left px-3 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
                     >
-                      {item.name}
+                      <div className="flex items-center">
+                        <item.icon className="w-5 h-5 mr-3" />
+                        {item.name}
+                      </div>
+                      <ChevronDown
+                        className={`h-5 w-5 transition-transform duration-200 ${openSubmenu === item.name ? 'rotate-180' : ''}`}
+                      />
                     </button>
-                  )}
-                </div>
-              ))}
 
-              {/* Mobile Contact Info */}
-              <div className="pt-6 border-t border-gray-200 space-y-4 bg-gray-50 rounded-xl p-4">
-                <div className="flex items-center space-x-3 text-sm text-gray-700 font-medium">
-                  <Phone className="w-4 h-4 text-blue-600" />
-                  <span>(702) 707-7273</span>
-                </div>
-                <div className="flex items-center space-x-3 text-sm text-gray-700 font-medium">
-                  <Mail className="w-4 h-4 text-blue-600" />
-                  <span>DrJan@LasVegasRelocationServices.com</span>
-                </div>
-                <div className="flex items-center space-x-3 text-sm text-gray-700 font-medium">
-                  <MapPin className="w-4 h-4 text-blue-600" />
-                  <span>Las Vegas, NV</span>
-                </div>
-                <button
-                  onClick={() => handleNavigation("#contact")}
-                  className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg"
-                >
-                  Get Started
-                </button>
+                    {openSubmenu === item.name && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="pl-8 mt-2 space-y-2 border-l-2 border-blue-200"
+                      >
+                        {item.submenu.map((subItem) => (
+                          <a
+                            key={subItem.name}
+                            href={subItem.href}
+                            className="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                            onClick={closeAllMenus}
+                          >
+                            <div className="font-medium">{subItem.name}</div>
+                            <div className="text-xs text-gray-500">{subItem.description}</div>
+                          </a>
+                        ))}
+                      </motion.div>
+                    )}
+                  </div>
+                ) : (
+                  <a
+                    href={item.href}
+                    className="flex items-center px-3 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                    onClick={closeAllMenus}
+                  >
+                    <item.icon className="w-5 h-5 mr-3" />
+                    {item.name}
+                  </a>
+                )}
               </div>
+            ))}
+
+            {/* Mobile Contact Info */}
+            <div className="pt-6 border-t border-gray-200 space-y-4 bg-gray-50 rounded-xl p-4">
+              <div className="flex items-center space-x-3 text-sm text-gray-700 font-medium">
+                <Phone className="w-4 h-4 text-blue-600" />
+                <span>(702) 707-7273</span>
+              </div>
+              <button
+                onClick={() => {
+                  document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+                  closeAllMenus();
+                }}
+                className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg"
+              >
+                Get Started
+              </button>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+        </motion.div>
+      )}
     </nav>
   );
 }

@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
-import { motion } from '@/components/motion'
-import { Award, Star, Users, Clock, Shield, Phone, Mail, CheckCircle } from 'lucide-react'
+import { Award, CheckCircle, Clock, Mail, Phone, Shield, Star, Users } from 'lucide-react';
+import { motion } from '@/components/motion';
 
 const teamMembers = [
   {
@@ -13,18 +13,22 @@ const teamMembers = [
     expertise: ['Corporate Relocation', 'Luxury Moving', 'Family Services', 'Local Market Expert'],
     image: '/team/dr-jan-duffy.jpg',
     bio: 'Dr. Jan Duffy leads our Las Vegas relocation services with unmatched expertise and dedication. As a member of the prestigious Berkshire Hathaway Services Relocation Team, she brings 15+ years of experience helping families and businesses successfully transition to Las Vegas.',
-    certifications: ['Certified Relocation Specialist', 'Berkshire Hathaway Services', 'Las Vegas Real Estate Expert'],
+    certifications: [
+      'Certified Relocation Specialist',
+      'Berkshire Hathaway Services',
+      'Las Vegas Real Estate Expert',
+    ],
     contact: {
       phone: '(702) 707-7273',
       email: 'DrJan@LasVegasRelocationServices.com',
-      linkedin: 'https://linkedin.com/in/dr-jan-duffy'
+      linkedin: 'https://linkedin.com/in/dr-jan-duffy',
     },
     stats: {
       families: '500+',
       satisfaction: '98%',
       years: '15+',
-      neighborhoods: '50+'
-    }
+      neighborhoods: '50+',
+    },
   },
   {
     id: 2,
@@ -39,14 +43,14 @@ const teamMembers = [
     contact: {
       phone: '(702) 707-7274',
       email: 'Michael@LasVegasRelocationServices.com',
-      linkedin: 'https://linkedin.com/in/michael-rodriguez'
+      linkedin: 'https://linkedin.com/in/michael-rodriguez',
     },
     stats: {
       relocations: '200+',
       satisfaction: '97%',
       years: '8+',
-      clients: '150+'
-    }
+      clients: '150+',
+    },
   },
   {
     id: 3,
@@ -56,44 +60,44 @@ const teamMembers = [
     experience: '6+ Years',
     expertise: ['Home Finding', 'Neighborhood Analysis', 'School Districts', 'Market Insights'],
     image: '/team/sarah-chen.jpg',
-    bio: 'Sarah\'s deep knowledge of Las Vegas neighborhoods and real estate markets helps families find their perfect home. She specializes in school district analysis and community integration.',
+    bio: "Sarah's deep knowledge of Las Vegas neighborhoods and real estate markets helps families find their perfect home. She specializes in school district analysis and community integration.",
     certifications: ['Licensed Real Estate Agent', 'Neighborhood Specialist'],
     contact: {
       phone: '(702) 707-7275',
       email: 'Sarah@LasVegasRelocationServices.com',
-      linkedin: 'https://linkedin.com/in/sarah-chen'
+      linkedin: 'https://linkedin.com/in/sarah-chen',
     },
     stats: {
       homes: '100+',
       satisfaction: '99%',
       years: '6+',
-      neighborhoods: '25+'
-    }
-  }
-]
+      neighborhoods: '25+',
+    },
+  },
+];
 
 const achievements = [
   {
     icon: Award,
     title: 'Berkshire Hathaway Services',
-    description: 'Prestigious relocation team member'
+    description: 'Prestigious relocation team member',
   },
   {
     icon: Star,
     title: 'A+ BBB Rating',
-    description: 'Better Business Bureau accredited'
+    description: 'Better Business Bureau accredited',
   },
   {
     icon: Shield,
     title: 'Licensed & Insured',
-    description: 'Full protection for your move'
+    description: 'Full protection for your move',
   },
   {
     icon: Users,
     title: '500+ Families Served',
-    description: 'Proven track record of success'
-  }
-]
+    description: 'Proven track record of success',
+  },
+];
 
 export default function Team() {
   return (
@@ -108,12 +112,15 @@ export default function Team() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Meet Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Expert Team</span>
+            Meet Our{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+              Expert Team
+            </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our experienced professionals are dedicated to making your Las Vegas relocation 
-            seamless, stress-free, and successful. Every team member brings unique expertise 
-            to ensure your move exceeds expectations.
+            Our experienced professionals are dedicated to making your Las Vegas relocation
+            seamless, stress-free, and successful. Every team member brings unique expertise to
+            ensure your move exceeds expectations.
           </p>
         </motion.div>
 
@@ -134,17 +141,18 @@ export default function Team() {
                     <Users className="w-20 h-20 text-blue-600" />
                   </div>
                 </div>
-                
+
                 {/* Stats Grid */}
                 <div className="grid grid-cols-2 gap-4 mb-6">
-                  {teamMembers[0].stats && Object.entries(teamMembers[0].stats).map(([key, value]) => (
-                    <div key={key} className="text-center p-4 bg-white rounded-xl shadow-sm">
-                      <div className="text-2xl font-bold text-blue-600 mb-1">{value}</div>
-                      <div className="text-xs text-gray-600 font-medium capitalize">
-                        {key.replace(/([A-Z])/g, ' $1').trim()}
+                  {teamMembers[0].stats &&
+                    Object.entries(teamMembers[0].stats).map(([key, value]) => (
+                      <div key={key} className="text-center p-4 bg-white rounded-xl shadow-sm">
+                        <div className="text-2xl font-bold text-blue-600 mb-1">{value}</div>
+                        <div className="text-xs text-gray-600 font-medium capitalize">
+                          {key.replace(/([A-Z])/g, ' $1').trim()}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
                 </div>
 
                 {/* Contact Info */}
@@ -178,7 +186,7 @@ export default function Team() {
                 <div className="mb-6">
                   <h4 className="font-semibold text-gray-900 mb-3">Areas of Expertise:</h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {teamMembers[0].expertise.map((skill, index) => (
+                    {teamMembers[0].expertise.map((skill, _index) => (
                       <div key={skill} className="flex items-center gap-2">
                         <CheckCircle className="w-4 h-4 text-green-500" />
                         <span className="text-sm text-gray-700">{skill}</span>
@@ -192,7 +200,10 @@ export default function Team() {
                   <h4 className="font-semibold text-gray-900 mb-3">Certifications:</h4>
                   <div className="flex flex-wrap gap-2">
                     {teamMembers[0].certifications.map((cert) => (
-                      <span key={cert} className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+                      <span
+                        key={cert}
+                        className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
+                      >
                         {cert}
                       </span>
                     ))}
@@ -200,7 +211,10 @@ export default function Team() {
                 </div>
 
                 {/* CTA */}
-                <button type="button" className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+                <button
+                  type="button"
+                  className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+                >
                   Schedule Consultation with Dr. Jan
                 </button>
               </div>
@@ -298,5 +312,5 @@ export default function Team() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

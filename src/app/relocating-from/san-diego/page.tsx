@@ -10,19 +10,20 @@ import {
   Plane,
   Star,
   Sun,
-} from "lucide-react";
-import type { Metadata } from "next";
+} from 'lucide-react';
+import type { Metadata } from 'next';
+import { motion } from '@/components/motion';
 
 export const metadata: Metadata = {
-  title: "San Diego to Las Vegas Relocation Services | Dr. Jan Duffy",
+  title: 'San Diego to Las Vegas Relocation Services | Dr. Jan Duffy',
   description:
-    "Professional relocation services from San Diego to Las Vegas. Expert assistance with housing, schools, and settling into your new Las Vegas home.",
+    'Professional relocation services from San Diego to Las Vegas. Expert assistance with housing, schools, and settling into your new Las Vegas home.',
   keywords:
-    "San Diego to Las Vegas relocation, SD to Vegas move, California to Nevada relocation, Dr. Jan Duffy, Berkshire Hathaway",
+    'San Diego to Las Vegas relocation, SD to Vegas move, California to Nevada relocation, Dr. Jan Duffy, Berkshire Hathaway',
   openGraph: {
-    title: "San Diego to Las Vegas Relocation Services",
+    title: 'San Diego to Las Vegas Relocation Services',
     description:
-      "Professional relocation services from San Diego to Las Vegas with Dr. Jan Duffy and Berkshire Hathaway.",
+      'Professional relocation services from San Diego to Las Vegas with Dr. Jan Duffy and Berkshire Hathaway.',
   },
 };
 
@@ -147,7 +148,7 @@ export default function SanDiegoToLasVegasPage() {
       </section>
 
       {/* Relocation Process Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-green-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -199,6 +200,85 @@ export default function SanDiegoToLasVegasPage() {
                 We help you settle in with local connections and ongoing support.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Property Search Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Find Your Las Vegas Home
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Discover properties in Las Vegas that offer better value than San Diego
+            </p>
+          </motion.div>
+
+          {/* RealScout Widget */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <realscout-office-listings
+              agent-encoded-id="QWdlbnQtMjI1MDUw"
+              sort-order="PRICE_HIGH"
+              listing-status="For Sale"
+              property-types="SFR,MF"
+              price-min="400000"
+              price-max="800000"
+            ></realscout-office-listings>
+          </motion.div>
+
+          {/* Property Categories */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* SD-Style Homes */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl shadow-lg p-6"
+            >
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">SD-Style Homes</h3>
+              <realscout-office-listings
+                agent-encoded-id="QWdlbnQtMjI1MDUw"
+                sort-order="PRICE_HIGH"
+                listing-status="For Sale"
+                property-types="SFR"
+                price-min="500000"
+                price-max="900000"
+              ></realscout-office-listings>
+            </motion.div>
+
+            {/* Value Properties */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl shadow-lg p-6"
+            >
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Value Properties</h3>
+              <realscout-office-listings
+                agent-encoded-id="QWdlbnQtMjI1MDUw"
+                sort-order="PRICE_LOW"
+                listing-status="For Sale"
+                property-types="SFR,MF"
+                price-min="300000"
+                price-max="600000"
+              ></realscout-office-listings>
+            </motion.div>
           </div>
         </div>
       </section>

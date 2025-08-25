@@ -1,47 +1,44 @@
-'use client'
+'use client';
 
-import { motion } from '@/components/motion'
 import {
   Building,
-  Users, 
-  Clock,
-  DollarSign,
-  CheckCircle, 
-  ArrowRight, 
-  Phone,
   Calendar,
+  CheckCircle,
+  DollarSign,
+  Globe,
+  Phone,
   Shield,
   TrendingUp,
-  Globe,
-  Target
-} from 'lucide-react'
+  Users,
+} from 'lucide-react';
+import { motion } from '@/components/motion';
 
 const serviceFeatures = [
   {
     icon: Building,
     title: 'Business Relocation Planning',
     description: 'Comprehensive strategy development for your entire business move',
-    benefits: ['Minimize downtime', 'Reduce costs', 'Maintain productivity']
+    benefits: ['Minimize downtime', 'Reduce costs', 'Maintain productivity'],
   },
   {
     icon: Users,
     title: 'Employee Relocation Support',
     description: 'Full-service support for relocating employees and their families',
-    benefits: ['Housing assistance', 'School district guidance', 'Community integration']
+    benefits: ['Housing assistance', 'School district guidance', 'Community integration'],
   },
   {
     icon: Globe,
     title: 'Vendor & Service Coordination',
     description: 'Coordinate all moving services and local vendor relationships',
-    benefits: ['Single point of contact', 'Quality assurance', 'Cost optimization']
+    benefits: ['Single point of contact', 'Quality assurance', 'Cost optimization'],
   },
   {
     icon: Shield,
     title: 'Risk Management',
     description: 'Comprehensive insurance and liability protection for your move',
-    benefits: ['Full coverage', 'Compliance assurance', 'Peace of mind']
-  }
-]
+    benefits: ['Full coverage', 'Compliance assurance', 'Peace of mind'],
+  },
+];
 
 const corporatePackages = [
   {
@@ -53,10 +50,10 @@ const corporatePackages = [
       'Vendor recommendations',
       'Basic employee support',
       'Move coordination',
-      'Post-move follow-up'
+      'Post-move follow-up',
     ],
     bestFor: 'Small businesses (1-10 employees)',
-    cta: 'Get Quote'
+    cta: 'Get Quote',
   },
   {
     name: 'Professional Corporate',
@@ -68,10 +65,10 @@ const corporatePackages = [
       'Housing assistance',
       'School district analysis',
       'Community integration support',
-      'Ongoing support'
+      'Ongoing support',
     ],
     bestFor: 'Medium businesses (10-50 employees)',
-    cta: 'Get Quote'
+    cta: 'Get Quote',
   },
   {
     name: 'Enterprise Corporate',
@@ -83,35 +80,35 @@ const corporatePackages = [
       'Luxury housing options',
       'Executive relocation services',
       'Cultural integration programs',
-      '24/7 support hotline'
+      '24/7 support hotline',
     ],
     bestFor: 'Large corporations (50+ employees)',
-    cta: 'Contact Sales'
-  }
-]
+    cta: 'Contact Sales',
+  },
+];
 
 const benefits = [
   {
     icon: TrendingUp,
     title: 'Increased Productivity',
-    description: 'Minimize downtime and maintain business operations during relocation'
+    description: 'Minimize downtime and maintain business operations during relocation',
   },
   {
     icon: DollarSign,
     title: 'Cost Optimization',
-    description: 'Reduce relocation costs through expert planning and vendor management'
+    description: 'Reduce relocation costs through expert planning and vendor management',
   },
   {
     icon: Users,
     title: 'Employee Retention',
-    description: 'Improve employee satisfaction and retention through smooth transitions'
+    description: 'Improve employee satisfaction and retention through smooth transitions',
   },
   {
     icon: Shield,
     title: 'Risk Mitigation',
-    description: 'Comprehensive insurance and compliance management for your move'
-  }
-]
+    description: 'Comprehensive insurance and compliance management for your move',
+  },
+];
 
 export default function AnimatedCorporateRelocationContent() {
   return (
@@ -132,16 +129,17 @@ export default function AnimatedCorporateRelocationContent() {
                 </span>
               </h1>
               <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-                Professional corporate relocation services designed for businesses. We help you 
-                minimize downtime, reduce costs, and ensure a smooth transition for your entire organization.
+                Professional corporate relocation services designed for businesses. We help you
+                minimize downtime, reduce costs, and ensure a smooth transition for your entire
+                organization.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-4">
                 <motion.button
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  type="button" 
+                  type="button"
                   className="bg-white text-blue-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors flex items-center gap-2"
                 >
                   <Phone className="w-5 h-5" />
@@ -151,7 +149,7 @@ export default function AnimatedCorporateRelocationContent() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
-                  type="button" 
+                  type="button"
                   className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-blue-900 transition-colors flex items-center gap-2"
                 >
                   <Calendar className="w-5 h-5" />
@@ -188,8 +186,8 @@ export default function AnimatedCorporateRelocationContent() {
               Complete Corporate Relocation Services
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From initial planning to post-move support, we provide comprehensive 
-              corporate relocation services that minimize disruption to your business.
+              From initial planning to post-move support, we provide comprehensive corporate
+              relocation services that minimize disruption to your business.
             </p>
           </motion.div>
 
@@ -236,8 +234,8 @@ export default function AnimatedCorporateRelocationContent() {
               Corporate Relocation Packages
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Choose the package that best fits your business size and relocation needs. 
-              All packages include our expert guidance and support.
+              Choose the package that best fits your business size and relocation needs. All
+              packages include our expert guidance and support.
             </p>
           </motion.div>
 
@@ -254,7 +252,7 @@ export default function AnimatedCorporateRelocationContent() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">{pkg.name}</h3>
                 <div className="text-3xl font-bold text-blue-600 mb-4">{pkg.price}</div>
                 <p className="text-gray-600 mb-6">{pkg.description}</p>
-                
+
                 <ul className="space-y-3 mb-8">
                   {pkg.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-3">
@@ -263,12 +261,15 @@ export default function AnimatedCorporateRelocationContent() {
                     </li>
                   ))}
                 </ul>
-                
+
                 <div className="text-sm text-gray-500 mb-6">
                   <strong>Best for:</strong> {pkg.bestFor}
                 </div>
-                
-                <button type="button" className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+
+                <button
+                  type="button"
+                  className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                >
                   {pkg.cta}
                 </button>
               </motion.div>
@@ -291,8 +292,8 @@ export default function AnimatedCorporateRelocationContent() {
               Why Choose Our Corporate Services?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Experience the benefits of professional corporate relocation expertise 
-              that keeps your business running smoothly during transitions.
+              Experience the benefits of professional corporate relocation expertise that keeps your
+              business running smoothly during transitions.
             </p>
           </motion.div>
 
@@ -317,6 +318,85 @@ export default function AnimatedCorporateRelocationContent() {
         </div>
       </section>
 
+      {/* Corporate Property Search Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Corporate Property Solutions
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Find executive homes and investment properties for your corporate relocation needs
+            </p>
+          </motion.div>
+
+          {/* RealScout Widget */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <realscout-office-listings
+              agent-encoded-id="QWdlbnQtMjI1MDUw"
+              sort-order="PRICE_HIGH"
+              listing-status="For Sale"
+              property-types="SFR,OTHER"
+              price-min="600000"
+              price-max="1200000"
+            ></realscout-office-listings>
+          </motion.div>
+
+          {/* Property Categories */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Executive Homes */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl shadow-lg p-6"
+            >
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Executive Homes</h3>
+              <realscout-office-listings
+                agent-encoded-id="QWdlbnQtMjI1MDUw"
+                sort-order="PRICE_HIGH"
+                listing-status="For Sale"
+                property-types="SFR"
+                price-min="800000"
+                price-max="1500000"
+              ></realscout-office-listings>
+            </motion.div>
+
+            {/* Investment Properties */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl shadow-lg p-6"
+            >
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Investment Properties</h3>
+              <realscout-office-listings
+                agent-encoded-id="QWdlbnQtMjI1MDUw"
+                sort-order="PRICE_LOW"
+                listing-status="For Sale"
+                property-types="MF,SFR"
+                price-min="400000"
+                price-max="800000"
+              ></realscout-office-listings>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -330,17 +410,17 @@ export default function AnimatedCorporateRelocationContent() {
               Ready to Plan Your Corporate Relocation?
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-              Let's discuss your business relocation needs and create a customized 
-              plan that minimizes disruption and maximizes success.
+              Let's discuss your business relocation needs and create a customized plan that
+              minimizes disruption and maximizes success.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                type="button" 
+                type="button"
                 className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors flex items-center gap-2 justify-center"
               >
                 <Phone className="w-5 h-5" />
@@ -351,7 +431,7 @@ export default function AnimatedCorporateRelocationContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
-                type="button" 
+                type="button"
                 className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-xl font-semibold text-lg transition-colors flex items-center gap-2 justify-center"
               >
                 <Calendar className="w-5 h-5" />
@@ -362,5 +442,5 @@ export default function AnimatedCorporateRelocationContent() {
         </div>
       </section>
     </div>
-  )
-} 
+  );
+}

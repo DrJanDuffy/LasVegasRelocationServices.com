@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState } from 'react';
 
 interface ContactFormData {
   firstName: string;
@@ -30,20 +30,20 @@ export function useFollowUpBoss(): UseFollowUpBossReturn {
     setSuccess(false);
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
+      const response = await fetch('/api/contact', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           ...data,
-          source: "website-form",
-          campaign: "relocation-inquiry",
+          source: 'website-form',
+          campaign: 'relocation-inquiry',
         }),
       });
 
       if (!response.ok) {
-        throw new Error("Failed to submit contact form");
+        throw new Error('Failed to submit contact form');
       }
 
       const result = await response.json();
@@ -55,11 +55,11 @@ export function useFollowUpBoss(): UseFollowUpBossReturn {
         // - Redirect to thank you page
         // - Track conversion
       } else {
-        throw new Error(result.message || "Submission failed");
+        throw new Error(result.message || 'Submission failed');
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : "An error occurred");
-      console.error("Error creating relocation lead:", err);
+      setError(err instanceof Error ? err.message : 'An error occurred');
+      console.error('Error creating relocation lead:', err);
     } finally {
       setIsLoading(false);
     }
@@ -86,53 +86,59 @@ export function useFollowUpBossContacts() {
 
       try {
         const searchParams = new URLSearchParams();
-        if (params?.limit) searchParams.append("limit", params.limit.toString());
-        if (params?.tags) searchParams.append("tags", params.tags.join(","));
-        if (params?.source) searchParams.append("source", params.source);
+        if (params?.limit) {
+          searchParams.append('limit', params.limit.toString());
+        }
+        if (params?.tags) {
+          searchParams.append('tags', params.tags.join(','));
+        }
+        if (params?.source) {
+          searchParams.append('source', params.source);
+        }
 
         const response = await fetch(`/api/follow-up-boss/contacts?${searchParams.toString()}`);
 
         if (!response.ok) {
-          throw new Error("Failed to fetch contacts");
+          throw new Error('Failed to fetch contacts');
         }
 
         const result = await response.json();
         setContacts(result.contacts || []);
       } catch (err) {
-        setError(err instanceof Error ? err.message : "Failed to fetch contacts");
-        console.error("Error fetching contacts:", err);
+        setError(err instanceof Error ? err.message : 'Failed to fetch contacts');
+        console.error('Error fetching contacts:', err);
       } finally {
         setIsLoading(false);
       }
     },
-    [],
+    []
   );
 
   const addContactToCampaign = useCallback(
     async (contactId: string, campaignName: string) => {
       try {
-        const response = await fetch("/api/follow-up-boss/campaigns", {
-          method: "POST",
+        const response = await fetch('/api/follow-up-boss/campaigns', {
+          method: 'POST',
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
           body: JSON.stringify({ contactId, campaignName }),
         });
 
         if (!response.ok) {
-          throw new Error("Failed to add contact to campaign");
+          throw new Error('Failed to add contact to campaign');
         }
 
         // Refresh contacts list
         await fetchContacts();
         return true;
       } catch (err) {
-        setError(err instanceof Error ? err.message : "Failed to add contact to campaign");
-        console.error("Error adding contact to campaign:", err);
+        setError(err instanceof Error ? err.message : 'Failed to add contact to campaign');
+        console.error('Error adding contact to campaign:', err);
         return false;
       }
     },
-    [fetchContacts],
+    [fetchContacts]
   );
 
   return {
@@ -155,17 +161,17 @@ export function useFollowUpBossAnalytics() {
     setError(null);
 
     try {
-      const response = await fetch("/api/follow-up-boss/stats");
+      const response = await fetch('/api/follow-up-boss/stats');
 
       if (!response.ok) {
-        throw new Error("Failed to fetch analytics");
+        throw new Error('Failed to fetch analytics');
       }
 
       const result = await response.json();
       setStats(result);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Failed to fetch analytics");
-      console.error("Error fetching analytics:", err);
+      setError(err instanceof Error ? err.message : 'Failed to fetch analytics');
+      console.error('Error fetching analytics:', err);
     } finally {
       setIsLoading(false);
     }

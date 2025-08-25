@@ -1,47 +1,55 @@
-'use client'
+'use client';
 
-import { motion } from '@/components/motion'
-import { 
-  Calendar, 
-  Target, 
-  CheckSquare, 
-  Users, 
-  CheckCircle, 
-  Phone, 
-  Clock,
-  MapPin,
-  Shield,
-  TrendingUp,
+import {
+  BarChart3,
+  Calendar,
+  CheckCircle,
+  CheckSquare,
   FileText,
-  BarChart3
-} from 'lucide-react'
+  Phone,
+  Shield,
+  Target,
+  TrendingUp,
+  Users,
+} from 'lucide-react';
+import { motion } from '@/components/motion';
 
 const planningServices = [
   {
     icon: Calendar,
     title: 'Timeline Management',
     description: 'Strategic planning and scheduling for your entire relocation',
-    benefits: ['Milestone planning', 'Deadline management', 'Progress tracking', 'Contingency planning']
+    benefits: [
+      'Milestone planning',
+      'Deadline management',
+      'Progress tracking',
+      'Contingency planning',
+    ],
   },
   {
     icon: Target,
     title: 'Goal Setting',
     description: 'Define and achieve your relocation objectives',
-    benefits: ['Objective definition', 'Success metrics', 'Progress monitoring', 'Achievement tracking']
+    benefits: [
+      'Objective definition',
+      'Success metrics',
+      'Progress monitoring',
+      'Achievement tracking',
+    ],
   },
   {
     icon: CheckSquare,
     title: 'Task Coordination',
     description: 'Coordinate all aspects of your relocation seamlessly',
-    benefits: ['Vendor management', 'Service coordination', 'Quality control', 'Issue resolution']
+    benefits: ['Vendor management', 'Service coordination', 'Quality control', 'Issue resolution'],
   },
   {
     icon: Users,
     title: 'Stakeholder Management',
     description: 'Coordinate with all parties involved in your move',
-    benefits: ['Communication plans', 'Meeting coordination', 'Documentation', 'Progress updates']
-  }
-]
+    benefits: ['Communication plans', 'Meeting coordination', 'Documentation', 'Progress updates'],
+  },
+];
 
 const planningPackages = [
   {
@@ -54,10 +62,10 @@ const planningPackages = [
       'Vendor coordination',
       'Progress tracking',
       'Monthly check-ins',
-      'Basic reporting'
+      'Basic reporting',
     ],
     bestFor: 'Simple relocations and individuals',
-    cta: 'Get Started'
+    cta: 'Get Started',
   },
   {
     name: 'Comprehensive Planning',
@@ -71,10 +79,10 @@ const planningPackages = [
       'Weekly progress updates',
       'Risk management',
       'Contingency planning',
-      '90-day support'
+      '90-day support',
     ],
     bestFor: 'Complex relocations and families',
-    cta: 'Get Started'
+    cta: 'Get Started',
   },
   {
     name: 'Strategic Planning',
@@ -88,35 +96,35 @@ const planningPackages = [
       'Risk mitigation',
       'Performance optimization',
       '6-month support',
-      '24/7 availability'
+      '24/7 availability',
     ],
     bestFor: 'Corporate relocations and executives',
-    cta: 'Contact Sales'
-  }
-]
+    cta: 'Contact Sales',
+  },
+];
 
 const planningBenefits = [
   {
     icon: TrendingUp,
     title: 'Efficiency Gains',
-    description: 'Streamlined processes save time and reduce stress'
+    description: 'Streamlined processes save time and reduce stress',
   },
   {
     icon: Shield,
     title: 'Risk Mitigation',
-    description: 'Proactive planning prevents costly delays and issues'
+    description: 'Proactive planning prevents costly delays and issues',
   },
   {
     icon: FileText,
     title: 'Documentation',
-    description: 'Complete records and tracking for your relocation'
+    description: 'Complete records and tracking for your relocation',
   },
   {
     icon: BarChart3,
     title: 'Performance Metrics',
-    description: 'Clear visibility into progress and success metrics'
-  }
-]
+    description: 'Clear visibility into progress and success metrics',
+  },
+];
 
 export default function RelocationPlanningPage() {
   return (
@@ -137,16 +145,22 @@ export default function RelocationPlanningPage() {
                 </span>
               </h1>
               <p className="text-xl text-indigo-100 mb-8 leading-relaxed">
-                Strategic relocation planning services that ensure your move to Las Vegas 
-                is organized, efficient, and successful. We coordinate every detail.
+                Strategic relocation planning services that ensure your move to Las Vegas is
+                organized, efficient, and successful. We coordinate every detail.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-4">
-                <button type="button" className="bg-white text-indigo-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors flex items-center gap-2">
+                <button
+                  type="button"
+                  className="bg-white text-indigo-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors flex items-center gap-2"
+                >
                   <Phone className="w-5 h-5" />
                   Call (702) 707-7273
                 </button>
-                <button type="button" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-indigo-900 transition-colors flex items-center gap-2">
+                <button
+                  type="button"
+                  className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-indigo-900 transition-colors flex items-center gap-2"
+                >
                   <Calendar className="w-5 h-5" />
                   Free Planning Session
                 </button>
@@ -181,8 +195,8 @@ export default function RelocationPlanningPage() {
               Strategic Relocation Planning Services
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From initial planning to successful completion, we provide comprehensive 
-              coordination and strategic guidance for your relocation.
+              From initial planning to successful completion, we provide comprehensive coordination
+              and strategic guidance for your relocation.
             </p>
           </motion.div>
 
@@ -229,8 +243,8 @@ export default function RelocationPlanningPage() {
               Choose Your Planning Package
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Flexible planning packages designed to provide the level of coordination 
-              and support your relocation requires.
+              Flexible planning packages designed to provide the level of coordination and support
+              your relocation requires.
             </p>
           </motion.div>
 
@@ -247,7 +261,7 @@ export default function RelocationPlanningPage() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">{pkg.name}</h3>
                 <div className="text-3xl font-bold text-indigo-600 mb-4">{pkg.price}</div>
                 <p className="text-gray-600 mb-6">{pkg.description}</p>
-                
+
                 <ul className="space-y-3 mb-8">
                   {pkg.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-3">
@@ -256,12 +270,15 @@ export default function RelocationPlanningPage() {
                     </li>
                   ))}
                 </ul>
-                
+
                 <div className="text-sm text-gray-500 mb-6">
                   <strong>Best for:</strong> {pkg.bestFor}
                 </div>
-                
-                <button type="button" className="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors">
+
+                <button
+                  type="button"
+                  className="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors"
+                >
                   {pkg.cta}
                 </button>
               </motion.div>
@@ -284,8 +301,8 @@ export default function RelocationPlanningPage() {
               Why Choose Our Planning Services?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Experience the difference that strategic planning makes 
-              for your relocation to Las Vegas.
+              Experience the difference that strategic planning makes for your relocation to Las
+              Vegas.
             </p>
           </motion.div>
 
@@ -310,6 +327,85 @@ export default function RelocationPlanningPage() {
         </div>
       </section>
 
+      {/* Property Search Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Strategic Property Search
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Plan your relocation with access to comprehensive property listings in Las Vegas
+            </p>
+          </motion.div>
+
+          {/* RealScout Widget */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <realscout-office-listings
+              agent-encoded-id="QWdlbnQtMjI1MDUw"
+              sort-order="PRICE_HIGH"
+              listing-status="For Sale"
+              property-types="SFR,MF,OTHER"
+              price-min="450000"
+              price-max="900000"
+            ></realscout-office-listings>
+          </motion.div>
+
+          {/* Property Categories */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Strategic Investments */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl shadow-lg p-6"
+            >
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Strategic Investments</h3>
+              <realscout-office-listings
+                agent-encoded-id="QWdlbnQtMjI1MDUw"
+                sort-order="PRICE_HIGH"
+                listing-status="For Sale"
+                property-types="SFR,OTHER"
+                price-min="600000"
+                price-max="1000000"
+              ></realscout-office-listings>
+            </motion.div>
+
+            {/* Growth Areas */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl shadow-lg p-6"
+            >
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Growth Areas</h3>
+              <realscout-office-listings
+                agent-encoded-id="QWdlbnQtMjI1MDUw"
+                sort-order="PRICE_LOW"
+                listing-status="For Sale"
+                property-types="SFR,MF"
+                price-min="300000"
+                price-max="600000"
+              ></realscout-office-listings>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -323,16 +419,22 @@ export default function RelocationPlanningPage() {
               Ready to Plan Your Perfect Relocation?
             </h2>
             <p className="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto">
-              Let's create a strategic plan for your move to Las Vegas. Schedule your free planning session 
-              and discover how we can make your relocation organized and successful.
+              Let's create a strategic plan for your move to Las Vegas. Schedule your free planning
+              session and discover how we can make your relocation organized and successful.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button type="button" className="bg-white text-indigo-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors flex items-center gap-2">
+              <button
+                type="button"
+                className="bg-white text-indigo-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors flex items-center gap-2"
+              >
                 <Phone className="w-5 h-5" />
                 Call (702) 707-7273
               </button>
-              <button type="button" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-indigo-600 transition-colors flex items-center gap-2">
+              <button
+                type="button"
+                className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-indigo-600 transition-colors flex items-center gap-2"
+              >
                 <Calendar className="w-5 h-5" />
                 Schedule Free Planning Session
               </button>
@@ -341,5 +443,5 @@ export default function RelocationPlanningPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }

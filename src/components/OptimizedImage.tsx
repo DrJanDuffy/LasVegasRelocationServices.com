@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { useState } from "react";
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import { useState } from 'react';
 
 interface OptimizedImageProps {
   src: string;
@@ -11,7 +11,7 @@ interface OptimizedImageProps {
   height: number;
   className?: string;
   priority?: boolean;
-  placeholder?: "blur" | "empty";
+  placeholder?: 'blur' | 'empty';
   blurDataURL?: string;
   sizes?: string;
   quality?: number;
@@ -24,9 +24,9 @@ export default function OptimizedImage({
   alt,
   width,
   height,
-  className = "",
+  className = '',
   priority = false,
-  placeholder = "blur",
+  placeholder = 'blur',
   blurDataURL,
   sizes,
   quality = 75,
@@ -50,7 +50,7 @@ export default function OptimizedImage({
     return (
       <div
         className={`bg-gray-200 flex items-center justify-center text-gray-500 ${className}`}
-        style={{ width: fill ? "100%" : width, height: fill ? "100%" : height }}
+        style={{ width: fill ? '100%' : width, height: fill ? '100%' : height }}
       >
         <span className="text-sm">Image failed to load</span>
       </div>
@@ -60,7 +60,7 @@ export default function OptimizedImage({
   return (
     <motion.div
       className={`relative overflow-hidden ${className}`}
-      style={fill ? { width: "100%", height: "100%" } : { width, height }}
+      style={fill ? { width: '100%', height: '100%' } : { width, height }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
@@ -70,7 +70,7 @@ export default function OptimizedImage({
         alt={alt}
         width={fill ? undefined : width}
         height={fill ? undefined : height}
-        className={`transition-opacity duration-300 ${isLoading ? "opacity-0" : "opacity-100"}`}
+        className={`transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
         priority={priority}
         placeholder={placeholder}
         blurDataURL={blurDataURL}
@@ -96,7 +96,7 @@ export default function OptimizedImage({
 }
 
 // Specialized image components for common use cases
-export function HeroImage(props: Omit<OptimizedImageProps, "priority" | "sizes">) {
+export function HeroImage(props: Omit<OptimizedImageProps, 'priority' | 'sizes'>) {
   return (
     <OptimizedImage
       {...props}
@@ -106,13 +106,13 @@ export function HeroImage(props: Omit<OptimizedImageProps, "priority" | "sizes">
   );
 }
 
-export function ServiceImage(props: Omit<OptimizedImageProps, "sizes">) {
+export function ServiceImage(props: Omit<OptimizedImageProps, 'sizes'>) {
   return (
     <OptimizedImage {...props} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw" />
   );
 }
 
-export function TeamImage(props: Omit<OptimizedImageProps, "sizes">) {
+export function TeamImage(props: Omit<OptimizedImageProps, 'sizes'>) {
   return (
     <OptimizedImage {...props} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
   );

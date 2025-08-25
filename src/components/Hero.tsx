@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
-import { motion } from '@/components/motion'
-import { Phone, Calendar, ArrowRight, Star, Shield, Award, MapPin } from 'lucide-react'
+import { ArrowRight, Award, Calendar, MapPin, Phone, Shield, Star } from 'lucide-react';
+import { motion } from '@/components/motion';
 
 export default function Hero() {
   return (
@@ -51,7 +51,8 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-xl md:text-2xl text-blue-100 mb-8 max-w-4xl mx-auto leading-relaxed"
         >
-          Expert relocation assistance with Dr. Jan Duffy | Serving individuals, families & corporations relocating to Las Vegas
+          Expert relocation assistance with Dr. Jan Duffy | Serving individuals, families &
+          corporations relocating to Las Vegas
         </motion.p>
 
         {/* Value Proposition */}
@@ -61,7 +62,8 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-lg md:text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed"
         >
-          Relocating to Las Vegas can be overwhelming. Dr. Jan Duffy and our team of certified relocation specialists provide exceptional, personalized service you can depend on.
+          Relocating to Las Vegas can be overwhelming. Dr. Jan Duffy and our team of certified
+          relocation specialists provide exceptional, personalized service you can depend on.
         </motion.p>
 
         {/* Trust Indicators */}
@@ -99,7 +101,7 @@ export default function Hero() {
             Get Free Consultation
             <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
           </a>
-          
+
           <a
             href="tel:+17027077273"
             className="group border-2 border-white text-white hover:bg-white hover:text-blue-900 px-10 py-5 rounded-full font-semibold text-xl transition-all duration-300 transform hover:scale-105 flex items-center gap-3"
@@ -120,9 +122,7 @@ export default function Hero() {
             <Calendar className="w-5 h-5 text-blue-300" />
             <span className="text-sm font-medium text-blue-200">Available 7 Days a Week</span>
           </div>
-          <p className="text-sm text-blue-100">
-            Free consultation • Available 7 days a week
-          </p>
+          <p className="text-sm text-blue-100">Free consultation • Available 7 days a week</p>
         </motion.div>
       </div>
 
@@ -142,5 +142,5 @@ export default function Hero() {
         </div>
       </motion.div>
     </section>
-  )
+  );
 }

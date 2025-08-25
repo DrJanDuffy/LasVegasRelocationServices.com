@@ -1,0 +1,69 @@
+# Cloudflare Headers Configuration
+# This file provides optimal caching and security headers for Cloudflare CDN
+
+# Global headers for all pages
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Cache-Control: public, max-age=3600, s-maxage=86400
+
+# Static assets - long-term caching
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+  CDN-Cache-Control: public, max-age=31536000
+  Cloudflare-CDN-Cache-Control: public, max-age=31536000
+
+# Images - long-term caching
+/_next/image/*
+  Cache-Control: public, max-age=31536000, immutable
+  CDN-Cache-Control: public, max-age=31536000
+  Cloudflare-CDN-Cache-Control: public, max-age=31536000
+
+# CSS and JavaScript files
+*.css
+  Cache-Control: public, max-age=31536000, immutable
+  CDN-Cache-Control: public, max-age=31536000
+
+*.js
+  Cache-Control: public, max-age=31536000, immutable
+  CDN-Cache-Control: public, max-age=31536000
+
+# Fonts - long-term caching
+*.woff
+  Cache-Control: public, max-age=31536000, immutable
+  CDN-Cache-Control: public, max-age=31536000
+
+*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+  CDN-Cache-Control: public, max-age=31536000
+
+*.ttf
+  Cache-Control: public, max-age=31536000, immutable
+  CDN-Cache-Control: public, max-age=31536000
+
+# SVG files
+*.svg
+  Cache-Control: public, max-age=31536000, immutable
+  CDN-Cache-Control: public, max-age=31536000
+
+# API routes - shorter caching
+/api/*
+  Cache-Control: public, max-age=300, s-maxage=600
+  CDN-Cache-Control: public, max-age=300
+
+# Service worker - no caching
+/sw.js
+  Cache-Control: no-cache, no-store, must-revalidate
+  CDN-Cache-Control: no-cache
+
+# Robots and sitemap
+/robots.txt
+  Cache-Control: public, max-age=86400
+  CDN-Cache-Control: public, max-age=86400
+
+/sitemap.xml
+  Cache-Control: public, max-age=86400
+  CDN-Cache-Control: public, max-age=86400

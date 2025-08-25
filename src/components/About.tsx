@@ -1,28 +1,31 @@
-'use client'
+'use client';
 
-import { motion } from '@/components/motion'
-import { CheckCircle, Award, Users, MapPin, Shield, Star } from 'lucide-react'
+import { Award, CheckCircle, MapPin, Shield, Star, Users } from 'lucide-react';
+import { motion } from '@/components/motion';
 
 const whyChooseUs = [
   {
     icon: Users,
     title: '🏠 Complete Relocation Services',
-    description: 'Full-service relocation division with over 1,300 local Las Vegas experts providing valuable insights relevant to your family and lifestyle.',
-    color: 'text-blue-600'
+    description:
+      'Full-service relocation division with over 1,300 local Las Vegas experts providing valuable insights relevant to your family and lifestyle.',
+    color: 'text-blue-600',
   },
   {
     icon: Award,
     title: '🎯 Single Point of Contact',
-    description: 'Dr. Jan Duffy personally oversees your entire relocation process, ensuring seamless communication and exceptional results.',
-    color: 'text-green-600'
+    description:
+      'Dr. Jan Duffy personally oversees your entire relocation process, ensuring seamless communication and exceptional results.',
+    color: 'text-green-600',
   },
   {
     icon: Star,
     title: '🏆 Award-Winning Team',
-    description: 'Our nationally recognized team has received multiple awards for service and performance, representing the majority of Las Vegas relocations.',
-    color: 'text-purple-600'
-  }
-]
+    description:
+      'Our nationally recognized team has received multiple awards for service and performance, representing the majority of Las Vegas relocations.',
+    color: 'text-purple-600',
+  },
+];
 
 const credentials = [
   'Primary service provider for Las Vegas metro with BGRS',
@@ -30,8 +33,8 @@ const credentials = [
   'Primary or preferred broker status with most third-party companies',
   'Serving Fortune 100 companies nationwide',
   '35% Fortune 100 market share',
-  '125+ countries served annually'
-]
+  '125+ countries served annually',
+];
 
 export default function About() {
   return (
@@ -49,7 +52,10 @@ export default function About() {
             Why Choose Dr. Jan Duffy for Your Las Vegas Relocation?
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Relocating to Las Vegas can be overwhelming. Dr. Jan Duffy and our team of certified relocation specialists provide exceptional, personalized service you can depend on. Whether you're moving for work, retirement, or lifestyle, we make your Las Vegas relocation seamless and stress-free.
+            Relocating to Las Vegas can be overwhelming. Dr. Jan Duffy and our team of certified
+            relocation specialists provide exceptional, personalized service you can depend on.
+            Whether you're moving for work, retirement, or lifestyle, we make your Las Vegas
+            relocation seamless and stress-free.
           </p>
         </motion.div>
 
@@ -73,12 +79,8 @@ export default function About() {
               <div className={`mx-auto mb-4 ${item.color}`}>
                 <item.icon className="w-12 h-12" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">
-                {item.title}
-              </h3>
-              <p className="text-gray-600 leading-relaxed text-center">
-                {item.description}
-              </p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">{item.title}</h3>
+              <p className="text-gray-600 leading-relaxed text-center">{item.description}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -96,7 +98,9 @@ export default function About() {
               Trusted by Fortune 100 Companies
             </h3>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-              We are the primary service provider for Las Vegas metro with BGRS (2nd largest relocation provider worldwide). Our team has earned "primary" or "preferred" broker status with most third-party relocation companies.
+              We are the primary service provider for Las Vegas metro with BGRS (2nd largest
+              relocation provider worldwide). Our team has earned "primary" or "preferred" broker
+              status with most third-party relocation companies.
             </p>
           </div>
 
@@ -130,10 +134,11 @@ export default function About() {
               Personal Attention from Dr. Jan Duffy
             </h3>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
-              Unlike large corporate relocation companies where you're just a number, Dr. Jan Duffy personally oversees every aspect of your relocation. 
-              From initial consultation to final settlement, you'll have direct access to her expertise and dedication.
+              Unlike large corporate relocation companies where you're just a number, Dr. Jan Duffy
+              personally oversees every aspect of your relocation. From initial consultation to
+              final settlement, you'll have direct access to her expertise and dedication.
             </p>
-            
+
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <div className="text-left">
                 <h4 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
@@ -155,7 +160,7 @@ export default function About() {
                   </li>
                 </ul>
               </div>
-              
+
               <div className="text-left">
                 <h4 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
                   <MapPin className="w-6 h-6 text-blue-600" />
@@ -181,5 +186,5 @@ export default function About() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

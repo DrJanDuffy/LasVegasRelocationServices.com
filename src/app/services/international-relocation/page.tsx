@@ -1,46 +1,56 @@
-'use client'
+'use client';
 
-import { motion } from '@/components/motion'
-import { 
-  Globe, 
-  FileText, 
-  Building, 
-  Users, 
-  CheckCircle, 
-  Phone, 
+import {
+  Building,
   Calendar,
-  MapPin,
-  Shield,
+  CheckCircle,
   DollarSign,
-  Home
-} from 'lucide-react'
+  FileText,
+  Globe,
+  Home,
+  MapPin,
+  Phone,
+  Shield,
+  Users,
+} from 'lucide-react';
+import { motion } from '@/components/motion';
 
 const internationalServices = [
   {
     icon: FileText,
     title: 'Visa & Immigration Support',
     description: 'Assistance with visa applications and immigration requirements',
-    benefits: ['Visa consultation', 'Document preparation', 'Legal referrals', 'Timeline planning']
+    benefits: ['Visa consultation', 'Document preparation', 'Legal referrals', 'Timeline planning'],
   },
   {
     icon: Building,
     title: 'Corporate Relocation',
     description: 'Support for international businesses expanding to Las Vegas',
-    benefits: ['Business registration', 'Office space', 'Local partnerships', 'Cultural integration']
+    benefits: [
+      'Business registration',
+      'Office space',
+      'Local partnerships',
+      'Cultural integration',
+    ],
   },
   {
     icon: Home,
     title: 'Housing Solutions',
     description: 'International-friendly housing options and neighborhoods',
-    benefits: ['Temporary housing', 'Long-term rentals', 'Home purchases', 'Neighborhood guidance']
+    benefits: ['Temporary housing', 'Long-term rentals', 'Home purchases', 'Neighborhood guidance'],
   },
   {
     icon: Users,
     title: 'Cultural Integration',
     description: 'Help your family adapt to American culture and Las Vegas lifestyle',
-    benefits: ['Cultural orientation', 'Language support', 'Community connections', 'Local customs']
-  }
-]
+    benefits: [
+      'Cultural orientation',
+      'Language support',
+      'Community connections',
+      'Local customs',
+    ],
+  },
+];
 
 const internationalPackages = [
   {
@@ -52,10 +62,10 @@ const internationalPackages = [
       'Housing assistance',
       'Basic cultural orientation',
       'Airport pickup and welcome',
-      'Essential services setup'
+      'Essential services setup',
     ],
     bestFor: 'Individual professionals and small families',
-    cta: 'Get Quote'
+    cta: 'Get Quote',
   },
   {
     name: 'Complete International',
@@ -67,10 +77,10 @@ const internationalPackages = [
       'School enrollment assistance',
       'Cultural integration program',
       'Ongoing support network',
-      'Legal and financial guidance'
+      'Legal and financial guidance',
     ],
     bestFor: 'Families with children and professionals',
-    cta: 'Get Quote'
+    cta: 'Get Quote',
   },
   {
     name: 'Premium International',
@@ -83,35 +93,35 @@ const internationalPackages = [
       'Concierge services',
       'Cultural programs',
       '24/7 international support',
-      'Legal and financial planning'
+      'Legal and financial planning',
     ],
     bestFor: 'Executives and high-net-worth individuals',
-    cta: 'Contact Sales'
-  }
-]
+    cta: 'Contact Sales',
+  },
+];
 
 const internationalBenefits = [
   {
     icon: Globe,
     title: 'Global Expertise',
-    description: 'Experience with clients from over 30 countries'
+    description: 'Experience with clients from over 30 countries',
   },
   {
     icon: Shield,
     title: 'Legal Compliance',
-    description: 'Ensuring all immigration and legal requirements are met'
+    description: 'Ensuring all immigration and legal requirements are met',
   },
   {
     icon: DollarSign,
     title: 'Financial Guidance',
-    description: 'Help with banking, taxes, and financial planning'
+    description: 'Help with banking, taxes, and financial planning',
   },
   {
     icon: MapPin,
     title: 'Local Knowledge',
-    description: 'Deep understanding of Las Vegas for international residents'
-  }
-]
+    description: 'Deep understanding of Las Vegas for international residents',
+  },
+];
 
 export default function InternationalRelocationPage() {
   return (
@@ -132,16 +142,22 @@ export default function InternationalRelocationPage() {
                 </span>
               </h1>
               <p className="text-xl text-purple-100 mb-8 leading-relaxed">
-                Expert international relocation services to Las Vegas. We help clients from around the world 
-                make a smooth transition to their new home in the United States.
+                Expert international relocation services to Las Vegas. We help clients from around
+                the world make a smooth transition to their new home in the United States.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-4">
-                <button type="button" className="bg-white text-purple-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors flex items-center gap-2">
+                <button
+                  type="button"
+                  className="bg-white text-purple-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors flex items-center gap-2"
+                >
                   <Phone className="w-5 h-5" />
                   Call (702) 707-7273
                 </button>
-                <button type="button" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-purple-900 transition-colors flex items-center gap-2">
+                <button
+                  type="button"
+                  className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-purple-900 transition-colors flex items-center gap-2"
+                >
                   <Calendar className="w-5 h-5" />
                   Free Consultation
                 </button>
@@ -176,7 +192,7 @@ export default function InternationalRelocationPage() {
               Comprehensive International Services
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From visa applications to cultural integration, we provide complete support for your 
+              From visa applications to cultural integration, we provide complete support for your
               international relocation to Las Vegas.
             </p>
           </motion.div>
@@ -224,8 +240,8 @@ export default function InternationalRelocationPage() {
               Choose Your International Package
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Flexible international relocation packages designed to meet your needs and ensure 
-              a successful transition to Las Vegas.
+              Flexible international relocation packages designed to meet your needs and ensure a
+              successful transition to Las Vegas.
             </p>
           </motion.div>
 
@@ -242,7 +258,7 @@ export default function InternationalRelocationPage() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">{pkg.name}</h3>
                 <div className="text-3xl font-bold text-purple-600 mb-4">{pkg.price}</div>
                 <p className="text-gray-600 mb-6">{pkg.description}</p>
-                
+
                 <ul className="space-y-3 mb-8">
                   {pkg.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-3">
@@ -251,12 +267,15 @@ export default function InternationalRelocationPage() {
                     </li>
                   ))}
                 </ul>
-                
+
                 <div className="text-sm text-gray-500 mb-6">
                   <strong>Best for:</strong> {pkg.bestFor}
                 </div>
-                
-                <button type="button" className="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+
+                <button
+                  type="button"
+                  className="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors"
+                >
                   {pkg.cta}
                 </button>
               </motion.div>
@@ -279,8 +298,8 @@ export default function InternationalRelocationPage() {
               Why Choose Our International Services?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Experience the difference that international relocation expertise makes 
-              for your move to Las Vegas.
+              Experience the difference that international relocation expertise makes for your move
+              to Las Vegas.
             </p>
           </motion.div>
 
@@ -305,6 +324,86 @@ export default function InternationalRelocationPage() {
         </div>
       </section>
 
+      {/* International Property Search Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              International Property Portfolio
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Discover premium properties in Las Vegas perfect for international buyers and
+              investors
+            </p>
+          </motion.div>
+
+          {/* RealScout Widget */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <realscout-office-listings
+              agent-encoded-id="QWdlbnQtMjI1MDUw"
+              sort-order="PRICE_HIGH"
+              listing-status="For Sale"
+              property-types="SFR,MF,OTHER"
+              price-min="500000"
+              price-max="1000000"
+            ></realscout-office-listings>
+          </motion.div>
+
+          {/* Property Categories */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Premium Homes */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl shadow-lg p-6"
+            >
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Premium Homes</h3>
+              <realscout-office-listings
+                agent-encoded-id="QWdlbnQtMjI1MDUw"
+                sort-order="PRICE_HIGH"
+                listing-status="For Sale"
+                property-types="SFR"
+                price-min="700000"
+                price-max="1200000"
+              ></realscout-office-listings>
+            </motion.div>
+
+            {/* Investment Opportunities */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl shadow-lg p-6"
+            >
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Investment Opportunities</h3>
+              <realscout-office-listings
+                agent-encoded-id="QWdlbnQtMjI1MDUw"
+                sort-order="PRICE_LOW"
+                listing-status="For Sale"
+                property-types="MF,SFR"
+                price-min="350000"
+                price-max="700000"
+              ></realscout-office-listings>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-purple-600 to-purple-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -318,16 +417,22 @@ export default function InternationalRelocationPage() {
               Ready to Start Your International Journey to Las Vegas?
             </h2>
             <p className="text-xl text-purple-100 mb-8 max-w-3xl mx-auto">
-              Let's begin your international relocation process. Schedule your free consultation 
-              and discover how we can make your move to Las Vegas successful and stress-free.
+              Let's begin your international relocation process. Schedule your free consultation and
+              discover how we can make your move to Las Vegas successful and stress-free.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button type="button" className="bg-white text-purple-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors flex items-center gap-2">
+              <button
+                type="button"
+                className="bg-white text-purple-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors flex items-center gap-2"
+              >
                 <Phone className="w-5 h-5" />
                 Call (702) 707-7273
               </button>
-              <button type="button" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-purple-600 transition-colors flex items-center gap-2">
+              <button
+                type="button"
+                className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-purple-600 transition-colors flex items-center gap-2"
+              >
                 <Calendar className="w-5 h-5" />
                 Schedule Free Consultation
               </button>
@@ -336,5 +441,5 @@ export default function InternationalRelocationPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }

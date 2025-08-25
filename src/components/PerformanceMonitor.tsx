@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect } from 'react';
 
 interface PerformanceMetrics {
   fcp: number | null;
@@ -30,10 +30,10 @@ interface LayoutShiftEntry extends PerformanceEntry {
 export default function PerformanceMonitor() {
   const sendMetrics = useCallback((metrics: PerformanceMetrics) => {
     // Send to analytics service (Google Analytics, etc.)
-    if (typeof window !== "undefined" && window.gtag) {
-      window.gtag("event", "performance_metrics", {
-        event_category: "Performance",
-        event_label: "Core Web Vitals",
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'performance_metrics', {
+        event_category: 'Performance',
+        event_label: 'Core Web Vitals',
         value: Math.round(metrics.lcp || 0),
         custom_map: {
           fcp: metrics.fcp,
@@ -46,26 +46,26 @@ export default function PerformanceMonitor() {
     }
 
     // Log to console in development
-    if (process.env.NODE_ENV === "development") {
-      console.log("Performance Metrics:", metrics);
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Performance Metrics:', metrics);
     }
   }, []);
 
   const measureFCP = useCallback(() => {
-    if ("PerformanceObserver" in window) {
+    if ('PerformanceObserver' in window) {
       const observer = new PerformanceObserver((list) => {
         const entries = list.getEntries();
-        const fcpEntry = entries.find((entry) => entry.name === "first-contentful-paint");
+        const fcpEntry = entries.find((entry) => entry.name === 'first-contentful-paint');
         if (fcpEntry) {
           sendMetrics({ fcp: fcpEntry.startTime, lcp: null, fid: null, cls: null, ttfb: null });
         }
       });
-      observer.observe({ entryTypes: ["paint"] });
+      observer.observe({ entryTypes: ['paint'] });
     }
   }, [sendMetrics]);
 
   const measureLCP = useCallback(() => {
-    if ("PerformanceObserver" in window) {
+    if ('PerformanceObserver' in window) {
       const observer = new PerformanceObserver((list) => {
         const entries = list.getEntries();
         const lcpEntry = entries[entries.length - 1] as PerformanceEntry;
@@ -73,17 +73,17 @@ export default function PerformanceMonitor() {
           sendMetrics({ fcp: null, lcp: lcpEntry.startTime, fid: null, cls: null, ttfb: null });
         }
       });
-      observer.observe({ entryTypes: ["largest-contentful-paint"] });
+      observer.observe({ entryTypes: ['largest-contentful-paint'] });
     }
   }, [sendMetrics]);
 
   const measureFID = useCallback(() => {
-    if ("PerformanceObserver" in window) {
+    if ('PerformanceObserver' in window) {
       const observer = new PerformanceObserver((list) => {
         const entries = list.getEntries();
         entries.forEach((entry) => {
           // Check if it's a FirstInputEntry
-          if ("processingStart" in entry) {
+          if ('processingStart' in entry) {
             const firstInputEntry = entry as FirstInputEntry;
             if (firstInputEntry.processingStart && firstInputEntry.startTime) {
               const fid = firstInputEntry.processingStart - firstInputEntry.startTime;
@@ -92,17 +92,17 @@ export default function PerformanceMonitor() {
           }
         });
       });
-      observer.observe({ entryTypes: ["first-input"] });
+      observer.observe({ entryTypes: ['first-input'] });
     }
   }, [sendMetrics]);
 
   const measureCLS = useCallback(() => {
-    if ("PerformanceObserver" in window) {
+    if ('PerformanceObserver' in window) {
       let clsValue = 0;
       const observer = new PerformanceObserver((list) => {
         for (const entry of list.getEntries()) {
           // Check if it's a LayoutShiftEntry
-          if ("hadRecentInput" in entry) {
+          if ('hadRecentInput' in entry) {
             const layoutShiftEntry = entry as LayoutShiftEntry;
             if (!layoutShiftEntry.hadRecentInput) {
               clsValue += layoutShiftEntry.value;
@@ -111,23 +111,23 @@ export default function PerformanceMonitor() {
           }
         }
       });
-      observer.observe({ entryTypes: ["layout-shift"] });
+      observer.observe({ entryTypes: ['layout-shift'] });
     }
   }, [sendMetrics]);
 
   const measureTTFB = useCallback(() => {
-    if ("PerformanceObserver" in window) {
+    if ('PerformanceObserver' in window) {
       const observer = new PerformanceObserver((list) => {
         const entries = list.getEntries();
         entries.forEach((entry) => {
-          if (entry.entryType === "navigation") {
+          if (entry.entryType === 'navigation') {
             const navEntry = entry as PerformanceNavigationTiming;
             const ttfb = navEntry.responseStart - navEntry.requestStart;
             sendMetrics({ fcp: null, lcp: null, fid: null, cls: null, ttfb });
           }
         });
       });
-      observer.observe({ entryTypes: ["navigation"] });
+      observer.observe({ entryTypes: ['navigation'] });
     }
   }, [sendMetrics]);
 
@@ -157,10 +157,10 @@ export default function PerformanceMonitor() {
       updateActiveTime();
 
       // Send engagement data
-      if (typeof window !== "undefined" && window.gtag) {
-        window.gtag("event", "user_engagement", {
-          event_category: "Engagement",
-          event_label: "Session Duration",
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'user_engagement', {
+          event_category: 'Engagement',
+          event_label: 'Session Duration',
           value: Math.round(totalActiveTime / 1000), // Convert to seconds
           custom_map: {
             session_duration: totalActiveTime,
@@ -170,12 +170,12 @@ export default function PerformanceMonitor() {
       }
     };
 
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-    window.addEventListener("beforeunload", handleBeforeUnload);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    window.addEventListener('beforeunload', handleBeforeUnload);
 
     return () => {
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
-      window.removeEventListener("beforeunload", handleBeforeUnload);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      window.removeEventListener('beforeunload', handleBeforeUnload);
     };
   }, []);
 
@@ -196,10 +196,10 @@ export default function PerformanceMonitor() {
     };
 
     const handleBeforeUnload = () => {
-      if (typeof window !== "undefined" && window.gtag) {
-        window.gtag("event", "scroll_depth", {
-          event_category: "Engagement",
-          event_label: "Scroll Depth",
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'scroll_depth', {
+          event_category: 'Engagement',
+          event_label: 'Scroll Depth',
           value: maxScrollDepth,
           custom_map: {
             max_scroll_depth: maxScrollDepth,
@@ -209,12 +209,12 @@ export default function PerformanceMonitor() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("beforeunload", handleBeforeUnload);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('beforeunload', handleBeforeUnload);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("beforeunload", handleBeforeUnload);
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('beforeunload', handleBeforeUnload);
     };
   }, []);
 

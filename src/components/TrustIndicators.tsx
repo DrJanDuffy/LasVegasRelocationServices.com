@@ -1,55 +1,55 @@
-'use client'
+'use client';
 
-import { motion } from '@/components/motion'
-import { Award, Shield, Star, Users, Globe, Building, MapPin } from 'lucide-react'
+import { Award, Building, Globe, MapPin, Shield, Star, Users } from 'lucide-react';
+import { motion } from '@/components/motion';
 
 const stats = [
   {
     number: '85K+',
     label: 'Annual Employee Relocations',
     icon: Users,
-    color: 'text-orange-500'
+    color: 'text-orange-500',
   },
   {
     number: '125',
     label: 'Countries Served',
     icon: Globe,
-    color: 'text-blue-500'
+    color: 'text-blue-500',
   },
   {
     number: '35%',
     label: 'Fortune 100 Market Share',
     icon: Building,
-    color: 'text-green-500'
+    color: 'text-green-500',
   },
   {
     number: '1,300+',
     label: 'Local Las Vegas Experts',
     icon: MapPin,
-    color: 'text-purple-500'
-  }
-]
+    color: 'text-purple-500',
+  },
+];
 
 const trustBadges = [
   {
     icon: Award,
     title: 'Nationally Recognized Team',
     description: 'Multiple awards for service and performance',
-    color: 'text-yellow-500'
+    color: 'text-yellow-500',
   },
   {
     icon: Shield,
     title: 'Primary BGRS Provider',
     description: '2nd largest relocation provider worldwide',
-    color: 'text-blue-500'
+    color: 'text-blue-500',
   },
   {
     icon: Star,
     title: 'Preferred Broker Status',
     description: 'Primary or preferred with most third-party companies',
-    color: 'text-green-500'
-  }
-]
+    color: 'text-green-500',
+  },
+];
 
 export default function TrustIndicators() {
   return (
@@ -63,12 +63,11 @@ export default function TrustIndicators() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Trusted by Fortune 100 Companies
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Trusted by Fortune 100 Companies</h2>
           <p className="text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
-            We are the primary service provider for Las Vegas metro with BGRS (2nd largest relocation provider worldwide). 
-            Our team has earned "primary" or "preferred" broker status with most third-party relocation companies.
+            We are the primary service provider for Las Vegas metro with BGRS (2nd largest
+            relocation provider worldwide). Our team has earned "primary" or "preferred" broker
+            status with most third-party relocation companies.
           </p>
         </motion.div>
 
@@ -92,9 +91,7 @@ export default function TrustIndicators() {
               <div className={`text-4xl md:text-5xl font-bold mb-2 ${stat.color}`}>
                 {stat.number}
               </div>
-              <div className="text-blue-100 text-sm md:text-base">
-                {stat.label}
-              </div>
+              <div className="text-blue-100 text-sm md:text-base">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>
@@ -119,12 +116,8 @@ export default function TrustIndicators() {
               <div className={`mx-auto mb-4 ${badge.color}`}>
                 <badge.icon className="w-12 h-12" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">
-                {badge.title}
-              </h3>
-              <p className="text-blue-100 text-sm leading-relaxed">
-                {badge.description}
-              </p>
+              <h3 className="text-xl font-semibold mb-3">{badge.title}</h3>
+              <p className="text-blue-100 text-sm leading-relaxed">{badge.description}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -142,12 +135,12 @@ export default function TrustIndicators() {
               Representing the Majority of Las Vegas Relocations
             </h3>
             <p className="text-blue-100 text-lg leading-relaxed">
-              Our expertise and track record make us the go-to choice for individuals, families, and corporations 
-              seeking professional relocation services in the Las Vegas area.
+              Our expertise and track record make us the go-to choice for individuals, families, and
+              corporations seeking professional relocation services in the Las Vegas area.
             </p>
           </div>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

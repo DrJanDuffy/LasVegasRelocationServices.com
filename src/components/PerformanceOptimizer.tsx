@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { AnimatePresence, motion } from "framer-motion";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from 'framer-motion';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 interface PerformanceOptimizerProps {
   children: React.ReactNode;
@@ -12,7 +12,7 @@ interface PerformanceOptimizerProps {
 export default function PerformanceOptimizer({
   children,
   threshold = 0.1,
-  rootMargin = "50px",
+  rootMargin = '50px',
 }: PerformanceOptimizerProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -48,7 +48,7 @@ export default function PerformanceOptimizer({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
           >
             {isLoaded ? (
               children
@@ -68,8 +68,8 @@ export default function PerformanceOptimizer({
 export function LazyImage({
   src,
   alt,
-  className = "",
-  placeholder = "/placeholder.jpg",
+  className = '',
+  placeholder = '/placeholder.jpg',
 }: {
   src: string;
   alt: string;
@@ -90,7 +90,7 @@ export function LazyImage({
       <img
         src={error ? placeholder : src}
         alt={alt}
-        className={`lazy-image ${isLoaded ? "loaded" : "loading"}`}
+        className={`lazy-image ${isLoaded ? 'loaded' : 'loading'}`}
         onLoad={handleLoad}
         onError={handleError}
         loading="lazy"
@@ -129,10 +129,10 @@ export function VirtualList<T>({
     <div
       ref={containerRef}
       className="virtual-list-container"
-      style={{ height: containerHeight, overflow: "auto" }}
+      style={{ height: containerHeight, overflow: 'auto' }}
       onScroll={handleScroll}
     >
-      <div style={{ height: totalHeight, position: "relative" }}>
+      <div style={{ height: totalHeight, position: 'relative' }}>
         <div style={{ transform: `translateY(${offsetY}px)` }}>
           {items.slice(startIndex, endIndex).map((item, index) => (
             <div key={startIndex + index} style={{ height: itemHeight }}>
@@ -155,14 +155,14 @@ export function usePerformanceMonitor() {
   }>({ fcp: 0, lcp: 0, fid: 0, cls: 0 });
 
   useEffect(() => {
-    if (typeof window !== "undefined" && "PerformanceObserver" in window) {
+    if (typeof window !== 'undefined' && 'PerformanceObserver' in window) {
       // First Contentful Paint
       const fcpObserver = new PerformanceObserver((list) => {
         const entries = list.getEntries();
         const fcp = entries[0] as PerformanceEntry;
         setMetrics((prev) => ({ ...prev, fcp: fcp.startTime }));
       });
-      fcpObserver.observe({ entryTypes: ["paint"] });
+      fcpObserver.observe({ entryTypes: ['paint'] });
 
       // Largest Contentful Paint
       const lcpObserver = new PerformanceObserver((list) => {
@@ -170,7 +170,7 @@ export function usePerformanceMonitor() {
         const lcp = entries[entries.length - 1] as PerformanceEntry;
         setMetrics((prev) => ({ ...prev, lcp: lcp.startTime }));
       });
-      lcpObserver.observe({ entryTypes: ["largest-contentful-paint"] });
+      lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
 
       // First Input Delay
       const fidObserver = new PerformanceObserver((list) => {
@@ -180,7 +180,7 @@ export function usePerformanceMonitor() {
           setMetrics((prev) => ({ ...prev, fid: fid.processingStart - fid.startTime }));
         }
       });
-      fidObserver.observe({ entryTypes: ["first-input"] });
+      fidObserver.observe({ entryTypes: ['first-input'] });
 
       // Cumulative Layout Shift
       let clsValue = 0;
@@ -193,7 +193,7 @@ export function usePerformanceMonitor() {
         }
         setMetrics((prev) => ({ ...prev, cls: clsValue }));
       });
-      clsObserver.observe({ entryTypes: ["layout-shift"] });
+      clsObserver.observe({ entryTypes: ['layout-shift'] });
 
       return () => {
         fcpObserver.disconnect();
@@ -237,7 +237,7 @@ export function useThrottle<T>(value: T, delay: number): T {
           lastRun.current = Date.now();
         }
       },
-      delay - (Date.now() - lastRun.current),
+      delay - (Date.now() - lastRun.current)
     );
 
     return () => {

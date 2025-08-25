@@ -1,0 +1,63 @@
+# Cloudflare Workers Configuration
+# This file configures Cloudflare Workers for advanced CDN features
+
+name = "las-vegas-relocation-services"
+main = "src/worker.js"
+compatibility_date = "2024-01-01"
+
+[env.production]
+name = "las-vegas-relocation-services-prod"
+
+[env.staging]
+name = "las-vegas-relocation-services-staging"
+
+# KV Namespace for caching
+[[kv_namespaces]]
+binding = "CACHE"
+id = "your-kv-namespace-id"
+preview_id = "your-preview-kv-namespace-id"
+
+# Account ID for Cloudflare Workers
+account_id = "2cc579c1ec9e426ed585e933ebf4753b"
+
+# Durable Objects for state management
+[[durable_objects.bindings]]
+name = "SESSION_STORE"
+class_name = "SessionStore"
+
+# Environment variables
+[vars]
+ENVIRONMENT = "production"
+API_VERSION = "v1"
+
+# Routes configuration
+[triggers]
+crons = []
+
+# Build configuration
+[build]
+command = "npm run build"
+watch_dir = "src"
+
+# Custom domains
+[[domains]]
+zone = "lasvegasrelocationservices.com"
+custom_domain = true
+
+# Security headers
+[security]
+hsts = true
+hsts_max_age = 31536000
+hsts_include_subdomains = true
+hsts_preload = true
+
+# Cache configuration
+[cache]
+browser_ttl = 31536000
+edge_ttl = 31536000
+
+# Performance optimization
+[performance]
+minify = { javascript = true, css = true, html = true }
+brotli = true
+early_hints = true

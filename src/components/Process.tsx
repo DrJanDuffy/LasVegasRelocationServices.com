@@ -1,50 +1,55 @@
-'use client'
+'use client';
 
-import { motion } from '@/components/motion'
-import { CheckCircle, ArrowRight, Phone, Calendar, Users, MapPin, Home, Truck } from 'lucide-react'
+import { Calendar, CheckCircle, Home, MapPin, Truck, Users } from 'lucide-react';
+import { motion } from '@/components/motion';
 
 const processSteps = [
   {
     icon: MapPin,
     step: '01',
     title: 'Initial Consultation',
-    description: 'Free consultation to understand your relocation needs, timeline, and budget. We\'ll create a personalized moving plan.',
+    description:
+      "Free consultation to understand your relocation needs, timeline, and budget. We'll create a personalized moving plan.",
     duration: '1-2 hours',
-    features: ['Needs assessment', 'Budget planning', 'Timeline creation']
+    features: ['Needs assessment', 'Budget planning', 'Timeline creation'],
   },
   {
     icon: Home,
     step: '02',
     title: 'Home Finding & Real Estate',
-    description: 'Our local experts help you find the perfect home in your target area, including neighborhood analysis and school research.',
+    description:
+      'Our local experts help you find the perfect home in your target area, including neighborhood analysis and school research.',
     duration: '2-4 weeks',
-    features: ['Property search', 'Neighborhood tours', 'School district analysis']
+    features: ['Property search', 'Neighborhood tours', 'School district analysis'],
   },
   {
     icon: Truck,
     step: '03',
     title: 'Moving Coordination',
-    description: 'We coordinate every aspect of your move, from packing to transportation, ensuring a smooth transition.',
+    description:
+      'We coordinate every aspect of your move, from packing to transportation, ensuring a smooth transition.',
     duration: '1-2 weeks',
-    features: ['Packing services', 'Transportation', 'Insurance coverage']
+    features: ['Packing services', 'Transportation', 'Insurance coverage'],
   },
   {
     icon: Users,
     step: '04',
     title: 'Settling In Support',
-    description: 'Get help with utilities, local services, and community integration to make your new location feel like home.',
+    description:
+      'Get help with utilities, local services, and community integration to make your new location feel like home.',
     duration: 'Ongoing',
-    features: ['Utility setup', 'Local services', 'Community integration']
+    features: ['Utility setup', 'Local services', 'Community integration'],
   },
   {
     icon: CheckCircle,
     step: '05',
     title: 'Post-Move Follow-up',
-    description: 'We stay in touch to ensure your satisfaction and provide ongoing support for any relocation needs.',
+    description:
+      'We stay in touch to ensure your satisfaction and provide ongoing support for any relocation needs.',
     duration: 'Lifetime',
-    features: ['Satisfaction check', 'Ongoing support', 'Future referrals']
-  }
-]
+    features: ['Satisfaction check', 'Ongoing support', 'Future referrals'],
+  },
+];
 
 export default function Process() {
   return (
@@ -62,8 +67,8 @@ export default function Process() {
             Your Stress-Free Relocation Journey
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            From initial planning to settling into your new home, we handle every detail 
-            with precision and care. Our proven 5-step process ensures a seamless transition.
+            From initial planning to settling into your new home, we handle every detail with
+            precision and care. Our proven 5-step process ensures a seamless transition.
           </p>
         </motion.div>
 
@@ -71,7 +76,7 @@ export default function Process() {
         <div className="relative">
           {/* Timeline Line */}
           <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-200 via-blue-400 to-green-200 transform -translate-x-1/2" />
-          
+
           <div className="space-y-16">
             {processSteps.map((step, index) => (
               <motion.div
@@ -95,13 +100,15 @@ export default function Process() {
                 </div>
 
                 {/* Content */}
-                <div className={`flex-1 text-center lg:text-left ${
-                  index % 2 === 0 ? 'lg:text-left' : 'lg:text-right'
-                }`}>
+                <div
+                  className={`flex-1 text-center lg:text-left ${
+                    index % 2 === 0 ? 'lg:text-left' : 'lg:text-right'
+                  }`}
+                >
                   <div className="bg-gray-50 rounded-2xl p-8 shadow-sm border border-gray-100">
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">{step.title}</h3>
                     <p className="text-gray-600 mb-6 leading-relaxed">{step.description}</p>
-                    
+
                     {/* Duration */}
                     <div className="flex items-center justify-center lg:justify-start gap-2 mb-6 text-blue-600">
                       <Calendar className="w-5 h-5" />
@@ -135,13 +142,20 @@ export default function Process() {
           <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">Ready to Start Your Journey?</h3>
             <p className="text-blue-100 mb-6">
-              Book your free consultation today and discover how we can make your relocation stress-free.
+              Book your free consultation today and discover how we can make your relocation
+              stress-free.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button type="button" className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+              <button
+                type="button"
+                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
+              >
                 Schedule Free Consultation
               </button>
-              <button type="button" className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-800 transition-colors">
+              <button
+                type="button"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-800 transition-colors"
+              >
                 Call Now: (702) 707-7273
               </button>
             </div>
@@ -149,5 +163,5 @@ export default function Process() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

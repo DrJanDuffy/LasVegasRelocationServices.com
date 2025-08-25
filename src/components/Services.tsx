@@ -1,19 +1,7 @@
-'use client'
+'use client';
 
-import { motion } from '@/components/motion'
-import { 
-  Building, 
-  Home, 
-  Crown, 
-  Truck, 
-  MapPin, 
-  Users, 
-  CheckCircle,
-  ArrowRight,
-  Globe,
-  Award,
-  Shield
-} from 'lucide-react'
+import { ArrowRight, Award, Building, CheckCircle, Home, Shield, Users } from 'lucide-react';
+import { motion } from '@/components/motion';
 
 const services = [
   {
@@ -25,12 +13,12 @@ const services = [
       'Temporary housing coordination',
       'Home finding assistance from certified specialists',
       'Rental property assistance',
-      'International settling-in services'
+      'International settling-in services',
     ],
     benefits: ['Local market expertise', 'Personalized home search', 'Ongoing support'],
     color: 'from-blue-500 to-blue-600',
     bgColor: 'bg-blue-50',
-    borderColor: 'border-blue-200'
+    borderColor: 'border-blue-200',
   },
   {
     icon: Building,
@@ -41,12 +29,12 @@ const services = [
       'Professional broker price opinions',
       'Corporate inventory management',
       'Full-service property management',
-      'Maximum market exposure guaranteed'
+      'Maximum market exposure guaranteed',
     ],
     benefits: ['Maximum market exposure', 'Professional marketing', 'Optimal pricing'],
     color: 'from-green-500 to-green-600',
     bgColor: 'bg-green-50',
-    borderColor: 'border-green-200'
+    borderColor: 'border-green-200',
   },
   {
     icon: Users,
@@ -57,12 +45,12 @@ const services = [
       'International relocation services',
       'Affinity program partnerships',
       'Individual needs analysis',
-      'Worldwide broker referral network'
+      'Worldwide broker referral network',
     ],
     benefits: ['Global expertise', 'Corporate partnerships', 'Customized solutions'],
     color: 'from-purple-500 to-purple-600',
     bgColor: 'bg-purple-50',
-    borderColor: 'border-purple-200'
+    borderColor: 'border-purple-200',
   },
   {
     icon: Award,
@@ -73,12 +61,12 @@ const services = [
       'Personal oversight of entire process',
       'Seamless communication throughout',
       'Exceptional results guaranteed',
-      'Nationally recognized team'
+      'Nationally recognized team',
     ],
     benefits: ['Personal attention', 'Seamless process', 'Proven results'],
     color: 'from-orange-500 to-orange-600',
     bgColor: 'bg-orange-50',
-    borderColor: 'border-orange-200'
+    borderColor: 'border-orange-200',
   },
   {
     icon: Shield,
@@ -90,14 +78,14 @@ const services = [
       'HR partnership support',
       'ROI analysis & reporting',
       'Vendor management',
-      'Compliance & legal support'
+      'Compliance & legal support',
     ],
     benefits: ['Reduce relocation costs', 'Minimize downtime', 'Improve retention'],
     color: 'from-red-500 to-red-600',
     bgColor: 'bg-red-50',
-    borderColor: 'border-red-200'
-  }
-]
+    borderColor: 'border-red-200',
+  },
+];
 
 export default function Services() {
   return (
@@ -115,8 +103,8 @@ export default function Services() {
             Comprehensive Relocation Solutions
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            From corporate moves to luxury relocations, we provide end-to-end services 
-            that ensure your transition is seamless, stress-free, and successful.
+            From corporate moves to luxury relocations, we provide end-to-end services that ensure
+            your transition is seamless, stress-free, and successful.
           </p>
         </motion.div>
 
@@ -132,7 +120,9 @@ export default function Services() {
               className={`${service.bgColor} rounded-2xl p-8 border ${service.borderColor} hover:shadow-xl transition-all duration-300 group`}
             >
               {/* Icon */}
-              <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+              <div
+                className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}
+              >
                 <service.icon className="w-8 h-8 text-white" />
               </div>
 
@@ -155,7 +145,10 @@ export default function Services() {
                 <h4 className="font-semibold text-gray-900 mb-3">Key Benefits:</h4>
                 <div className="space-y-2">
                   {service.benefits.map((benefit, benefitIndex) => (
-                    <div key={benefitIndex} className="flex items-center gap-2 text-sm text-gray-600">
+                    <div
+                      key={benefitIndex}
+                      className="flex items-center gap-2 text-sm text-gray-600"
+                    >
                       <div className="w-2 h-2 bg-green-400 rounded-full"></div>
                       <span>{benefit}</span>
                     </div>
@@ -189,10 +182,16 @@ export default function Services() {
               Get a personalized quote and discover how we can make your move stress-free.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button type="button" className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+              <button
+                type="button"
+                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
+              >
                 Get Free Quote
               </button>
-              <button type="button" className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-800 transition-colors">
+              <button
+                type="button"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-800 transition-colors"
+              >
                 Schedule Consultation
               </button>
             </div>
@@ -200,5 +199,5 @@ export default function Services() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

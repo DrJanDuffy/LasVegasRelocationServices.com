@@ -1,0 +1,108 @@
+{
+  "amp": {
+    "debugLogs": false,
+    "notifications": {
+      "enabled": true,
+      "system": {
+        "enabled": true
+      }
+    },
+    "tab": {
+      "enabled": true
+    },
+    "terminal": {
+      "commands": {
+        "hide": false,
+        "nodeSpawn": {
+          "loadProfile": "always"
+        }
+      }
+    },
+    "ui": {
+      "zoomLevel": 1
+    },
+    "anthropic": {
+      "thinking": {
+        "enabled": true
+      }
+    },
+    "git": {
+      "commit": {
+        "ampThread": {
+          "enabled": true
+        },
+        "coauthor": {
+          "enabled": true
+        }
+      }
+    },
+    "todos": {
+      "enabled": true
+    },
+    "tools": {
+      "stopTimeout": 300,
+      "disable": ["builtin:web_search", "builtin:web_search_streaming"]
+    },
+    "permissions": [
+      {
+        "tool": "Bash",
+        "matches": {
+          "cmd": [
+            "*git status*",
+            "*git diff*",
+            "*git add*",
+            "*git commit*",
+            "*git push*",
+            "*npm run*",
+            "*npm install*",
+            "*npm ci*"
+          ]
+        },
+        "action": "allow"
+      },
+      {
+        "tool": "Bash",
+        "matches": {
+          "cmd": ["*rm -rf*", "*sudo*", "*chmod*", "*chown*"]
+        },
+        "action": "reject"
+      },
+      {
+        "tool": "Bash",
+        "matches": {
+          "cmd": "*"
+        },
+        "action": "ask"
+      }
+    ],
+    "mcpServers": {
+      "github": {
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-github"]
+      }
+    }
+  },
+  "editor": {
+    "formatOnSave": true,
+    "codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    }
+  },
+  "typescript": {
+    "preferences": {
+      "importModuleSpecifier": "relative"
+    }
+  },
+  "tailwindCSS": {
+    "experimental": {
+      "classRegex": [
+        ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+        ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+      ]
+    },
+    "includeLanguages": {
+      "typescript": "javascript",
+      "typescriptreact": "javascript"
+    }
+  }
+}

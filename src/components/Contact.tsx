@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
-import { motion } from '@/components/motion'
-import { useState, useId } from 'react'
-import { Phone, Mail, MapPin, Clock, Calendar, MessageSquare, CheckCircle, ArrowRight, ArrowLeft } from 'lucide-react'
+import { ArrowRight, Calendar, Clock, Mail, MapPin, MessageSquare, Phone } from 'lucide-react';
+import { useState } from 'react';
+import { motion } from '@/components/motion';
 
 const contactMethods = [
   {
@@ -12,7 +12,7 @@ const contactMethods = [
     action: 'Call Now',
     value: '(702) 707-7273',
     link: 'tel:+17027077273',
-    primary: true
+    primary: true,
   },
   {
     icon: Mail,
@@ -20,7 +20,7 @@ const contactMethods = [
     description: 'Send us your questions',
     action: 'Send Email',
     value: 'DrJan@LasVegasRelocationServices.com',
-    link: 'mailto:DrJan@LasVegasRelocationServices.com'
+    link: 'mailto:DrJan@LasVegasRelocationServices.com',
   },
   {
     icon: Calendar,
@@ -28,7 +28,7 @@ const contactMethods = [
     description: 'Book a free 30-minute call',
     action: 'Book Now',
     value: 'Free 30-min Call',
-    link: '#consultation-form'
+    link: '#consultation-form',
   },
   {
     icon: MessageSquare,
@@ -36,15 +36,15 @@ const contactMethods = [
     description: 'Chat with us online',
     action: 'Start Chat',
     value: 'Available Now',
-    link: '#live-chat'
-  }
-]
+    link: '#live-chat',
+  },
+];
 
 const officeHours = [
   { day: 'Monday - Friday', hours: '8:00 AM - 6:00 PM' },
   { day: 'Saturday', hours: '9:00 AM - 4:00 PM' },
-  { day: 'Sunday', hours: 'By Appointment' }
-]
+  { day: 'Sunday', hours: 'By Appointment' },
+];
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -54,22 +54,24 @@ export default function Contact() {
     currentLocation: '',
     timeline: '',
     services: '',
-    message: ''
-  })
+    message: '',
+  });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Handle form submission
-    console.log('Form submitted:', formData)
+    console.log('Form submitted:', formData);
     // Here you would typically send to your API
-  }
+  };
 
   return (
     <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
@@ -86,7 +88,8 @@ export default function Contact() {
             Start Your Las Vegas Relocation Today
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Ready to make Las Vegas your new home? Contact Dr. Jan Duffy for a free consultation and discover how we can make your relocation seamless and successful.
+            Ready to make Las Vegas your new home? Contact Dr. Jan Duffy for a free consultation and
+            discover how we can make your relocation seamless and successful.
           </p>
         </motion.div>
 
@@ -149,7 +152,10 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="currentLocation" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label
+                  htmlFor="currentLocation"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
+                >
                   Current Location
                 </label>
                 <input
@@ -164,7 +170,10 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="timeline" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label
+                  htmlFor="timeline"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
+                >
                   Relocation Timeline
                 </label>
                 <select
@@ -184,7 +193,10 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="services" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label
+                  htmlFor="services"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
+                >
                   Services Needed
                 </label>
                 <select
@@ -238,9 +250,7 @@ export default function Contact() {
           >
             {/* Contact Methods */}
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Get in Touch
-              </h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
               {contactMethods.map((method, index) => (
                 <motion.div
                   key={method.title}
@@ -249,34 +259,38 @@ export default function Contact() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   className={`flex items-start gap-4 p-6 rounded-2xl ${
-                    method.primary 
-                      ? 'bg-blue-600 text-white' 
+                    method.primary
+                      ? 'bg-blue-600 text-white'
                       : 'bg-white shadow-lg border border-gray-100'
                   }`}
                 >
-                  <div className={`p-3 rounded-full ${
-                    method.primary ? 'bg-white/20' : 'bg-blue-100'
-                  }`}>
-                    <method.icon className={`w-6 h-6 ${
-                      method.primary ? 'text-white' : 'text-blue-600'
-                    }`} />
+                  <div
+                    className={`p-3 rounded-full ${method.primary ? 'bg-white/20' : 'bg-blue-100'}`}
+                  >
+                    <method.icon
+                      className={`w-6 h-6 ${method.primary ? 'text-white' : 'text-blue-600'}`}
+                    />
                   </div>
                   <div className="flex-1">
-                    <h4 className={`font-semibold mb-1 ${
-                      method.primary ? 'text-white' : 'text-gray-900'
-                    }`}>
+                    <h4
+                      className={`font-semibold mb-1 ${
+                        method.primary ? 'text-white' : 'text-gray-900'
+                      }`}
+                    >
                       {method.title}
                     </h4>
-                    <p className={`text-sm mb-3 ${
-                      method.primary ? 'text-blue-100' : 'text-gray-600'
-                    }`}>
+                    <p
+                      className={`text-sm mb-3 ${
+                        method.primary ? 'text-blue-100' : 'text-gray-600'
+                      }`}
+                    >
                       {method.description}
                     </p>
                     <a
                       href={method.link}
                       className={`inline-flex items-center gap-2 text-sm font-medium ${
-                        method.primary 
-                          ? 'text-white hover:text-blue-100' 
+                        method.primary
+                          ? 'text-white hover:text-blue-100'
                           : 'text-blue-600 hover:text-blue-700'
                       } transition-colors`}
                     >
@@ -295,8 +309,11 @@ export default function Contact() {
                 Office Hours
               </h3>
               <div className="space-y-3">
-                {officeHours.map((schedule, index) => (
-                  <div key={schedule.day} className="flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0">
+                {officeHours.map((schedule, _index) => (
+                  <div
+                    key={schedule.day}
+                    className="flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0"
+                  >
                     <span className="font-medium text-gray-700">{schedule.day}</span>
                     <span className="text-gray-600">{schedule.hours}</span>
                   </div>
@@ -311,14 +328,14 @@ export default function Contact() {
                 Serving Las Vegas & Beyond
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Dr. Jan Duffy and our team serve the entire Las Vegas metropolitan area, 
-                including Henderson, North Las Vegas, and surrounding communities. 
-                We also provide relocation services to and from Las Vegas nationwide.
+                Dr. Jan Duffy and our team serve the entire Las Vegas metropolitan area, including
+                Henderson, North Las Vegas, and surrounding communities. We also provide relocation
+                services to and from Las Vegas nationwide.
               </p>
             </div>
           </motion.div>
         </div>
       </div>
     </section>
-  )
+  );
 }

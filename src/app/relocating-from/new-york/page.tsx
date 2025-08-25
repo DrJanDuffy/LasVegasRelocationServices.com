@@ -1,20 +1,19 @@
-'use client'
+'use client';
 
-import { motion } from '@/components/motion'
-import { 
-  Building, 
-  Calendar, 
-  DollarSign, 
-  Home, 
-  Mail, 
-  MapPin, 
-  Mountain, 
-  Phone, 
-  Plane, 
-  Star, 
+import {
+  Building,
+  Calendar,
+  DollarSign,
+  Home,
+  Mail,
+  MapPin,
+  Phone,
+  Plane,
+  Star,
   Sun,
-  Users
-} from 'lucide-react'
+  Users,
+} from 'lucide-react';
+import { motion } from '@/components/motion';
 
 export default function NewYorkToLasVegasPage() {
   return (
@@ -119,8 +118,8 @@ export default function NewYorkToLasVegasPage() {
                 Business Friendly
               </h3>
               <p className="text-gray-600 text-center">
-                Nevada's business-friendly environment with no corporate income tax and
-                lower operating costs.
+                Nevada's business-friendly environment with no corporate income tax and lower
+                operating costs.
               </p>
             </div>
 
@@ -132,8 +131,8 @@ export default function NewYorkToLasVegasPage() {
                 Growing Community
               </h3>
               <p className="text-gray-600 text-center">
-                Join a rapidly growing, diverse community with excellent amenities and
-                entertainment options.
+                Join a rapidly growing, diverse community with excellent amenities and entertainment
+                options.
               </p>
             </div>
           </div>
@@ -192,6 +191,85 @@ export default function NewYorkToLasVegasPage() {
                 We help you settle in with local connections and ongoing support.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Property Search Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Find Your Las Vegas Home
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Discover properties in Las Vegas that offer better value than New York City
+            </p>
+          </motion.div>
+
+          {/* RealScout Widget */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <realscout-office-listings
+              agent-encoded-id="QWdlbnQtMjI1MDUw"
+              sort-order="PRICE_HIGH"
+              listing-status="For Sale"
+              property-types="SFR,MF"
+              price-min="500000"
+              price-max="1000000"
+            ></realscout-office-listings>
+          </motion.div>
+
+          {/* Property Categories */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* NYC-Style Homes */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl shadow-lg p-6"
+            >
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">NYC-Style Homes</h3>
+              <realscout-office-listings
+                agent-encoded-id="QWdlbnQtMjI1MDUw"
+                sort-order="PRICE_HIGH"
+                listing-status="For Sale"
+                property-types="SFR"
+                price-min="600000"
+                price-max="1200000"
+              ></realscout-office-listings>
+            </motion.div>
+
+            {/* Value Properties */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl shadow-lg p-6"
+            >
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Value Properties</h3>
+              <realscout-office-listings
+                agent-encoded-id="QWdlbnQtMjI1MDUw"
+                sort-order="PRICE_LOW"
+                listing-status="For Sale"
+                property-types="SFR,MF"
+                price-min="350000"
+                price-max="700000"
+              ></realscout-office-listings>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -429,5 +507,5 @@ export default function NewYorkToLasVegasPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }

@@ -13,6 +13,9 @@
     "analyze": "cross-env ANALYZE=true next build",
     "deploy": "powershell -ExecutionPolicy Bypass -File deploy.ps1",
     "deploy:simple": "deploy.bat",
+    "deploy:cloudflare": "powershell -ExecutionPolicy Bypass -File deploy-cloudflare.ps1",
+    "setup:cloudflare": "powershell -ExecutionPolicy Bypass -File setup-cloudflare.ps1",
+
     "biome:check": "biome check .",
     "biome:format": "biome format --write .",
     "biome:lint": "biome lint .",
@@ -20,7 +23,20 @@
     "biome:check:strict": "biome check . --max-diagnostics=200",
     "biome:fix:strict": "biome check --write . --max-diagnostics=200",
     "biome:organize": "biome check --write --apply-unsafe .",
-    "code:quality": "npm run biome:check && npm run type-check"
+    "biome:ci": "biome check . --max-diagnostics=0",
+    "biome:format:check": "biome format --check .",
+    "biome:organize:check": "biome check --apply-unsafe .",
+
+    "code:quality": "npm run biome:check && npm run type-check",
+    "code:quality:fix": "npm run biome:fix && npm run type-check",
+    "code:quality:strict": "npm run biome:check:strict && npm run type-check",
+    "code:quality:strict:fix": "npm run biome:fix:strict && npm run type-check",
+
+    "pre-commit": "npm run biome:check && npm run type-check",
+    "pre-push": "npm run biome:ci && npm run type-check",
+
+    "real-estate:quality": "npm run code:quality && npm run accessibility:check",
+    "accessibility:check": "biome check . --apply-unsafe --max-diagnostics=500"
   },
   "dependencies": {
     "@headlessui/react": "^2.0.0",

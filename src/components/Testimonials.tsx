@@ -1,28 +1,31 @@
-'use client'
+'use client';
 
-import { motion } from '@/components/motion'
-import { Star, Quote } from 'lucide-react'
+import { Quote, Star } from 'lucide-react';
+import { motion } from '@/components/motion';
 
 const testimonials = [
   {
-    quote: "Dr. Jan Duffy made our move to Las Vegas completely stress-free. Her knowledge of the local market and personal attention to detail exceeded all our expectations.",
-    author: "Sarah M.",
-    title: "Corporate Executive",
-    rating: 5
+    quote:
+      'Dr. Jan Duffy made our move to Las Vegas completely stress-free. Her knowledge of the local market and personal attention to detail exceeded all our expectations.',
+    author: 'Sarah M.',
+    title: 'Corporate Executive',
+    rating: 5,
   },
   {
-    quote: "Moving from California to Las Vegas seemed daunting until we found Dr. Duffy. She handled everything from finding our perfect home to coordinating the entire move.",
-    author: "Michael R.",
-    title: "Tech Professional",
-    rating: 5
+    quote:
+      'Moving from California to Las Vegas seemed daunting until we found Dr. Duffy. She handled everything from finding our perfect home to coordinating the entire move.',
+    author: 'Michael R.',
+    title: 'Tech Professional',
+    rating: 5,
   },
   {
-    quote: "The level of service and expertise Dr. Duffy provided was exceptional. She truly understands what families need when relocating to Las Vegas.",
-    author: "Jennifer L.",
-    title: "Military Family",
-    rating: 5
-  }
-]
+    quote:
+      'The level of service and expertise Dr. Duffy provided was exceptional. She truly understands what families need when relocating to Las Vegas.',
+    author: 'Jennifer L.',
+    title: 'Military Family',
+    rating: 5,
+  },
+];
 
 export default function Testimonials() {
   return (
@@ -40,7 +43,8 @@ export default function Testimonials() {
             What Our Las Vegas Relocation Clients Say
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Don't just take our word for it. Here's what families and professionals who have relocated to Las Vegas with Dr. Jan Duffy have to say about their experience.
+            Don't just take our word for it. Here's what families and professionals who have
+            relocated to Las Vegas with Dr. Jan Duffy have to say about their experience.
           </p>
         </motion.div>
 
@@ -80,12 +84,8 @@ export default function Testimonials() {
 
               {/* Author */}
               <div className="border-t border-gray-100 pt-4">
-                <div className="font-semibold text-gray-900">
-                  — {testimonial.author}
-                </div>
-                <div className="text-sm text-gray-600">
-                  {testimonial.title}
-                </div>
+                <div className="font-semibold text-gray-900">— {testimonial.author}</div>
+                <div className="text-sm text-gray-600">{testimonial.title}</div>
               </div>
             </motion.div>
           ))}
@@ -104,8 +104,9 @@ export default function Testimonials() {
               Join Hundreds of Satisfied Families
             </h3>
             <p className="text-gray-600 leading-relaxed mb-6">
-              Dr. Jan Duffy has successfully helped over 500 families relocate to Las Vegas with a 98% satisfaction rate. 
-              Our clients consistently praise our attention to detail, local expertise, and personalized service.
+              Dr. Jan Duffy has successfully helped over 500 families relocate to Las Vegas with a
+              98% satisfaction rate. Our clients consistently praise our attention to detail, local
+              expertise, and personalized service.
             </p>
             <div className="flex flex-wrap justify-center items-center gap-8 text-gray-600">
               <div className="flex items-center gap-2">
@@ -125,5 +126,5 @@ export default function Testimonials() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

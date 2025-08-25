@@ -3,14 +3,15 @@
   "root": true,
   "files": {
     "ignoreUnknown": false,
-    "includes": ["src/**/*.{js,jsx,ts,tsx}", "*.{js,jsx,ts,tsx,json}"]
+    "includes": ["src/**/*.{js,jsx,ts,tsx}", "*.{js,jsx,ts,tsx,json}", "*.config.{js,ts,mjs}"]
   },
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
     "indentWidth": 2,
     "lineWidth": 100,
-    "useEditorconfig": true
+    "useEditorconfig": true,
+    "lineEnding": "lf"
   },
   "linter": {
     "enabled": true,
@@ -18,27 +19,51 @@
       "recommended": true,
       "correctness": {
         "noUnusedVariables": "error",
+        "noUnreachable": "error",
+        "noUndeclaredVariables": "error",
         "noUnusedImports": "error"
       },
       "suspicious": {
         "noDebugger": "error",
-        "noArrayIndexKey": "warn"
+        "noArrayIndexKey": "warn",
+        "noExplicitAny": "warn"
       },
       "style": {
         "useConst": "error",
         "useTemplate": "error",
-        "useImportType": "error"
+        "useImportType": "error",
+        "useBlockStatements": "error",
+        "useDefaultParameterLast": "error",
+        "useExponentiationOperator": "error"
       },
       "a11y": {
-        "useButtonType": "warn",
-        "noLabelWithoutControl": "warn"
+        "useButtonType": "error",
+        "noLabelWithoutControl": "error",
+        "useAriaPropsForRole": "warn",
+        "useHeadingContent": "warn",
+        "useHtmlLang": "warn",
+        "useKeyWithClickEvents": "warn",
+        "useKeyWithMouseEvents": "warn",
+        "useMediaCaption": "warn",
+        "useValidAnchor": "warn",
+        "useValidAriaProps": "warn",
+        "useValidAriaValues": "warn"
       },
       "security": {
-        "noDangerouslySetInnerHtml": "warn"
+        "noDangerouslySetInnerHtml": "error",
+        "noGlobalEval": "error"
       },
       "complexity": {
-        "noExcessiveCognitiveComplexity": "warn"
+        "noExcessiveCognitiveComplexity": "warn",
+        "noExcessiveLinesPerFunction": "warn"
       }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "trailingCommas": "es5",
+      "semicolons": "always"
     }
   },
   "vcs": {

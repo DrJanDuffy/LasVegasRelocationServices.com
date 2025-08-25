@@ -1,17 +1,17 @@
-'use client'
+'use client';
 
-export { 
-  motion, 
-  AnimatePresence, 
-  useAnimation, 
-  useInView, 
-  useMotionValue, 
-  useTransform,
+export {
+  AnimatePresence,
+  domAnimation,
+  domMax,
+  LazyMotion,
+  motion,
+  useAnimation,
+  useInView,
+  useMotionTemplate,
+  useMotionValue,
+  useReducedMotion,
   useScroll,
   useSpring,
-  useMotionTemplate,
-  useReducedMotion,
-  LazyMotion,
-  domAnimation,
-  domMax
-} from 'framer-motion'
+  useTransform,
+} from 'framer-motion';

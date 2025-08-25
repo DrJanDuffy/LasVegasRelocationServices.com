@@ -1,21 +1,19 @@
-'use client'
+'use client';
 
-import { motion } from '@/components/motion'
-import { 
-  Building, 
-  Calendar, 
-  DollarSign, 
-  Home, 
-  Mail, 
-  MapPin, 
-  Mountain, 
-  Phone, 
-  Plane, 
-  Star, 
+import {
+  Building,
+  Calendar,
+  DollarSign,
+  Home,
+  Mail,
+  MapPin,
+  Phone,
+  Plane,
+  Star,
   Sun,
-  Users,
-  Wind
-} from 'lucide-react'
+  Wind,
+} from 'lucide-react';
+import { motion } from '@/components/motion';
 
 export default function ChicagoToLasVegasPage() {
   return (
@@ -28,7 +26,9 @@ export default function ChicagoToLasVegasPage() {
               <MapPin className="w-4 h-4 mr-2" />
               Chicago → Las Vegas
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">Moving from Chicago to Las Vegas?</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Moving from Chicago to Las Vegas?
+            </h1>
             <p className="text-xl md:text-2xl text-red-100 mb-8 max-w-3xl mx-auto">
               Let Dr. Jan Duffy and the Berkshire Hathaway team make your transition seamless. We
               understand the Chicago lifestyle and will help you find your perfect Las Vegas home.
@@ -120,8 +120,8 @@ export default function ChicagoToLasVegasPage() {
                 Business Friendly
               </h3>
               <p className="text-gray-600 text-center">
-                Nevada's business-friendly environment with no corporate income tax and
-                lower operating costs.
+                Nevada's business-friendly environment with no corporate income tax and lower
+                operating costs.
               </p>
             </div>
 
@@ -133,8 +133,8 @@ export default function ChicagoToLasVegasPage() {
                 No Wind Chill
               </h3>
               <p className="text-gray-600 text-center">
-                Escape Chicago's famous wind chill factor. Las Vegas offers comfortable
-                temperatures year-round.
+                Escape Chicago's famous wind chill factor. Las Vegas offers comfortable temperatures
+                year-round.
               </p>
             </div>
           </div>
@@ -142,7 +142,7 @@ export default function ChicagoToLasVegasPage() {
       </section>
 
       {/* Relocation Process Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-red-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -193,6 +193,85 @@ export default function ChicagoToLasVegasPage() {
                 We help you settle in with local connections and ongoing support.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Property Search Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Find Your Las Vegas Home
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Discover properties in Las Vegas that offer better value than Chicago
+            </p>
+          </motion.div>
+
+          {/* RealScout Widget */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <realscout-office-listings
+              agent-encoded-id="QWdlbnQtMjI1MDUw"
+              sort-order="PRICE_HIGH"
+              listing-status="For Sale"
+              property-types="SFR,MF"
+              price-min="400000"
+              price-max="800000"
+            ></realscout-office-listings>
+          </motion.div>
+
+          {/* Property Categories */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Chicago-Style Homes */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl shadow-lg p-6"
+            >
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Chicago-Style Homes</h3>
+              <realscout-office-listings
+                agent-encoded-id="QWdlbnQtMjI1MDUw"
+                sort-order="PRICE_HIGH"
+                listing-status="For Sale"
+                property-types="SFR"
+                price-min="500000"
+                price-max="900000"
+              ></realscout-office-listings>
+            </motion.div>
+
+            {/* Value Properties */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl shadow-lg p-6"
+            >
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Value Properties</h3>
+              <realscout-office-listings
+                agent-encoded-id="QWdlbnQtMjI1MDUw"
+                sort-order="PRICE_LOW"
+                listing-status="For Sale"
+                property-types="SFR,MF"
+                price-min="300000"
+                price-max="600000"
+              ></realscout-office-listings>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -430,5 +509,5 @@ export default function ChicagoToLasVegasPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }
