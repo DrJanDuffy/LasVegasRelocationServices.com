@@ -3,10 +3,10 @@
 import { motion } from '@/components/motion'
 import { 
   // Import relevant icons for your service
-  Icon1, 
-  Icon2, 
-  Icon3, 
-  Icon4,
+  Home, 
+  MapPin, 
+  Users, 
+  TrendingUp,
   CheckCircle, 
   Phone, 
   Calendar
@@ -15,25 +15,25 @@ import {
 // Service features array - customize for your specific service
 const serviceFeatures = [
   {
-    icon: Icon1,
+    icon: Home,
     title: 'Feature Title 1',
     description: 'Description of this service feature',
     benefits: ['Benefit 1', 'Benefit 2', 'Benefit 3', 'Benefit 4']
   },
   {
-    icon: Icon2,
+    icon: MapPin,
     title: 'Feature Title 2',
     description: 'Description of this service feature',
     benefits: ['Benefit 1', 'Benefit 2', 'Benefit 3', 'Benefit 4']
   },
   {
-    icon: Icon3,
+    icon: Users,
     title: 'Feature Title 3',
     description: 'Description of this service feature',
     benefits: ['Benefit 1', 'Benefit 2', 'Benefit 3', 'Benefit 4']
   },
   {
-    icon: Icon4,
+    icon: TrendingUp,
     title: 'Feature Title 4',
     description: 'Description of this service feature',
     benefits: ['Benefit 1', 'Benefit 2', 'Benefit 3', 'Benefit 4']
@@ -90,22 +90,22 @@ const servicePackages = [
 // Service benefits - customize for your service
 const serviceBenefits = [
   {
-    icon: Icon1,
+    icon: Home,
     title: 'Benefit Title 1',
     description: 'Description of this benefit'
   },
   {
-    icon: Icon2,
+    icon: MapPin,
     title: 'Benefit Title 2',
     description: 'Description of this benefit'
   },
   {
-    icon: Icon3,
+    icon: Users,
     title: 'Benefit Title 3',
     description: 'Description of this benefit'
   },
   {
-    icon: Icon4,
+    icon: TrendingUp,
     title: 'Benefit Title 4',
     description: 'Description of this benefit'
   }
@@ -152,7 +152,7 @@ export default function ServiceNamePage() {
               className="text-center"
             >
               <div className="w-64 h-64 mx-auto bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
-                <Icon1 className="w-32 h-32 text-white/80" />
+                <Home className="w-32 h-32 text-white/80" />
               </div>
             </motion.div>
           </div>
