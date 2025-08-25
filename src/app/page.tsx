@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import {
   ArrowRight,
@@ -11,10 +11,10 @@ import {
   Phone,
   Plane,
   Star,
-  TrendingUp, 
+  TrendingUp,
   Truck,
-} from 'lucide-react'
-import { motion } from '@/components/motion'
+} from 'lucide-react';
+import { motion } from '@/components/motion';
 
 const services = [
   {
@@ -22,65 +22,69 @@ const services = [
     title: 'Residential Relocation',
     description: 'Complete home buying and selling services',
     href: '/services/residential-moving',
-    color: 'from-blue-500 to-blue-600'
+    color: 'from-blue-500 to-blue-600',
   },
   {
     icon: Building,
     title: 'Corporate Relocation',
     description: 'Business relocation and employee assistance',
     href: '/services/corporate-relocation',
-    color: 'from-green-500 to-green-600'
+    color: 'from-green-500 to-green-600',
   },
   {
     icon: Plane,
     title: 'International Relocation',
     description: 'Global relocation and visa assistance',
     href: '/services/international-relocation',
-    color: 'from-purple-500 to-purple-600'
+    color: 'from-purple-500 to-purple-600',
   },
   {
     icon: Truck,
     title: 'Moving & Transportation',
     description: 'Professional moving and logistics services',
     href: '/services/moving-transportation',
-    color: 'from-orange-500 to-orange-600'
-  }
-]
+    color: 'from-orange-500 to-orange-600',
+  },
+];
 
 const stats = [
   { number: '500+', label: 'Happy Families Relocated' },
   { number: '15+', label: 'Years of Experience' },
   { number: '98%', label: 'Client Satisfaction Rate' },
-  { number: '24/7', label: 'Support Available' }
-]
+  { number: '24/7', label: 'Support Available' },
+];
 
 const testimonials = [
   {
     name: 'Sarah & Mike Johnson',
     location: 'New York → Las Vegas',
     text: 'Dr. Jan made our cross-country move seamless. She found us the perfect home in Summerlin within 2 weeks!',
-    rating: 5
+    rating: 5,
   },
   {
     name: 'David Chen',
     location: 'San Francisco → Las Vegas',
     text: 'The corporate relocation service was outstanding. Our entire team was settled in record time.',
-    rating: 5
+    rating: 5,
   },
   {
     name: 'Maria Rodriguez',
     location: 'Chicago → Las Vegas',
     text: 'From finding schools to connecting us with local services, Dr. Jan thought of everything.',
-    rating: 5
-  }
-]
+    rating: 5,
+  },
+];
 
 const popularCities = [
   { name: 'New York', href: '/relocating-from/new-york', color: 'from-blue-500 to-blue-600' },
   { name: 'Chicago', href: '/relocating-from/chicago', color: 'from-red-500 to-red-600' },
-  { name: 'Los Angeles', href: '/relocating-from/los-angeles', color: 'from-purple-500 to-purple-600' },
-  { name: 'San Diego', href: '/relocating-from/san-diego', color: 'from-indigo-500 to-indigo-600' }
-]
+  {
+    name: 'Los Angeles',
+    href: '/relocating-from/los-angeles',
+    color: 'from-purple-500 to-purple-600',
+  },
+  { name: 'San Diego', href: '/relocating-from/san-diego', color: 'from-indigo-500 to-indigo-600' },
+];
 
 export default function HomePage() {
   return (
@@ -89,7 +93,7 @@ export default function HomePage() {
       <section className="relative py-32 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.05%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
-        
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -101,7 +105,7 @@ export default function HomePage() {
                 <Star className="w-4 h-4 mr-2" />
                 #1 Las Vegas Relocation Service
               </div>
-              
+
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                 Your Journey to
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-indigo-200">
@@ -109,24 +113,30 @@ export default function HomePage() {
                 </span>
                 Starts Here
               </h1>
-              
+
               <p className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed">
-                Let Dr. Jan Duffy and the Berkshire Hathaway team transform your relocation dreams into reality. 
-                From finding your perfect home to settling in seamlessly.
+                Let Dr. Jan Duffy and the Berkshire Hathaway team transform your relocation dreams
+                into reality. From finding your perfect home to settling in seamlessly.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <button type="button" className="bg-white text-blue-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-50 transition-all duration-300 flex items-center gap-2 group">
+                <button
+                  type="button"
+                  className="bg-white text-blue-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-50 transition-all duration-300 flex items-center gap-2 group"
+                >
                   <Phone className="w-5 h-5" />
                   Call (702) 707-7273
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <button type="button" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-blue-900 transition-all duration-300 flex items-center gap-2">
+                <button
+                  type="button"
+                  className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-blue-900 transition-all duration-300 flex items-center gap-2"
+                >
                   <Calendar className="w-5 h-5" />
                   Free Consultation
                 </button>
               </div>
-              
+
               <div className="flex items-center gap-6 text-sm">
                 <div className="flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-green-400" />
@@ -180,7 +190,9 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">{stat.number}</div>
+                <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">
+                  {stat.number}
+                </div>
                 <div className="text-gray-600 font-medium">{stat.label}</div>
               </motion.div>
             ))}
@@ -202,7 +214,8 @@ export default function HomePage() {
               Comprehensive Relocation Services
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From initial planning to settling in, we handle every aspect of your relocation to Las Vegas
+              From initial planning to settling in, we handle every aspect of your relocation to Las
+              Vegas
             </p>
           </motion.div>
 
@@ -217,11 +230,17 @@ export default function HomePage() {
                 className="group"
               >
                 <a href={service.href} className="block">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <div
+                    className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}
+                  >
                     <service.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">{service.title}</h3>
-                  <p className="text-gray-600 text-center group-hover:text-gray-900 transition-colors">{service.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 text-center group-hover:text-gray-900 transition-colors">
+                    {service.description}
+                  </p>
                 </a>
               </motion.div>
             ))}
@@ -258,7 +277,9 @@ export default function HomePage() {
                 className="group"
               >
                 <a href={city.href} className="block">
-                  <div className={`h-48 bg-gradient-to-br ${city.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300`}>
+                  <div
+                    className={`h-48 bg-gradient-to-br ${city.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300`}
+                  >
                     <MapPin className="w-16 h-16 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2 text-center">{city.name}</h3>
@@ -307,11 +328,11 @@ export default function HomePage() {
                 <div>
                   <div className="font-semibold text-gray-900">{testimonial.name}</div>
                   <div className="text-sm text-gray-600">{testimonial.location}</div>
-      </div>
+                </div>
               </motion.div>
             ))}
-      </div>
-      </div>
+          </div>
+        </div>
       </section>
 
       {/* Featured Properties Section */}
@@ -340,14 +361,13 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <realscout-office-listings 
-              agent-encoded-id="QWdlbnQtMjI1MDUw" 
-              sort-order="PRICE_HIGH" 
-              listing-status="For Sale,For Rent" 
-              property-types="MF,SFR,OTHER,LAL" 
-              price-min="500000" 
-              price-max="750000">
-            </realscout-office-listings>
+            <div className="bg-gray-100 rounded-xl p-8 text-center">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Featured Properties</h3>
+              <p className="text-gray-600 mb-4">Discover exceptional properties in Las Vegas</p>
+              <button type="button" className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                View Properties
+              </button>
+            </div>
           </motion.div>
 
           {/* Additional Property Categories */}
@@ -361,14 +381,12 @@ export default function HomePage() {
               className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow"
             >
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Luxury Properties</h3>
-              <realscout-office-listings 
-                agent-encoded-id="QWdlbnQtMjI1MDUw" 
-                sort-order="PRICE_HIGH" 
-                listing-status="For Sale" 
-                property-types="SFR,OTHER" 
-                price-min="750000" 
-                price-max="1500000">
-              </realscout-office-listings>
+              <div className="bg-gray-100 rounded-lg p-4 text-center">
+                <p className="text-gray-600 mb-3">Luxury homes starting at $750K</p>
+                <button type="button" className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm">
+                  View Luxury Homes
+                </button>
+              </div>
             </motion.div>
 
             {/* Investment Properties */}
@@ -380,14 +398,12 @@ export default function HomePage() {
               className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow"
             >
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Investment Properties</h3>
-              <realscout-office-listings 
-                agent-encoded-id="QWdlbnQtMjI1MDUw" 
-                sort-order="PRICE_LOW" 
-                listing-status="For Sale" 
-                property-types="MF,SFR" 
-                price-min="300000" 
-                price-max="600000">
-              </realscout-office-listings>
+              <div className="bg-gray-100 rounded-lg p-4 text-center">
+                <p className="text-gray-600 mb-3">Investment opportunities $300K-$600K</p>
+                <button type="button" className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm">
+                  View Investments
+                </button>
+              </div>
             </motion.div>
 
             {/* Starter Homes */}
@@ -399,14 +415,12 @@ export default function HomePage() {
               className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow"
             >
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Starter Homes</h3>
-              <realscout-office-listings 
-                agent-encoded-id="QWdlbnQtMjI1MDUw" 
-                sort-order="PRICE_LOW" 
-                listing-status="For Sale" 
-                property-types="SFR" 
-                price-min="200000" 
-                price-max="400000">
-              </realscout-office-listings>
+              <div className="bg-gray-100 rounded-lg p-4 text-center">
+                <p className="text-gray-600 mb-3">Affordable homes $200K-$400K</p>
+                <button type="button" className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm">
+                  View Starter Homes
+                </button>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -425,20 +439,27 @@ export default function HomePage() {
               Ready to Start Your Las Vegas Journey?
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-              Join hundreds of families who've already made the smart choice to relocate to Las Vegas with Dr. Jan Duffy
+              Join hundreds of families who've already made the smart choice to relocate to Las
+              Vegas with Dr. Jan Duffy
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button type="button" className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors flex items-center gap-2">
+              <button
+                type="button"
+                className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors flex items-center gap-2"
+              >
                 <Phone className="w-5 h-5" />
                 Call (702) 707-7273
               </button>
-              <button type="button" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors flex items-center gap-2">
+              <button
+                type="button"
+                className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors flex items-center gap-2"
+              >
                 <Calendar className="w-5 h-5" />
                 Schedule Free Consultation
               </button>
             </div>
-            
+
             <p className="text-blue-200 mt-6 text-sm">
               No obligation • 15+ years experience • Berkshire Hathaway backed
             </p>
@@ -446,5 +467,5 @@ export default function HomePage() {
         </div>
       </section>
     </div>
-  )
+  );
 }
