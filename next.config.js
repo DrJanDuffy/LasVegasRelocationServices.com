@@ -4,8 +4,6 @@ const nextConfig = {
     optimizePackageImports: ['lucide-react', '@heroicons/react'],
     // Cloudflare optimizations
     optimizeCss: true,
-    // Enable modern JavaScript features
-    modern: true,
   },
   transpilePackages: ['framer-motion'],
   webpack: (config, { isServer }) => {
@@ -100,9 +98,9 @@ const nextConfig = {
         },
       ],
     },
-    // Fonts caching
+    // Fonts caching - fixed pattern without capturing groups
     {
-      source: '/(.*\\.(woff|woff2|ttf|eot))',
+      source: '/:path*.(woff|woff2|ttf|eot)',
       headers: [
         {
           key: 'Cache-Control',
@@ -114,9 +112,9 @@ const nextConfig = {
         },
       ],
     },
-    // CSS and JS caching
+    // CSS and JS caching - fixed pattern without capturing groups
     {
-      source: '/(.*\\.(css|js))',
+      source: '/:path*.(css|js)',
       headers: [
         {
           key: 'Cache-Control',
