@@ -105,35 +105,35 @@ export default function LosAngelesPageClient() {
       category: "State Income Tax",
       originCity: "13.3%",
       lasVegas: "0%",
-      difference: "better",
+      difference: "better" as const,
       description: "No state income tax"
     },
     {
       category: "Property Tax Rate",
       originCity: "1.25%",
       lasVegas: "0.84%",
-      difference: "better",
+      difference: "better" as const,
       description: "Lower property taxes"
     },
     {
       category: "Sales Tax",
       originCity: "9.5%",
       lasVegas: "8.38%",
-      difference: "better",
+      difference: "better" as const,
       description: "Lower sales tax"
     },
     {
       category: "Traffic Congestion",
       originCity: "Severe",
       lasVegas: "Minimal",
-      difference: "better",
+      difference: "better" as const,
       description: "No more gridlock"
     },
     {
       category: "Housing Space",
       originCity: "Limited",
       lasVegas: "Spacious",
-      difference: "better",
+      difference: "better" as const,
       description: "More square footage"
     }
   ];

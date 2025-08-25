@@ -105,35 +105,35 @@ export default function SanDiegoPageClient() {
       category: "State Income Tax",
       originCity: "13.3%",
       lasVegas: "0%",
-      difference: "better",
+      difference: "better" as const,
       description: "No state income tax"
     },
     {
       category: "Property Tax Rate",
       originCity: "1.25%",
       lasVegas: "0.84%",
-      difference: "better",
+      difference: "better" as const,
       description: "Lower property taxes"
     },
     {
       category: "Sales Tax",
       originCity: "7.75%",
       lasVegas: "8.38%",
-      difference: "worse",
+      difference: "worse" as const,
       description: "Slightly higher sales tax"
     },
     {
       category: "Traffic Congestion",
       originCity: "Moderate",
       lasVegas: "Minimal",
-      difference: "better",
+      difference: "better" as const,
       description: "Much less traffic"
     },
     {
       category: "Housing Space",
       originCity: "Limited",
       lasVegas: "Spacious",
-      difference: "better",
+      difference: "better" as const,
       description: "More square footage"
     }
   ];
