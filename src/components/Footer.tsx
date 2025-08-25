@@ -83,10 +83,30 @@ const contactInfo = [
 ];
 
 const socialLinks = [
-  { name: 'Facebook', icon: Facebook, href: 'http://drjanduffy.realscout.com/onboarding', color: 'hover:text-blue-600' },
-  { name: 'Twitter', icon: Twitter, href: 'http://drjanduffy.realscout.com/onboarding', color: 'hover:text-blue-400' },
-  { name: 'Instagram', icon: Instagram, href: 'http://drjanduffy.realscout.com/onboarding', color: 'hover:text-pink-500' },
-  { name: 'LinkedIn', icon: Linkedin, href: 'http://drjanduffy.realscout.com/onboarding', color: 'hover:text-blue-700' },
+  {
+    name: 'Facebook',
+    icon: Facebook,
+    href: 'http://drjanduffy.realscout.com/onboarding',
+    color: 'hover:text-blue-600',
+  },
+  {
+    name: 'Twitter',
+    icon: Twitter,
+    href: 'http://drjanduffy.realscout.com/onboarding',
+    color: 'hover:text-blue-400',
+  },
+  {
+    name: 'Instagram',
+    icon: Instagram,
+    href: 'http://drjanduffy.realscout.com/onboarding',
+    color: 'hover:text-pink-500',
+  },
+  {
+    name: 'LinkedIn',
+    icon: Linkedin,
+    href: 'http://drjanduffy.realscout.com/onboarding',
+    color: 'hover:text-blue-700',
+  },
 ];
 
 const quickStats = [
